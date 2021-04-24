@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #131313;
+    color: white;
+    font-family: Arial;
+}
+
+input{
+    display: block;
+    height: 55px;
+    width: 400px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16pt;
+    padding: 0px 20px;
+    outline: none;
+}
+
+input[type="submit"]{ 
+    width: 440px;
+    background-color: #002040;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+div#corpo-form{
+    width: 420px;
+    margin: 100px auto 0px auto;
+}
+
+div#corpo-form h1{
+    text-align: center;
+    padding: 20px;
+    margin-left: 15px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+a:hover{
+    text-decoration: underline;
+}
