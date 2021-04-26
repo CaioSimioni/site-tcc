@@ -11,7 +11,7 @@ if(!isset($_SESSION['id_usuario'])){
 <head>
     <meta charset="UTF-8">
     <title>Site</title>
-    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/estilo_site.css">
 </head>
 <body>
     <div id="corpo-form">

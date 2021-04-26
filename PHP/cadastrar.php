@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar</title>
-    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/estilo_cad.css">
 </head>
 <body>
     <div id="corpo-form">

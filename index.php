@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
-    <link rel="stylesheet" href="./CSS/estilo.css">
+    <link rel="stylesheet" href="./CSS/estilo_index.css">
 </head>
 <body>
-    <div id="corpo-form">
-            <a href="./PHP/entrar.php"><strong>Login</strong></a>
-    </div>
+
+    <nav>
+        <ul>
+            <li><img src="./ASSETS/logo-arara-azul.png" alt=""></li>
+            <li><h3>Polo</h3></li>
+            <li><a href="./PHP/entrar.php">Login</a></li>
+         </ul>
+    </nav>
+
+    
 </body>
 </html>
+
+<!---->
