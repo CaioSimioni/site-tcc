@@ -1,4 +1,53 @@
 
+-=========== Tarefas ==========-
+
+[Parte do Sistema/Estrutura]
+     * Fazer o banco de dados
+     * Fazer o Email da POLO
+     * Host na Awardspace
+     * Exportar os arquivos
+
+[Nóticias]
+     * Criar tabela no BD
+     * Feed de notícias
+     * Sistema de postagem de notícias
+
+[Usuário]
+     * Criar tabela no BD
+     * Sistema de Login e Cadastro
+
+[Tópicos/Chat]
+     * Criar tabela BD
+     * Criar os Tópicos
+          - Chat para cada tópico
+
+[Moderação]
+     * Sistema de Moderação/Administração
+     * Analytics
+          - Criar tabela BD
+          - Painel de controle
+     * Painel de Moderação
+
+[E-Sports]
+     * Criar tabela BD
+     * Sistema de Anúncio de Campeonatos
+     * Sistema de apostas
+
+[Sobre Nós/TCC]
+     * Descrição sobre o TCC e nossa proposta
+     * Link para o TCC
+     * Contato/Link
+
+-=========== Ideias ==========-
+
+[PoloCoins]
+     * Carteira do Usuário
+     * Em apostadas em campeonados
+     * Loja Virtual
+
+-=============================-
+
+
 -= index.php - TESTA SE O USUÁRIO JÁ ESTÁ LOGADO =-
 <?php
 include_once "./php/login.php";
@@ -6,4 +55,3 @@ if($_SESSION['logged'] == False){
      header( "location: ./php/entrar.php");
 }
 ?>
--=================================================-
