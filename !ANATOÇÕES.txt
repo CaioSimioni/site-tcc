@@ -1,0 +1,9 @@
+
+-= index.php - TESTA SE O USUÁRIO JÁ ESTÁ LOGADO =-
+<?php
+include_once "./php/login.php";
+if($_SESSION['logged'] == False){
+     header( "location: ./php/entrar.php");
+}
+?>
+-=================================================-

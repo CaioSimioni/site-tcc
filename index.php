@@ -1,22 +1,19 @@
+
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
-    <link rel="stylesheet" href="./CSS/estilo_index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polo</title>
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><img src="./ASSETS/logo-arara-azul.png" alt=""></li>
-            <li><h3>Polo</h3></li>
-            <li><a href="./PHP/entrar.php">Login</a></li>
-         </ul>
-    </nav>
-
-    
+    <div id="global">
+    <?php
+        include "./HTML/navbar.html";
+    ?>
+    </div>
 </body>
 </html>
-
-<!---->
