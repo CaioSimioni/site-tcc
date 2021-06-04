@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* ============= CABEÇALHO =============== */
+
+.header li,.header a,.header button{
+    font-family: "Fredoka One", cursive;
+    font-weight: 500;
+    font-size: 16px;
+    color: #e9ebf5;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #1a1922;
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+    width: 180px;
+    height: 60px;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #30508b;
+}
+
+.header button{
+    padding: 9px 25px;
+    background-color: rgb(17, 49, 87, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header button:hover{
+    background-color: rgb(17, 49, 87, 0.6);
+}
+
+/*===============INDROTUÇÃO =================*/
+
+#indroducao{
+    display: flex;
+    justify-content: center;
+    padding: 50px 10%;
+}
+
+.bem_vindo{
+    width: 50%;
+    height: auto;
+    margin: 20px 20px 10px 10px;
+    font-family: 'Raleway';
+    color: rgb(15, 15, 15);
+}
+
+.bem_vindo h1{
+    font-weight: border;
+    animation: teste 1s ease;
+}
+
+.bem_vindo p{
+    text-align: justify;
+    font-weight: bold;
+    animation: teste 2s linear;
+}
+
+@keyframes teste {
+    0% {
+        color: transparent;
+        margin-top: -10px;
+    }
+    100% {
+        color: rgb(15, 15, 15);
+    }
+}
+
+.formulario{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 20px 10px 10px 20px;
+    background-color: rgb(23, 26, 31);
+    color: #e9ebf5;
+    border-radius: 5px;
+    font-family: 'Raleway';
+    padding: 10px;
+    animation: formu 2s linear;
+}
+
+@keyframes formu {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #e9ebf5;
+    }
+}
+
+
+.formulario h1{
+    text-align: center;
+}
+
+.formulario input{
+    display: block;
+    margin: 15px auto;
+    height: 30px;
+    width: 60%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.formulario input[type="text"], .formulario input[type="password"]{
+    background: transparent;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.formulario input[type="text"]:focus, .formulario input[type="password"]:focus{
+    background-color: white;
+    color: black;
+}
+
+.formulario input[type="submit"]{
+    width: auto;
+    padding: 0 20px;
+    border-radius: 10px;
+    color: #e9ebf5;
+    background-color: #294270;
+    border: none;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover{
+    background-color: #1e2f50;
+}
+
+.formulario a{
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    color: #e9ebf5;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.formulario a:hover{
+    color: #a6c5ff;
+}
+
+/*=============== E-Sports =================*/
+
+#esports{
+    width: 100%;
+    height: auto;
+    min-height: calc(200px + 60px);
+    background-image: url('./ASSETS/ESport-ESL.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 70px;
+}
+
+#esports h1{
+    padding-top: 40px;
+    margin: auto;
+    margin-bottom: 100px;
+    text-align: center;
+    font-family: "Raleway", cursive;
+    color: #e9ebf5;
+}
+
+#esports button{
+    display: block;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 0 auto 0 auto;
+    font-family: "Fredoka One", cursive;
+    border-radius: 3px;
+    background-color: rgba(7, 30, 78, 0.308);
+    color: #f4f4f8;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+#esports button:hover{
+    background-color: rgba(34, 61, 151, 0.801);
+}
+
+/*=============== Notícias ================*/
+
+#noticias_block{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.not {
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    color: rgb(23, 26, 31);
+    font-family: "Raleway", cursive;
+    transition: 500ms ease;
+}
+
+.not img{
+    border-radius: 3px;
+    max-height: 180px;
+    max-width: 320px;
+    transition: 500ms ease;
+
+}
+.not button {
+    margin-top: 10px;
+    background: transparent;
+    padding: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    transition: 300ms ease;
+    border-radius: 5px;
+}
+.not button:hover {
+    transition: 300ms ease;
+    cursor:pointer;
+    border: 1px solid rgb(23, 26, 31);
+    color: white;
+    background: #1a1922;
+}
+
+@media only screen and (max-width: 600px) {
+
+    
+    
+    #noticias_block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .formulario {
+        height: 30%;
+    }
+    #final {
+        display: inline;
+        flex-direction: column;
+        align-items: center;
+    }
+    #final span {
+        margin: 0 auto 0 auto;
+        margin-top: 30px;
+    }
+    
+}
+
+
+/*===============FINAL / FOOTER ================*/
+#final{
+    padding: 10px 10%;
+    background-color: #1a1922;
+    display: flex;
+    align-items: center;
+}
+
+#final ul{
+    display: flex;
+}
+
+#final ul li {
+    list-style: none;
+}
+#final ul li {
+    margin-left: 10px;
+}
+#final ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Raleway", cursive;
+    font-weight: bold;
+    
+}
+#final img {
+    width: 140px;
+    height: 50px;
+    /*margin-top: 20px;*/
+    margin: 0 0 0 0;
+}
+#final ul li a:hover {
+    color: #30508b;
+    transition: 300ms ease;
+}
+
+#final span{
+    margin-left: auto;
+    color: #f4f4f8;
+}
