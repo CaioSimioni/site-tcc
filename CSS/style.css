@@ -1,8 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 *{
     padding: 0px;
     margin: 0px;
 }
 
 body{
-    background-color: #111118;
+    background-color: #d1ddec;
+}
+
+/*-= CABEÇALHO =-*/
+header li, a, button{
+    font-family: "Fredoka One", cursive;
+    font-weight: 500;
+    font-size: 16px;
+    color: #e9ebf5;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #1a1922;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356);
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #30508b;
+}
+
+header button{
+    padding: 9px 25px;
+    background-color: rgb(17, 49, 87, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header button:hover{
+    background-color: rgb(17, 49, 87, 0.6);
+}
+
+
+
+.introducao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.teste {
+    width: 43%;
+    height: 170px;
+    margin: 0 auto 0 auto;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 3px;
+    font-family: 'Raleway';
+    color: rgb(15, 15, 15);
+}
+
+.teste h1 {
+    margin: 20px 0px 0px 20px;
+    animation: teste normal 1s;
+}
+@keyframes teste {
+    0% {
+        color: transparent;
+        margin-top: -1px;
+    }
+    100% {
+        color: rgb(15, 15, 15);
+    }
+}
+.teste p {
+    margin: 5px 0 0 40px;
+}
+
+
+
+
+
+form {
+    font-family: "Fredoka One", cursive;
+    width: 30%;
+    height: auto;
+    box-shadow: 10px 10px 10px black;
+    padding: 10px;
+    margin: 0 auto 0 auto;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 3px;
+    font-family: 'Raleway';
+    color: white;
+    background: #1a1922;
+    align-items: center;
+}
+
+form h1 {
+    font-family: "Raleway";
+}
+
+
+/*INPUTS*/
+form input {
+    width: 75%;
+    height: 35px;
+    text-align: center;
+    background:  transparent;
+    border: 2px solid white;
+    margin-top: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+form input[type="submit"] {
+    margin-top: 20px;
+    background-color: rgb(17, 49, 87);
+    color: white;
+    margin-bottom: 15px;
+    transition: all 0.3s ease 0s;
+}
+form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(12, 34, 61);
+}
+
+/*CHECKBOX*/
+input[type="checkbox"] {
+    display: inline-grid;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.25em;
+    border: 0.1em solid black;
+}
+label {
+    font-size: 3.5mm;
+    margin-left: -35%;
+    position: absolute;
+}
+input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+
+}
+
+input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 0%;
+    border-radius: 50%;
+    bottom: 0;
+    border: solid 2px;
+    vertical-align: bottom;
+}
+
+input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+}
+
+/*CADASTRAR*/
+form div p {
+    font-family: "Raleway";
+    font-size: 4mm;
+    margin-left: 50%;
+    margin-top: -28px;
+}
+form div {
+    margin-top: 10px;
+    width: 100%;
+    height: 20px;
+}
+
+.meio {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: #1a1922;
+    color: white;
+    margin-top: 10px;
 }
