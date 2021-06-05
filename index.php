@@ -36,11 +36,11 @@
             </div>
             <div class="formulario">
                 <h1>Login</h1>
-                <form action="#" method="POST">
+                <form action="PHP/logar.php" method="POST">
                     <input type="text" name="nome" placeholder="Usuário">
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" value="ACESSAR">
-                    <a href="#">Cadastrar-se</a>
+                    <a href="cadastro.php">Cadastrar-se</a>
                 </form>
             </div>
         </div>
