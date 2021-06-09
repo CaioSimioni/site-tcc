@@ -43,11 +43,11 @@
             } 
 
     </script>
-    
+
     <!-- retorno se o usuario ou email ja foi utilizado-->
     <?php
       session_start();
-      $exi =$_SESSION['usuario_e'];
+      $exi = $_SESSION['usuario_e'];
       if($exi==0){
       echo "<script> alert('Usuario ou email ja utilizado!') </script>";
       $_SESSION['usuario_e']=1;    }
