@@ -2,22 +2,27 @@
     width: 100%;
     height: auto;
     padding: 20px 0%;
-    background: transparent;
+    background: white;
     margin-top: 130px;
-    margin-bottom: 130px;
+    margin-bottom: 150px;
     font-family: "Raleway";
     display: flex;
     justify-content: space-around;
 }
 .div_principal p {
-    max-width: 250px;
-    font-weight: 400;
+    max-width: 300px;
+    font-weight: 700;
     margin-left: 20px;
     animation: text 700ms;
+    text-align: justify;
 }
 .div_principal h1 {
     max-width: 300px;
     animation: text 700ms;
+}
+
+.card{
+    padding: 10px;
 }
 
 @keyframes text {

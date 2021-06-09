@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLO</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="ASSETS/LogoArara.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/style_index.css">
+    <link rel="shortcut icon" href="./ASSETS/LogoArara.png" type="image/x-icon">
 </head>
 <body>
     <div id="global">
@@ -40,7 +40,7 @@
                     <input type="text" name="nome" placeholder="Usuário">
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" value="ACESSAR">
-                    <a href="cadastro.php">Cadastrar-se</a>
+                    <a href="./PHP/cadastro.php">Cadastrar-se</a>
                 </form>
             </div>
         </div>
@@ -69,7 +69,7 @@
         </div>
 
         <footer id="final">
-            <img src="ASSETS/LogoPOLO.png" alt="">
+            <img src="./ASSETS/LogoPOLO.png" alt="">
             <ul>
                 <li><a href="">Contato</a></li>
                 <li><a href="">Reclamações</a></li>
