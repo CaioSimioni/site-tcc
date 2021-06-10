@@ -7,9 +7,15 @@ Class Usuario{
     public $msgErro = "";
 
     //  Testa a conexão com o banco de dados
-    public function conectar($nome, $host, $usuario, $senha){
+    public function conectar(){
         global $pdo;    // As variaveis globais serão usadas
         global $msgErro;
+
+        //informações do banco de dados  !!! COLOCAR PARA FUNCIONAR !!!
+        $nome    = "";
+        $host    = "";
+        $usuario = "";
+        $senha   = "";
 
         try{
             // Tenta fazer o PDO
