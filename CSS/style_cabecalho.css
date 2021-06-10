@@ -1,3 +1,8 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 .header li,.header a,.header button{
     font-family: "Fredoka One", cursive;
     font-weight: 500;

@@ -17,7 +17,6 @@
                 <ul class="nav__links">
                     <li><a href="#">E-Sports</a></li>
                     <li><a href="#">Tópicos</a></li>
-                    <li><a href="#">Perfil</a></li>
                 </ul>
             </nav>
             <a class="cta" href="./HTML/informacoes.html"><button>Sobre nós</button></a>
@@ -40,7 +39,7 @@
                     <input type="text" name="nome" placeholder="Usuário">
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" value="ACESSAR">
-                    <a href="./PHP/cadastro.php">Cadastrar-se</a>
+                    <a href="./PHP/cadastrar.php">Cadastrar-se</a>
                 </form>
             </div>
         </div>

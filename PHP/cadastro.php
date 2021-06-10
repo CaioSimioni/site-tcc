@@ -56,10 +56,10 @@
         ?>
         <div class="global">
             <div class="formulario">
-                <form  name="formu"  method="POST" action="PHP/registrar.php">
+                <form  name="formu"  method="POST" action="../PHP/registrar.php">
                     <h1>Cadastrar</h1>
                     <input placeholder="Nome do Usuário" type="text" name="usuario" size="20">
-                    <input placeholder="Email@endereco.com" type="text" name="email" size="20">
+                    <input placeholder="Email" type="text" name="email" size="20">
                     <input placeholder="Senha"  type="password" name="senha" size="20">
                     <input placeholder="Confirmar Senha"  type="password" name="conf_senha" size="20">
                     <input type="submit" value="Criar Conta" name="btn_criar" onclick="return validar()">

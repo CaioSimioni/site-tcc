@@ -4,6 +4,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    outline: none;
 }
 
 .header li,.header a,.header button{
@@ -20,7 +21,6 @@ header{
     align-items: center;
     padding: 30px 10%;
     background-color: #1a1922;
-    
 }
 
 .logo{

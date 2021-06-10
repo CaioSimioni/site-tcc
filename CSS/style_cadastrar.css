@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
 .global {
     justify-content: center;
 }
@@ -70,4 +79,20 @@
 
 .formulario a:hover{
     color: #a6c5ff;
+}
+
+div#msg-sucesso{
+    width: 440px;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    color: green;
+    text-align: center;
+}
+
+div.msg-erro{
+    width: 440px;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    color: red;
+    text-align: center;
 }

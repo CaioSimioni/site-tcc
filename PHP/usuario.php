@@ -12,43 +12,52 @@ Class Usuario{
         global $msgErro;
 
         //informações do banco de dados  !!! COLOCAR PARA FUNCIONAR !!!
-        $nome    = "";
-        $host    = "";
-        $usuario = "";
+        $nome    = "polo";
+        $host    = "localhost";
+        $usuario = "root";
         $senha   = "";
 
-        try{
-            // Tenta fazer o PDO
+        try{  // Tenta fazer o PDO
             $pdo = new PDO("mysql:dbname=".$nome.";host=".$host, $usuario, $senha);
         }catch(PDOException $e){  // o Erro do PDO = $e
             $msgErro = $e->getMessage();
         }
     }
 
-    public function cadastrar($nome, $email, $senha, $confirmarSenha){
+    public function cadastrar($usuario, $email, $senha, $confirmarSenha){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e");  // Faz o comando no Banco de dados
+        $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
         $sql->bindValue(":e", $email);
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            return false; //Usuário já cadastrado.
+            return false; //Email já cadastrado.
+
         }else{
-            $sql = $pdo->prepare("INSERT INTO usuarios(nome, email, senha) VALUES(:n, :e, :s)");
-            $sql->bindValue(":n", $nome);
-            $sql->bindValue(":e", $email);
-            $sql->bindValue(":s", md5($senha));
+            $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE usuario = :u");
+            $sql->bindValue(":u", $usuario);
             $sql->execute();
-            return true; //Novo usuário cadastrado.
+
+            if($sql->rowCount() > 0){
+                return false; //Usuario já cadastrado
+                
+            }else{
+                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha) VALUES(:u, :e, :s)");
+                $sql->bindValue(":u", $usuario);
+                $sql->bindValue(":e", $email);
+                $sql->bindValue(":s", md5($senha));
+                $sql->execute();
+                return true; //Novo usuário cadastrado.
+            }
         }
     }
 
-    public function entrar($nome, $senha){
+    public function entrar($usuario, $senha){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE nome = :n AND senha = :s");
-        $sql->bindValue(":n", $nome);
+        $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE usuario = :u AND senha = :s");
+        $sql->bindValue(":u", $usuario);
         $sql->bindValue(":s", md5($senha));
         $sql->execute();
 
