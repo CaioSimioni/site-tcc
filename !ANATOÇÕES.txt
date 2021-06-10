@@ -2,9 +2,6 @@
 -=========== Tarefas ==========-
 
 [Parte do Sistema/Estrutura]
-     * Fazer o banco de dados
-     * Fazer o Email da POLO
-     * Host na Awardspace
      * Exportar os arquivos
 
 [Nóticias]
@@ -46,7 +43,6 @@
      * Loja Virtual
 
 -=============================-
-
 
 -= index.php - TESTA SE O USUÁRIO JÁ ESTÁ LOGADO =-
 <?php

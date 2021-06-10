@@ -69,7 +69,7 @@
         </div>
 
         <footer id="final">
-            <img src="./ASSETS/LogoPOLO.png" alt="">
+            <img src="./ASSETS/LogoPOLO.png">
             <ul>
                 <li><a href="">Contato</a></li>
                 <li><a href="">Reclamações</a></li>
