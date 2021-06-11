@@ -22,7 +22,7 @@
     border-radius: 5px;
     font-family: 'Raleway';
     padding: 15px;
-    margin: 90px auto;
+    margin: 50px auto;
     animation: formu 2s linear;
 }
 
@@ -83,15 +83,19 @@
 
 div#msg-sucesso{
     width: 440px;
-    margin: 10px auto 10px auto;
+    margin: 50px auto 10px auto;
+    font-family: 'Raleway';
+    font-weight: 900;
     padding: 10px;
     color: green;
     text-align: center;
 }
 
 div.msg-erro{
+    font-family: 'Raleway';
+    font-weight: 900;
     width: 440px;
-    margin: 10px auto 10px auto;
+    margin: 50px auto 10px auto;
     padding: 10px;
     color: red;
     text-align: center;

@@ -11,7 +11,7 @@ $u = new Usuario;   // Crio um objeto de Usuario
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLO</title>
-    <link rel="stylesheet" href="../css/style_cadastrar.css">
+    <link rel="stylesheet" href="../css/style_cadastro.css">
     <link rel="shortcut icon" href="../ASSETS/LogoArara.png" type="image/x-icon">
 </head>
 <body>
@@ -20,18 +20,7 @@ $u = new Usuario;   // Crio um objeto de Usuario
             include "../HTML/cabecalho.html";
         ?>
         <div class="global">
-            <div class="formulario">
-                <form method="POST">
-                    <h1>Cadastrar</h1>
-                    <input placeholder="Nome do Usuário" type="text" name="usuario" size="20">
-                    <input placeholder="Email" type="text" name="email" size="20">
-                    <input placeholder="Senha" type="password" name="senha" size="20">
-                    <input placeholder="Confirmar Senha" type="password" name="conf_senha" size="20">
-                    <input type="submit" value="Criar Conta">
-                    <a href="entrar.php">Já está cadastrado? <strong>Entrar</strong></a>
-                </form>
-            </div>
-            <?php
+        <?php
             // verificar se clicou no  botao
             if(isset($_POST['usuario'])){
                 $usuario = addslashes($_POST['usuario']);
@@ -51,18 +40,18 @@ $u = new Usuario;   // Crio um objeto de Usuario
                                 
                                 ?>
                                 <div id="msg-sucesso">
-                                    Cadastrado com sucesso! Acesse para entrar.
+                                    Cadastrado com sucesso! Acesse para entrar
                                 </div>
                                 <?php
                             }else{
                                 ?>
-                                <div class="msg-erro">Usuário ou Email já cadastrado.</div>
+                                <div class="msg-erro">Usuário ou Email já cadastrado</div>
                                 <?php
                             }
                             
                         }else{
                             ?>
-                            <div class="msg-erro">Senha e Confirmar senha estão diferentes.</div>
+                            <div class="msg-erro">Senha e Confirmar senha estão diferentes</div>
                             <?php
                         }
                         
@@ -80,6 +69,17 @@ $u = new Usuario;   // Crio um objeto de Usuario
                 }
             }
             ?>
+            <div class="formulario">
+                <form method="POST">
+                    <h1>Cadastrar</h1>
+                    <input placeholder="Nome do Usuário" type="text" name="usuario" size="20">
+                    <input placeholder="Email" type="text" name="email" size="20">
+                    <input placeholder="Senha" type="password" name="senha" size="20">
+                    <input placeholder="Confirmar Senha" type="password" name="conf_senha" size="20">
+                    <input type="submit" value="Criar Conta">
+                    <a href="entrar.php">Já está cadastrado? <strong>Entrar</strong></a>
+                </form>
+            </div>
         </div>
         <?php
             include "../HTML/rodape.html";
