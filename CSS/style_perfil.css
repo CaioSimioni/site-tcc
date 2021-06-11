@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.global {
+    display: flex;
+}
+.container {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+    width: 60%;
+    height: auto;
+    background: #1a1922;
+    border: 2px solid rgba(0, 0, 0, 0.384);
+    border-radius: 7px;
+}
+
+
+.container img {
+    width: 150px;
+    height: 150px;
+}
+.container .line {
+    width: 1px;
+    height: 100%;
+    background: white;
+    margin-left: 20px;
+}
+
+.container ul li {
+    list-style: none;
+    align-items: center;
+    color: white;
+    font-family: "Raleway";
+    margin: 10px;
+    font-weight: 900;
+    font-size: 19px;
+}

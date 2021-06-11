@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./CSS/style_index.css">
     <link rel="shortcut icon" href="./ASSETS/LogoArara.png" type="image/x-icon">
 </head>
+
 <body>
     <div id="global">
 
