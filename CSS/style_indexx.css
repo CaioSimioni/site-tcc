@@ -68,6 +68,7 @@ header{
 #indroducao{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 50px 10%;
 }
 
