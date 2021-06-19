@@ -1,3 +1,9 @@
+<?php
+require "./PHP/usuario.php";    // Importo o arquivo usuario.php
+$u = new Usuario; // Cria um objeto de Usuario
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,8 +16,9 @@
 </head>
 
 <body>
-    <div id="global">
+    <div id="global"> 
 
+        <!-- Cabeçalho do site -->
         <header class="header">
             <img class="logo" src="./ASSETS/LogoPOLO.png" alt="logo">
             <nav>
@@ -23,7 +30,10 @@
             <a class="cta" href="./HTML/informacoes.html"><button>Sobre nós</button></a>
         </header>
 
+        <!-- Pate de indrodução do site, Bem vindo e login -->
         <div id="indroducao">
+
+            <!-- Parte do Bem vindo -->
             <div class="bem_vindo">
                 <h1>Bem vindo ao POLO</h1><br>
                 <p>
@@ -34,6 +44,8 @@
                     nóticias e torcendo pelo seu time favorito.<br> Cadastrar-se ->
                 </p>
             </div>
+
+            <!-- Formulário de login -->
             <div class="formulario">
                 <h1>Login</h1>
                 <form method="POST">
@@ -42,18 +54,24 @@
                     <input type="submit" value="ACESSAR">
                     <a href="./PHP/cadastrar.php">Cadastrar-se</a>
                 </form>
-                <?php
 
-                    if(isset($_POST['usuario'])){
+                <!-- Parte do PHP de Login -->
+                <?php
+                    if(isset($_POST['usuario'])){  // Verifica se o Post de usuario foi feito
+
+                        // Recebe os valores do POST
                         $usuario = addslashes($_POST['usuario']);
                         $senha = addslashes($_POST['senha']);
-
-                        if(!empty($email) && !empty($senha)){
+                        
+                        // Verifica se os campos estão vazios
+                        if(!empty($usuario) && !empty($senha)){
+                            
                             $u->conectar(); //Faz a conexão com o banco
-                    
-                            if($u->msgErro == ""){
-
+                            
+                            if($u->msgErro == ""){  // Verifica se o retorno foi uma mensagem de erro
+                                
                                 if($u->entrar($usuario, $senha)){
+                                    
                                     header("location: ./PHP/home.php");
 
                                 }else{
@@ -93,6 +111,7 @@
             </div>
         </div>
 
+        <!-- Rodapé do site -->
         <footer id="final">
             <img src="./ASSETS/LogoPOLO.png">
             <ul>
