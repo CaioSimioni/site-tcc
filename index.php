@@ -5,13 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLO</title>
-    <link rel="stylesheet" href="./CSS/style_indexx.css">
+    <link rel="stylesheet" href="./CSS/style_index.css">
     <link rel="shortcut icon" href="./ASSETS/LogoArara.png" type="image/x-icon">
 </head>
 
 <body>
     <div id="global">
+    <?php
+        if(isset($_POST['email'])){
+            $usuario = addslashes($_POST['usuario']);
+            $senha = addslashes($_POST['senha']);
 
+            if(!empty($email) && !empty($senha)){
+                $u->conectar(); //Faz a conexão com o banco
+        
+                if($u->msgErro == ""){
+
+                    if($u->entrar($usuario, $senha)){
+                        header("location: home.php");
+
+                    }else{
+                        ?>
+                        <div class="msg-erro">Usuário e/ou senha estão incorretos!</div>
+                        <?php
+                    }
+                }else{
+                    ?>
+                    <div>
+                        <?php echo "Erro:".$u->msgErro.""; ?>
+                    </div>
+                    <?php
+                }
+            }else{
+                ?>
+                <div class="msg-erro">Peencha todos os campo!</div>
+                <?php
+            }
+        }
+    ?>
         <header class="header">
             <img class="logo" src="./ASSETS/LogoPOLO.png" alt="logo">
             <nav>
@@ -36,8 +67,8 @@
             </div>
             <div class="formulario">
                 <h1>Login</h1>
-                <form action="PHP/logar.php" method="POST">
-                    <input type="text" name="nome" placeholder="Usuário">
+                <form method="POST">
+                    <input type="text" name="usuario" placeholder="Usuário">
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" value="ACESSAR">
                     <a href="./PHP/cadastrar.php">Cadastrar-se</a>

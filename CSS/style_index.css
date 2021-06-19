@@ -27,7 +27,6 @@ header{
 }
 
 .logo{
-    cursor: pointer;
     margin-right: auto;
     width: 180px;
     height: 60px;
@@ -68,7 +67,6 @@ header{
 #indroducao{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 50px 10%;
 }
 

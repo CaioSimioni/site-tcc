@@ -77,7 +77,7 @@ $u = new Usuario;   // Crio um objeto de Usuario
                     <input placeholder="Senha" type="password" name="senha" size="20">
                     <input placeholder="Confirmar Senha" type="password" name="conf_senha" size="20">
                     <input type="submit" value="Criar Conta">
-                    <a href="entrar.php">Já está cadastrado? <strong>Entrar</strong></a>
+                    <a href="../index.php">Já está cadastrado? <strong>Entrar</strong></a>
                 </form>
             </div>
         </div>
