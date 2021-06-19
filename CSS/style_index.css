@@ -102,6 +102,7 @@ header{
 .formulario{
     display: block;
     width: 50%;
+    text-align: center;
     height: auto;
     margin: 20px 10px 10px 20px;
     background-color: rgb(23, 26, 31);
@@ -111,6 +112,7 @@ header{
     padding: 10px;
     animation: formu 2s linear;
 }
+
 
 @keyframes formu {
     0% {
@@ -265,6 +267,10 @@ header{
         align-items: center;
     }
     
+    .introducao {
+        flex-wrap: wrap;
+    }
+
     .formulario {
         height: 30%;
     }
