@@ -10,8 +10,7 @@
      * Sistema de postagem de notícias
 
 [Usuário]
-     * Criar tabela no BD
-     * Sistema de Login e Cadastro
+     * Sistema de Cookies(Sessão)
 
 [Tópicos/Chat]
      * Criar tabela BD
