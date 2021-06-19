@@ -40,7 +40,7 @@ $u = new Usuario;   // Crio um objeto de Usuario
                                 
                                 ?>
                                 <div id="msg-sucesso">
-                                    Cadastrado com sucesso! Acesse para entrar
+                                    Cadastrado com sucesso! Acesse para entrar.
                                 </div>
                                 <?php
                             }else{
