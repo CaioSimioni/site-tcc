@@ -177,6 +177,11 @@ header{
     color: #a6c5ff;
 }
 
+.formulario .erromsg {
+    color: rgb(172, 30, 30);
+    font-weight: 900;
+}
+
 /*=============== E-Sports =================*/
 
 #esports{
@@ -230,7 +235,6 @@ header{
     padding: 10px;
     margin-bottom: 30px;
     border-radius: 5px;
-    color: rgb(23, 26, 31);
     font-family: "Raleway", cursive;
     transition: 500ms ease;
 }

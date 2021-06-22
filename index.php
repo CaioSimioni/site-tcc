@@ -57,7 +57,7 @@ $u = new Usuario; // Cria um objeto de Usuario
 
                 <!-- Parte do PHP de Login -->
                 <?php
-                    if(isset($_POST['usuario'])){  // Verifica se o Post de usuario foi feito
+                    if(isset($_POST['usuario']) && isset($_POST['senha'])){  // Verifica se o Post de usuario foi feito
 
                         // Recebe os valores do POST
                         $usuario = addslashes($_POST['usuario']);
@@ -75,7 +75,7 @@ $u = new Usuario; // Cria um objeto de Usuario
                                     header("location: ./PHP/home.php");
 
                                 }else{
-                                    echo "Usuário e/ou senha estão incorretos!";
+                                    echo "<p class='erromsg'>Usuário e/ou senha estão incorretos!</p>";
                                 }
                             }else{
                                 echo "Erro:".$u->msgErro."";
