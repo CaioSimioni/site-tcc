@@ -93,21 +93,24 @@ $u = new Usuario; // Cria um objeto de Usuario
             <button>Acompanhar campeonatos</button>
         </div>
 
-        <div id="noticias_block">
-            <div class="not">
-                <img src="./ASSETS/FotosNotícias/ApexSesson9.jpg" alt="">
-                <h1>Apex Legends</h1>
-                <button>Saiba mais</button>
-            </div>
-            <div class="not">
-                <img src="./ASSETS/FotosNotícias/Minecraft.jpg" alt="">
-                <h1>Minecraft</h1>
-                <button>Saiba mais</button>
-            </div>
-            <div class="not">
-                <img src="./ASSETS/FotosNotícias/valorant.jpeg" alt="">
-                <h1>Valorant</h1>
-                <button>Saiba mais</button>
+        <div id="noticia">
+            <h1 id="titulo_div_noticia">Notícias</h1>
+            <div id="noticias_block">
+                <div class="not">
+                    <img src="./ASSETS/FotosNotícias/apexlegends.jpg" alt="">
+                    <h1>Apex Legends</h1>
+                    <button>Saiba mais</button>
+                </div>
+                <div class="not">
+                    <img src="./ASSETS/FotosNotícias/league-of-legends.png" alt="">
+                    <h1>League of Legends</h1>
+                    <button>Saiba mais</button>
+                </div>
+                <div class="not">
+                    <img src="./ASSETS/FotosNotícias/valorant.jpg" alt="">
+                    <h1>Valorant</h1>
+                    <button>Saiba mais</button>
+                </div>
             </div>
         </div>
 

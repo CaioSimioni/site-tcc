@@ -187,11 +187,11 @@ header{
 #esports{
     width: 100%;
     height: auto;
-    min-height: calc(200px + 60px);
-    background-image: url('../ASSETS/ESport-ESL.jpg');
+    min-height: calc(200px + 100px); 
+    background: red;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 #esports h1{
@@ -224,6 +224,12 @@ header{
 }
 
 /*=============== Notícias ================*/
+
+#noticia h1#titulo_div_noticia{
+    margin: 10px auto;
+    text-align: center;
+    font: bold 20pt 'Raleway';
+}
 
 #noticias_block{
     display: flex;
@@ -263,16 +269,21 @@ header{
     background: #1a1922;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     
     #noticias_block{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    #esports button{
+        margin-top: -50px;
+    }
     
     .introducao {
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
     }
 
     .formulario {
