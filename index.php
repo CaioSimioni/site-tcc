@@ -2,6 +2,11 @@
 require "./PHP/usuario.php";    // Importo o arquivo usuario.php
 $u = new Usuario; // Cria um objeto de Usuario
 
+if(isset($_SESSION['codigo_usuario'])){
+    echo "<script> window.location.href='./PHP/home.php' </script>";
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +15,9 @@ $u = new Usuario; // Cria um objeto de Usuario
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLO</title>
+    <title>Polo</title>
     <link rel="stylesheet" href="./CSS/style_index.css">
-    <link rel="shortcut icon" href="./ASSETS/LogoArara.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./ASSETS/polo_icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -20,17 +25,17 @@ $u = new Usuario; // Cria um objeto de Usuario
 
         <!-- Cabeçalho do site -->
         <header class="header">
-            <img class="logo" src="./ASSETS/LogoPOLO.png" alt="logo">
+            <img class="logo" src="./ASSETS/polo_logo_white@2x.png" alt="logo">
             <nav>
                 <ul class="nav__links">
                     <li><a href="#">E-Sports</a></li>
-                    <li><a href="#">Tópicos</a></li>
+                    <li><a href="#">Notícias</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="./HTML/informacoes.html"><button>Sobre nós</button></a>
+            <a class="cta" href="./HTML/sobre_nos.html"><button>Sobre nós</button></a>
         </header>
 
-        <!-- Pate de indrodução do site, Bem vindo e login -->
+        <!-- Parte de indrodução do site, Bem vindo e login -->
         <div id="indroducao">
 
             <!-- Parte do Bem vindo -->
@@ -86,11 +91,43 @@ $u = new Usuario; // Cria um objeto de Usuario
                     }
                 ?>
             </div>
+
         </div>
 
+        <!-- Parte de esports do site, alguns campeonatos -->
         <div id="esports">
+
             <h1>E-Sports</h1>
+
+            <div id="esports_cards"> <!-- Divisão para os cards com os campeonatos -->
+            <!-- MODELO DE CARD DE CAMPEONATO
+                <div class="campeonato" >
+                    <h2></h2>           
+                    <img src="" alt=""> 
+                    <p></p>             
+                </div>
+             -->
+                <div class="campeonato" >
+                    <h2></h2>           <!-- Título -->
+                    <img src="" alt=""> <!-- Logo Jogo -->
+                    <p></p>             <!-- Data do camp -->
+                </div>
+
+                <div class="campeonato" >
+                    <h2></h2>           <!-- Título -->
+                    <img src="" alt=""> <!-- Logo Jogo -->
+                    <p></p>             <!-- Data do camp -->
+                </div>
+
+                <div class="campeonato" >
+                    <h2></h2>           <!-- Título -->
+                    <img src="" alt=""> <!-- Logo Jogo -->
+                    <p></p>             <!-- Data do camp -->
+                </div>
+            </div>
+
             <button>Acompanhar campeonatos</button>
+
         </div>
 
         <div id="noticia">
@@ -116,7 +153,7 @@ $u = new Usuario; // Cria um objeto de Usuario
 
         <!-- Rodapé do site -->
         <footer id="final">
-            <img src="./ASSETS/LogoPOLO.png">
+            <img src="./ASSETS/polo_logo_white.png">
             <ul>
                 <li><a href="">Contato</a></li>
                 <li><a href="">Reclamações</a></li>

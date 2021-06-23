@@ -187,40 +187,21 @@ header{
 #esports{
     width: 100%;
     height: auto;
-    min-height: calc(200px + 100px); 
-    background: red;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin-bottom: 20px;
+    padding: 10px 0px;
+    margin: 10px auto;
+    background: #040113;
+    font: normal 20px 'Raleway';
 }
 
 #esports h1{
-    padding-top: 40px;
-    margin: auto;
-    margin-bottom: 100px;
+    margin: 10px auto;
+    color: white;
     text-align: center;
-    font-family: "Raleway", cursive;
-    color: #e9ebf5;
 }
 
-#esports button{
-    display: block;
-    height: auto;
-    width: auto;
-    padding: 10px;
-    margin: 0 auto 0 auto;
-    font-family: "Fredoka One", cursive;
-    border-radius: 3px;
-    background-color: rgba(7, 30, 78, 0.308);
-    color: #f4f4f8;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-}
-
-#esports button:hover{
-    background-color: rgba(34, 61, 151, 0.801);
+#esports_cards{
+    display: flex;
+    justify-content: space-around;
 }
 
 /*=============== Notícias ================*/
@@ -229,6 +210,7 @@ header{
     margin: 10px auto;
     text-align: center;
     font: bold 20pt 'Raleway';
+    transition: 500ms ease;
 }
 
 #noticias_block{
@@ -275,10 +257,6 @@ header{
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    #esports button{
-        margin-top: -50px;
     }
     
     .introducao {
