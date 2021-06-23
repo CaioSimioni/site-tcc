@@ -10,16 +10,26 @@ $u = new Usuario;   // Crio um objeto de Usuario
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLO</title>
+    <title>Polo</title>
     <link rel="stylesheet" href="../css/style_cadastrar.css">
-    <link rel="shortcut icon" href="../ASSETS/LogoArara.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
 </head>
 <body>
     <div id="global">
-        <?php
-            include "../HTML/cabecalho.html";
-        ?>
-        <div class="global">
+
+        <!-- Cabeçalho do site -->
+        <header class="header">
+            <img class="logo" src="../ASSETS/polo_logo_white@2x.png" alt="logo">
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="../index.php">Início</a></li>
+                    <li><a href="#">E-Sports</a></li>
+                    <li><a href="#">Notícias</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="../HTML/sobre_nos.html"><button>Sobre nós</button></a>
+        </header>
+
         <?php
             // verificar se clicou no  botao
             if(isset($_POST['usuario'])){
@@ -80,10 +90,18 @@ $u = new Usuario;   // Crio um objeto de Usuario
                     <a href="../index.php">Já está cadastrado? <strong>Entrar</strong></a>
                 </form>
             </div>
-        </div>
-        <?php
-            include "../HTML/rodape.html";
-        ?>
+        
+        <!-- Rodapé do site -->
+        <footer id="final">
+            <img src="../ASSETS/polo_logo_white@2x.png">
+            <ul>
+                <li><a href="">Contato</a></li>
+                <li><a href="">Reclamações</a></li>
+                <li><a href="">Suporte</a></li>
+            </ul>
+            <span>&copy;Copyright POLO-2021</span>
+        </footer>
+
     </div>
 
 </body>
