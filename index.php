@@ -108,25 +108,32 @@ if(isset($_SESSION['codigo_usuario'])){
                 </div>
              -->
                 <div class="campeonato" >
-                    <h2></h2>           <!-- Título -->
-                    <img src="" alt=""> <!-- Logo Jogo -->
-                    <p></p>             <!-- Data do camp -->
+                    <center>
+                    <h2>AGLS</h2>           <!-- Título -->
+                    <img src="./ASSETS/Icons/icon_campeonato_apex_legends.png" alt=""> <!-- Logo Jogo -->
+                    <p>Data: 23/06</p>             <!-- Data do camp -->
+                    </center>
                 </div>
 
                 <div class="campeonato" >
-                    <h2></h2>           <!-- Título -->
-                    <img src="" alt=""> <!-- Logo Jogo -->
-                    <p></p>             <!-- Data do camp -->
+                    <center>
+                    <h2>CBolão</h2>           <!-- Título -->
+                    <img src="./ASSETS/Icons/icon_campeonato_league_of_legends.png" alt=""> <!-- Logo Jogo -->
+                    <p>Data: 23/06</p>             <!-- Data do camp -->
+                    </center>
                 </div>
 
                 <div class="campeonato" >
-                    <h2></h2>           <!-- Título -->
-                    <img src="" alt=""> <!-- Logo Jogo -->
-                    <p></p>             <!-- Data do camp -->
+                    <center>
+                    <h2>Major</h2>           <!-- Título -->
+                    <img src="./ASSETS/Icons/icon_campeonato_valorant.png" alt=""> <!-- Logo Jogo -->
+                    <p>Data: 23/06</p>             <!-- Data do camp -->
+                    </center>
                 </div>
             </div>
-
-            <button>Acompanhar campeonatos</button>
+                
+            <a href=""><button>Acompanhar campeonatos</button></a>
+            
 
         </div>
 

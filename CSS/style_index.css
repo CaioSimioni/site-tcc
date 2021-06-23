@@ -66,16 +66,17 @@ header{
 
 #indroducao{
     display: flex;
-    justify-content: center;
-    padding: 50px 10%;
+    justify-content: space-around;
+    margin: 30px auto;
 }
 
 .bem_vindo{
-    width: 50%;
+    width: 30%;
     height: auto;
     margin: 20px 20px 10px 10px;
     font-family: 'Raleway';
     color: rgb(15, 15, 15);
+    text-align: justify;
 }
 
 .bem_vindo h1{
@@ -101,7 +102,7 @@ header{
 
 .formulario{
     display: block;
-    width: 50%;
+    width: 40%;
     text-align: center;
     height: auto;
     margin: 20px 10px 10px 20px;
@@ -201,7 +202,54 @@ header{
 
 #esports_cards{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.campeonato{
+    width: 150px;
+    height: auto;
+    background: #f4f4f8;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0px 50px;
+}
+
+.campeonato img{
+    width: 100px;
+    height: 70px;
+}
+
+.campeonato p{
+    font-weight: 900;
+    text-align: center;
+}
+
+.campeonato h2{
+    text-align: center;
+}
+
+
+#esports a{
+    text-decoration: none;
+}
+
+#esports a button{
+    display: block;
+    margin: 40px auto;
+    padding: 10px;
+    cursor: pointer;
+    font: normal 14pt 'Relaway';
+    background-color: #294270;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.3s ease 0s;
+}
+
+#esports a button:hover{
+    background-color: #1e2f50;
 }
 
 /*=============== Notícias ================*/
@@ -209,7 +257,7 @@ header{
 #noticia h1#titulo_div_noticia{
     margin: 10px auto;
     text-align: center;
-    font: bold 20pt 'Raleway';
+    font: bold 40px 'Raleway';
     transition: 500ms ease;
 }
 
@@ -257,12 +305,22 @@ header{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
     }
     
-    .introducao {
+    #indroducao{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
     }
+    #indroducao .bem_vindo{
+        width: 70%;
+    }
+    #indroducao .formulario{
+        width: 65%;
+    }
+    
 
     .formulario {
         height: 30%;
@@ -277,6 +335,16 @@ header{
         margin-top: 30px;
     }
     
+    #esports_cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .campeonato{
+        margin-top: 15px;
+    }
 }
 
 
@@ -286,6 +354,7 @@ header{
     background-color: #1a1922;
     display: flex;
     align-items: center;
+    bottom: 1px;
 }
 
 #final ul{
