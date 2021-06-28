@@ -165,7 +165,7 @@ if(isset($_SESSION['codigo_usuario']) ){
             <img src="./ASSETS/polo_logo_white.png">
             <ul>
                 <li><a href="">Fale conosco </a></li>
-                <li><a href=""> Política de privacidade </a></li>
+                <li><a href="">Política de privacidade </a></li>
                 <li><a href="">aqui são redes sociais</a></li>
             </ul>
             <span>&copy;Copyright POLO-2021</span>
