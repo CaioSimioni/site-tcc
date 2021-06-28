@@ -11,7 +11,20 @@ Class Usuario{
         global $pdo;    // As variaveis globais serão usadas
         global $msgErro;
 
-        //informações do banco de dados  !!! COLOCAR PARA FUNCIONAR !!!
+        /*
+        //informações do banco de dados  !!! TESTE !!!
+        $nome    = "polo";
+        $host    = "localhost";
+        $usuario = "root";
+        $senha   = "";
+
+        //informações do banco de dados  !!! AWARDSPACE !!!
+        $nome    = "3863708_polo";
+        $host    = "fdb32.awardspace.net";
+        $usuario = "3863708_polo";
+        $senha   = "g3k;vPz;8hJ%3eHc";
+        */
+
         $nome    = "polo";
         $host    = "localhost";
         $usuario = "root";
