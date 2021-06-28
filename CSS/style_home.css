@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+/*=============== E-Sports =================*/
+
+#esports{
+    margin: 10px auto;
+    margin-top: 100px;      /* Temporário */
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+    background: #040113;
+    font: normal 20px 'Raleway';
+}
+
+#esports h1{
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+}
+
+#esports_cards{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.campeonato{
+    width: 150px;
+    height: auto;
+    background: #f4f4f8;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0px 50px;
+}
+
+.campeonato img{
+    width: 100px;
+    height: 70px;
+}
+
+.campeonato p{
+    font-weight: 900;
+    text-align: center;
+}
+
+.campeonato h2{
+    text-align: center;
+}
+
+
+#esports a{
+    text-decoration: none;
+}
+
+#esports a button{
+    display: block;
+    margin: 40px auto;
+    padding: 10px;
+    cursor: pointer;
+    font: normal 14pt 'Relaway';
+    background-color: #294270;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.3s ease 0s;
+}
+
+#esports a button:hover{
+    background-color: #1e2f50;
+}
+
+/*=============== Notícias ================*/
+
+#noticia h1#titulo_div_noticia{
+    margin: 10px auto;
+    text-align: center;
+    font: bold 40px 'Raleway';
+    transition: 500ms ease;
+}
+
+#noticias_block{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.not {
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-family: "Raleway", cursive;
+    transition: 500ms ease;
+}
+
+.not img{
+    border-radius: 3px;
+    max-height: 180px;
+    max-width: 320px;
+    transition: 500ms ease;
+
+}
+.not button {
+    margin-top: 10px;
+    background: transparent;
+    padding: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    transition: 300ms ease;
+    border-radius: 5px;
+}
+.not button:hover {
+    transition: 300ms ease;
+    cursor:pointer;
+    border: 1px solid rgb(23, 26, 31);
+    color: white;
+    background: #1a1922;
+}
+
+@media only screen and (max-width: 1000px) {
+    
+    #noticias_block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    #indroducao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #indroducao .bem_vindo{
+        width: 70%;
+    }
+    #indroducao .formulario{
+        width: 65%;
+    }
+    
+
+    .formulario {
+        height: 30%;
+    }
+    #final {
+        display: inline;
+        flex-direction: column;
+        align-items: center;
+    }
+    #final span {
+        margin: 0 auto 0 auto;
+        margin-top: 30px;
+    }
+    
+    #esports_cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .campeonato{
+        margin-top: 15px;
+    }
+}

@@ -28,7 +28,8 @@ if(isset($_SESSION['codigo_usuario']) ){
             <img class="logo" src="./ASSETS/polo_logo_white@2x.png" alt="logo">
             <nav>
                 <ul class="nav__links">
-                    <li><a href="#">Cadastrar</a></li>
+                    <li><a href="#">E-Sports</a></li>
+                    <li><a href="#">Notícias</a></li>
                 </ul>
             </nav>
             <a class="cta" href="./HTML/sobre_nos.html"><button>Sobre nós</button></a>
@@ -76,7 +77,8 @@ if(isset($_SESSION['codigo_usuario']) ){
                                 
                                 if($u->entrar($usuario, $senha)){
                                     
-                                    echo "<script> window.location.href = './PHP/home.php' </script>";
+                                    echo "<script> window.location.href='./PHP/home.php' </script>";
+                                    exit;
 
                                 }else{
                                     echo "<p class='erromsg'>Usuário e/ou senha estão incorretos!</p>";
@@ -104,7 +106,7 @@ if(isset($_SESSION['codigo_usuario']) ){
                 <li><a href="">aqui são redes sociais</a></li>
             </ul>
         </footer>
-
+        
     </div>
 </body>
 </html>
