@@ -47,7 +47,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <div class="card">
                 <h1>Por que usar o polo?</h1>
                 <p>
-                    Por aqui você pode ajudar a na criação e insentivo de 
+                Ao usar polo, você automaticamente incentiva jovens criadores a continuarem o seu trabalho. Cada acesso seu é um sorriso no rosto da equipe
                 </p>
             </div>
         </div>
