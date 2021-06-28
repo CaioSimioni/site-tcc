@@ -1,5 +1,4 @@
 <?php
-
 // Origem do código: https://youtube.com/playlist?list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
 
 Class Usuario{
