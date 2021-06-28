@@ -2,7 +2,9 @@
 require "./PHP/usuario.php";    // Importo o arquivo usuario.php
 $u = new Usuario; // Cria um objeto de Usuario
 
-if(isset($_SESSION['codigo_usuario'])){
+session_start();
+
+if(isset($_SESSION['codigo_usuario']) ){
     echo "<script> window.location.href='./PHP/home.php' </script>";
     exit;
 }
