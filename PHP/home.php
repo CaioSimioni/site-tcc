@@ -21,5 +21,8 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
+    <?php
+        include "../COMPONENTS/rodape.html";
+    ?>
 </body>
 </html>
