@@ -2,8 +2,6 @@
 require "./PHP/usuario.php";    // Importo o arquivo usuario.php
 $u = new Usuario; // Cria um objeto de Usuario
 
-session_start();
-
 if(isset($_SESSION['codigo_usuario']) ){
     echo "<script> window.location.href='./PHP/home.php' </script>";
     exit;
@@ -30,8 +28,7 @@ if(isset($_SESSION['codigo_usuario']) ){
             <img class="logo" src="./ASSETS/polo_logo_white@2x.png" alt="logo">
             <nav>
                 <ul class="nav__links">
-                    <li><a href="#">E-Sports</a></li>
-                    <li><a href="#">Notícias</a></li>
+                    <li><a href="#">Cadastrar</a></li>
                 </ul>
             </nav>
             <a class="cta" href="./HTML/sobre_nos.html"><button>Sobre nós</button></a>
@@ -79,7 +76,7 @@ if(isset($_SESSION['codigo_usuario']) ){
                                 
                                 if($u->entrar($usuario, $senha)){
                                     
-                                    header("location: ./PHP/home.php");
+                                    echo "<script> window.location.href = './PHP/home.php' </script>";
 
                                 }else{
                                     echo "<p class='erromsg'>Usuário e/ou senha estão incorretos!</p>";
@@ -96,81 +93,18 @@ if(isset($_SESSION['codigo_usuario']) ){
 
         </div>
 
-        <!-- Parte de esports do site, alguns campeonatos -->
-        <div id="esports">
-
-            <h1>E-Sports</h1>
-
-            <div id="esports_cards"> <!-- Divisão para os cards com os campeonatos -->
-            <!-- MODELO DE CARD DE CAMPEONATO
-                <div class="campeonato" >
-                    <h2></h2>           
-                    <img src="" alt=""> 
-                    <p></p>             
-                </div>
-             -->
-                <div class="campeonato" >
-                    <center>
-                    <h2>AGLS</h2>           <!-- Título -->
-                    <img src="./ASSETS/Icons/icon_campeonato_apex_legends.png" alt=""> <!-- Logo Jogo -->
-                    <p>Data: 23/06</p>             <!-- Data do camp -->
-                    </center>
-                </div>
-
-                <div class="campeonato" >
-                    <center>
-                    <h2>CBolão</h2>           <!-- Título -->
-                    <img src="./ASSETS/Icons/icon_campeonato_league_of_legends.png" alt=""> <!-- Logo Jogo -->
-                    <p>Data: 23/06</p>             <!-- Data do camp -->
-                    </center>
-                </div>
-
-                <div class="campeonato" >
-                    <center>
-                    <h2>Major</h2>           <!-- Título -->
-                    <img src="./ASSETS/Icons/icon_campeonato_valorant.png" alt=""> <!-- Logo Jogo -->
-                    <p>Data: 23/06</p>             <!-- Data do camp -->
-                    </center>
-                </div>
-            </div>
-                
-            <a href=""><button>Acompanhar campeonatos</button></a>
-            
-
-        </div>
-
-        <div id="noticia">
-            <h1 id="titulo_div_noticia">Notícias</h1>
-            <div id="noticias_block">
-                <div class="not">
-                    <img src="./ASSETS/FotosNotícias/apexlegends.jpg" alt="">
-                    <h1>Apex Legends</h1>
-                    <button>Saiba mais</button>
-                </div>
-                <div class="not">
-                    <img src="./ASSETS/FotosNotícias/league-of-legends.png" alt="">
-                    <h1>League of Legends</h1>
-                    <button>Saiba mais</button>
-                </div>
-                <div class="not">
-                    <img src="./ASSETS/FotosNotícias/valorant.jpg" alt="">
-                    <h1>Valorant</h1>
-                    <button>Saiba mais</button>
-                </div>
-            </div>
-        </div>
-
         <!-- Rodapé do site -->
         <footer id="final">
-            <img src="./ASSETS/polo_logo_white.png">
+            <img src="../ASSETS/polo_logo_white@2x.png">
+            <span>&copy;Copyright POLO-2021</span>
             <ul>
+                <li><a href="../PHP/sobre_nos.php">Sobre nós</a></li>
                 <li><a href="">Fale conosco </a></li>
                 <li><a href="">Política de privacidade </a></li>
                 <li><a href="">aqui são redes sociais</a></li>
             </ul>
-            <span>&copy;Copyright POLO-2021</span>
         </footer>
-        
+
     </div>
 </body>
 </html>

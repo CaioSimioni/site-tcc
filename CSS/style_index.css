@@ -67,7 +67,7 @@ header{
 #indroducao{
     display: flex;
     justify-content: space-around;
-    margin: 30px auto;
+    margin: 140px auto;
 }
 
 .bem_vindo{
@@ -183,7 +183,9 @@ header{
     font-weight: 900;
 }
 
-/*=============== E-Sports =================*/
+
+
+/*=============== E-Sports =================*//*
 
 #esports{
     width: 100%;
@@ -252,7 +254,7 @@ header{
     background-color: #1e2f50;
 }
 
-/*=============== Notícias ================*/
+/*=============== Notícias ================*//*
 
 #noticia h1#titulo_div_noticia{
     margin: 10px auto;
@@ -347,6 +349,7 @@ header{
     }
 }
 
+*/
 
 /*===============FINAL / FOOTER ================*/
 #final{
@@ -354,38 +357,44 @@ header{
     background-color: #1a1922;
     display: flex;
     align-items: center;
+    justify-items: center;
     bottom: 1px;
 }
 
 #final ul{
     display: flex;
+    margin: auto;
 }
 
 #final ul li {
     list-style: none;
 }
+
 #final ul li {
-    margin-left: 10px;
+    margin-left: 40px;
 }
+
 #final ul li a {
     text-decoration: none;
     color: white;
     font-family: "Raleway", cursive;
     font-weight: bold;
-    
+    font-size: 10pt;
 }
+
 #final img {
-    width: 140px;
-    height: 50px;
+    width: 70px;
+    height: 25px;
     /*margin-top: 20px;*/
-    margin: 0 0 0 0;
+    margin-right: 10px;
 }
+
 #final ul li a:hover {
     color: #30508b;
     transition: 300ms ease;
 }
 
 #final span{
-    margin-left: auto;
     color: #f4f4f8;
+    font-size: 10pt;
 }

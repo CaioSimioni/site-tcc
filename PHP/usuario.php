@@ -1,5 +1,6 @@
 <?php
 // Origem do código: https://youtube.com/playlist?list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
+session_start();
 
 Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
@@ -63,13 +64,20 @@ Class Usuario{
         if($sql->rowCount() > 0){
 
             $dados = $sql->fetch();
-            session_start();
             $_SESSION['codigo_usuario'] = $dados['codigo_usuario'];
             $_SESSION['logged'] = True;
             return true;  //Login com sucesso.
         }else{
             return false; //Login não funcionou.
         }
+    }
+
+    public function sair(){
+        unset($_SESSION['codigo_usuario']);
+        unset($_SESSION['logged']);
+        session_destroy();
+
+        echo "<script> window.location.href = '../index.php'</script>";
     }
 }
 

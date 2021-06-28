@@ -12,32 +12,38 @@
     display: flex;
     align-items: center;
     justify-items: center;
-    
     bottom: 1px;
 }
 
 #final ul{
     display: flex;
+    margin: auto;
 }
 
 #final ul li {
     list-style: none;
 }
+
 #final ul li {
     margin-left: 40px;
 }
+
 #final ul li a {
     text-decoration: none;
     color: white;
     font-family: "Raleway", cursive;
     font-weight: bold;
-    
+    font-size: 10pt;
+    cursor: pointer;
 }
+
 #final img {
-    width: 140px;
-    height: 50px;
+    width: 70px;
+    height: 25px;
     /*margin-top: 20px;*/
+    margin-right: 10px;
 }
+
 #final ul li a:hover {
     color: #30508b;
     transition: 300ms ease;
@@ -45,4 +51,5 @@
 
 #final span{
     color: #f4f4f8;
+    font-size: 10pt;
 }
