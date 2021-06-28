@@ -24,10 +24,10 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             include "../COMPONENTS/cabecalho.html";
         ?>
         <div class="div_principal">
-        <div class="card">
+            <div class="card">
                 <h1>O que é o Polo?</h1>
                 <p>
-                     O Polo tratasse de um projeto de TCC(Trabalho de conclusão de curso) para o curso de 
+                     O Polo é de um projeto de TCC(Trabalho de Conclusão de Curso) para o curso de 
                     Desenvolvimento de Sistemas Integrado com Ensino Médio no ano de 2021.  Que busca criar
                     um Software de Web voltado para Video Games e E-sports, além de cobrir as principais 
                     notícias desse universo.  Junto de um sistema de Chat na parte de Tópicos os usuários
@@ -37,7 +37,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <div class="card">
                 <h1>Quem somos?</h1>
                 <p>
-                    Toda a equipe é formata por: Caio, Felipe, Fernando, Giselle, Gustavo.
+                    Toda a equipe é formata por: Caio, Felipe, Fernando, Giselle e Gustavo.
                 </p>
                 <p>
                     Todos alunos do 3º ETIM de Desenvolvimento de Sistemas da escola ETEC Tenente Aviador Gustavo 
@@ -47,7 +47,9 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <div class="card">
                 <h1>Por que usar o polo?</h1>
                 <p>
-                Ao usar polo, você automaticamente incentiva jovens criadores a continuarem o seu trabalho. Cada acesso seu é um sorriso no rosto da equipe
+                    Ao usar polo, você automaticamente incentiva jovens criadores a continuarem o seu trabalho. Cada acesso seu 
+                    é um sorriso no rosto da equipe. Além claro de poder interagir com outros usuários no chat e poder torcer para o seu
+                    time favorito, trazendo uma experiência único.
                 </p>
             </div>
         </div>
