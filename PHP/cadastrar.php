@@ -23,8 +23,6 @@ $u = new Usuario;   // Crio um objeto de Usuario
             <nav>
                 <ul class="nav__links">
                     <li><a href="../index.php">Início</a></li>
-                    <li><a href="#">E-Sports</a></li>
-                    <li><a href="#">Notícias</a></li>
                 </ul>
             </nav>
             <a class="cta" href="../HTML/sobre_nos.html"><button>Sobre nós</button></a>
@@ -94,12 +92,13 @@ $u = new Usuario;   // Crio um objeto de Usuario
         <!-- Rodapé do site -->
         <footer id="final">
             <img src="../ASSETS/polo_logo_white@2x.png">
-            <ul>
-                <li><a href="">Contato</a></li>
-                <li><a href="">Reclamações</a></li>
-                <li><a href="">Suporte</a></li>
-            </ul>
             <span>&copy;Copyright POLO-2021</span>
+            <ul>
+                <li><a href="../PHP/sobre_nos.php">Sobre nós</a></li>
+                <li><a href="">Fale conosco </a></li>
+                <li><a href="">Política de privacidade </a></li>
+                <li><a href="">aqui são redes sociais</a></li>
+            </ul>
         </footer>
 
     </div>
