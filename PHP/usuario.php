@@ -78,6 +78,7 @@ Class Usuario{
 
             $dados = $sql->fetch();
             $_SESSION['codigo_usuario'] = $dados['codigo_usuario'];
+            $_SESSION['nome_usuario'] = $usuario;
             $_SESSION['logged'] = True;
             return true;  //Login com sucesso.
         }else{
