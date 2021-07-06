@@ -23,9 +23,11 @@
     padding: 5px;
     font-family: "Raleway";
 }
+
 #chat #chat-mensagens {
     padding: 5px;
     max-height: 80%;
+    min-height: 80%;
     overflow-y: scroll;
     font-family: Arial, Helvetica, sans-serif;
 }

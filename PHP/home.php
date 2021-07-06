@@ -21,8 +21,6 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     <link rel="stylesheet" href="../CSS/style_home.css">
 
 <script type="text/javascript">
-    var el = document.getElementById('chat-mensagens');
-    el.scrollTop = el.scrollHeight;
 
     function ajax(){
 
