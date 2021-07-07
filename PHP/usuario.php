@@ -69,7 +69,7 @@ Class Usuario{
     public function entrar($usuario, $senha){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE usuario = :u AND senha = :s");
+        $sql = $pdo->prepare("SELECT codigo_usuario, usuario, email FROM usuario WHERE usuario = :u AND senha = :s");
         $sql->bindValue(":u", $usuario);
         $sql->bindValue(":s", md5($senha));
         $sql->execute();
@@ -78,7 +78,8 @@ Class Usuario{
 
             $dados = $sql->fetch();
             $_SESSION['codigo_usuario'] = $dados['codigo_usuario'];
-            $_SESSION['nome_usuario'] = $usuario;
+            $_SESSION['nome_usuario'] = $dados['usuario'];
+            $_SESSION['email_usuario'] = $dados['email'];
             $_SESSION['logged'] = True;
             return true;  //Login com sucesso.
         }else{
@@ -88,6 +89,8 @@ Class Usuario{
 
     public function sair(){
         unset($_SESSION['codigo_usuario']);
+        unset($_SESSION['nome_usuario']);
+        unset($_SESSION['email_usuario']);
         unset($_SESSION['logged']);
         session_destroy();
         echo "<script> window.location.href = '../index.php'</script>";
