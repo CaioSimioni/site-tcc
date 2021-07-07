@@ -3,8 +3,6 @@ require "usuario.php";
 $u = new Usuario;
 $u->conectar();
 
-print_r($_SESSION);
-
 if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     echo "<script> alert('Falha na autenticação de usuário!')</script>";    
     echo "<script>window.location.href='../index.php'</script>";
