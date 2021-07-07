@@ -29,7 +29,7 @@ print_r($_SESSION);
 
 
 </head>
-<body onload="ajax()">
+<body>
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
