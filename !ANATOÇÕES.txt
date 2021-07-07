@@ -30,7 +30,6 @@
      * Sistema de apostas
 
 [Sobre Nós/TCC]
-     * Descrição sobre o TCC e nossa proposta
      * Link para o TCC
      * Contato/Link
 
