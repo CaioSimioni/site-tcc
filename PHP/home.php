@@ -64,7 +64,11 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
                 if($msgUsuario){
                     $sql = $pdo->query("INSERT INTO `chat-geral` (`id_usuario`, `nome_usuario`, `mensagem`) VALUES ('$idUsuario', '$nomeUsuario', '$msgUsuario')");
+                    $_POST['mensagem'] = NULL;
+                    $msgUsuario = NULL;
                 }
+
+                
 
             ?>
 
