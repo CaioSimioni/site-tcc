@@ -33,7 +33,6 @@ if(isset($_FILES['arquivo'])){
    
    //aqui ele manda o comando update com o nome da imagem e a data do upload, da pra usar a data pra alguma coisa talvez.
     $sql_code="UPDATE `usuario` SET `imagem` = '$novo_nome',data=now() WHERE `usuario`.`codigo_usuario` = $cod_usu;";
-    $_FILES['arquivo']=null;
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
         if($pdo->query($sql_code)){ $msg="Arquivo enviado com sucesso"; }
@@ -118,13 +117,16 @@ if(isset($_FILES['arquivo'])){
 
        <div class="perfil-usuario-portadaa">
                 <div class="perfil-usuario-avatar-upload">
-                    <img src="upload/<?php echo $imagem; ?>" width=160px height=150px alt="img-avatar">     </div>                
+                    <img src="upload/<?php echo $imagem; ?>" width=160px height=150px alt="img-avatar">
+                 </div>                
             </div>
 
 
    <form class="forms" action="perfil.php" method="POST" enctype="multipart/form-data">
-                    <input type="file"  required name="arquivo">
-                    <input type="submit" value="Editar">
+                 <label >  <input type="file"  value="Selecionar Imagem" required name="arquivo"> </label>                
+                 
+
+                           <input type="submit" value="Salvar">
     </form>
 
   </div>
@@ -147,9 +149,5 @@ if(isset($_FILES['arquivo'])){
    
 
      </script>
- 
 </body>
-
-
-
 </html>
