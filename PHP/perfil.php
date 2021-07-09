@@ -9,6 +9,9 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     exit;
 }
 
+// credito do css para 
+
+
 //funcionou, porém sempre que da F5 ele manda a imagem dnv, e tem que descobrir um jeito de sempre que a pessoa fizer
 //o update de uma imagem, excluir a que ele tinha, tenho uma ideia de no processo de clicar em salvar, descobrir o
 // nome da imagem anterior e excluir a que tinha antes. A Pagina Upload serve pra guardar as imagens.
@@ -42,6 +45,8 @@ if(isset($_FILES['arquivo'])){
 ?>
 
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,41 +55,48 @@ if(isset($_FILES['arquivo'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
     <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style_home.css">
-
-
+    <link rel="stylesheet" href="../CSS/estilo_perfil.css">
 
 </head>
 <body onload="ajax()">
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
-    <div id="global">
+    <div id="global">         </div>
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="upload/<?php echo $imagem; ?>"  width=160px height=170px alt="img-avatar">
+
+                <button  onclick="inicialModal('modal-promocao');" type="button" class="boton-avatar" >
+                    <i class="far fa-image">
+                 <a>   <img src="upload/icon.png" alt="img-avatar"> </a>
+                                 
+                    </i>
+                    </button>
+                    
+                </div>
+                
+                
+            </div>
 
 
         </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"><?php $usu=$_SESSION['nome_usuario']; echo $usu   ?></h3>
+                <p class="texto">Email: <?php $email= $_SESSION['email_usuario']; echo $email ?></p>
+            </div>
+            </div>
 
-  <h1>      Upload de Imagem </h1>
-  <!--Aqui da pra por uma mensagezinha de que a imagem concluiu o upload ou não.-->
-   <form action="perfil.php" method="POST" enctype="multipart/form-data">
-   Arquivo: <input type="file" required name="arquivo">
-             <input type="submit" value="salvar">
-    </form>
-    <img class="logo" src="upload/<?php echo $imagem; ?>" alt="logo">
-        <table>
-     <tr>
-        <td>nome</td>
-        <td>E-mail</td>
-     </tr>
+        </div>
+    </section>
 
-     <tr>
-        <td><?php $usu=$_SESSION['nome_usuario']; echo $usu  ?> </td>
-        <td><?php $email= $_SESSION['email_usuario']; echo $email ?>
-     </tr>
 
-    </table>
 
-        <div id="conteudo">
+            <div id="conteudo">
             
         </div>
 
@@ -92,5 +104,51 @@ if(isset($_FILES['arquivo'])){
     <?php
         include "../COMPONENTS/rodape.html";
     ?>
+  
+
+<style>
+
+</style>
+
+   <div id="modal-promocao" class="modal-container">
+       <div class="modal">
+       <button class="fechar">x</button>
+       <section class="seccion-perfil-usuario">
+
+       <div class="perfil-usuario-portadaa">
+                <div class="perfil-usuario-avatar-upload">
+                    <img src="upload/<?php echo $imagem; ?>" width=160px height=150px alt="img-avatar">     </div>                
+            </div>
+
+
+   <form class="forms" action="perfil.php" method="POST" enctype="multipart/form-data">
+                    <input type="file"  required name="arquivo">
+                    <input type="submit" value="Editar">
+    </form>
+
+  </div>
+</div> 
+
+
+ <script>
+   function inicialModal(modalId){
+       const modal=document.getElementById(modalId);
+       if(modal){
+       modal.classList.add('mostrar');
+       modal.addEventListener('click',(e)=>{
+           if(e.target.id==modalId || e.target.className=='fechar'){
+         modal.classList.remove('mostrar');
+           }
+       });
+       }
+
+   }
+   
+
+     </script>
+ 
 </body>
+
+
+
 </html>
