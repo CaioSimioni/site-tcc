@@ -55,6 +55,10 @@
     background: #22202c;
     box-shadow: 1px 3px 0px #363346;
 }
+#chat #chat-mensagens #msg:hover {
+    background: #2d2a3a;
+    box-shadow: 1px 3px 0px #413e55;
+}
 
 #chat #chat-mensagens #msg .message {
     margin-left: 10px;
