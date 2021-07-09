@@ -59,10 +59,8 @@ if(isset($_FILES['arquivo'])){
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
-    <div id="global">
 
 
-        </div>
 
   <h1>      Upload de Imagem </h1>
   <!--Aqui da pra por uma mensagezinha de que a imagem concluiu o upload ou não.-->
@@ -87,8 +85,8 @@ if(isset($_FILES['arquivo'])){
         <div id="conteudo">
             
         </div>
-
     </div>
+
     <?php
         include "../COMPONENTS/rodape.html";
     ?>
