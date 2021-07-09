@@ -6,8 +6,8 @@
 }
 
 .conteudo {
-    width: 50%;
-    height: auto;
+    min-width: 38%;
+    height: 200px;
     display: flex;
     background: #1a1922;
     padding: 2% 20px;
@@ -16,11 +16,15 @@
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.274);
     align-items: center;
 }
+
+
+
 .conteudo .img-perfil {
-    width: 150px;
-    height: 150px;
+    width:150px;
+    height:150px;
     border-radius: 50%;
     background:transparent;
+    color: white;
 }
 .conteudo .divis {
     width: 1px;
@@ -29,21 +33,29 @@
     margin: auto 10px auto 10px;
 }
 .conteudo .info {
-
     width: 100%;
-    height: auto;
+    max-height:200px;
     color: white;
     padding: 10px;
     font-family: 'Raleway';
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-.conteudo .info h3 {
+
+.conteudo .info .block {
+    width: 50%;
+    height: auto;
+}
+
+.conteudo .info .block h3 {
     font-family: sans-serif;
     font-weight: 100;
     margin-top: 15px;
 
 }
-.conteudo .info h5 {
+.conteudo .info .block h5 {
     margin: 3px 5px 15px;
     font-weight: 900;
 }

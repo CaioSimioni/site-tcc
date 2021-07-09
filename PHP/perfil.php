@@ -65,17 +65,24 @@ if(isset($_FILES['arquivo'])){
         <div class="conteudo">
             <div class="img">
                 <img class="img-perfil" src="upload/<?php echo $imagem; ?>" alt="logo">
+                <form action="perfil.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" required name="arquivo">
+                    <input type="submit" value="salvar">
+                </form>
             </div>
             <div class="divis"></div>
             <div class="info">
-                <h3>Nome</h3>
-                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
-                <h3>Email</h3>
-                <h5><?php $usu=$_SESSION['email_usuario']; echo ($usu);?></h5>
-                <h3>Nome</h3>
-                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+                <div class="block">
+                    <h3>Nome de usuario</h3>
+                    <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);  ?></h5>
+                </div>
+                <div class="block">
+                    <h3>Email</h3>
+                    <h5><?php $usu=$_SESSION['email_usuario']; echo $usu;  ?></h5>
+                </div>
             </div>
         </div>
+
     </div>
 
     <?php
