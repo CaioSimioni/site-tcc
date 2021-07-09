@@ -91,6 +91,7 @@ if(isset($_FILES['arquivo'])){
             </div>
             </div>
 
+
         </div>
     </section>
 
@@ -99,8 +100,8 @@ if(isset($_FILES['arquivo'])){
             <div id="conteudo">
             
         </div>
-
     </div>
+
     <?php
         include "../COMPONENTS/rodape.html";
     ?>

@@ -6,17 +6,19 @@ $usuario=mysqli_real_escape_string($conexao ,$_POST['nome']);
 $email=mysqli_real_escape_string($conexao ,$_POST['email']);
 $senha=mysqli_real_escape_string($conexao ,md5($_POST['senha']));
 
+$usuario = ucfirst($usuario);
+
 $query = "select * from usuario where usuario='{$usuario}' or email='{$email}' ";
 $result=mysqli_query($conexao,$query);
 $row = mysqli_num_rows($result);
 
  if($row == 1){
-   // transferir para a pagina de registro com uma mensagem dizendo que o email ou usuario ja foram usados
-   // no link abaixo redireciona pra pagina do cadastro, ja que deu ruim
-   echo "<script> window.location.replace('./cadastro.php') </script>";
+  // transferir para a pagina de registro com uma mensagem dizendo que o email ou usuario ja foram usados
+  // no link abaixo redireciona pra pagina do cadastro, ja que deu ruim
+  echo "<script> window.location.replace('./cadastro.php') </script>";
   $_SESSION['usuario_e']=0;
- exit();
- }
+  exit();
+}
 
 else{
 $sql= "insert into usuario(email,senha,usuario)

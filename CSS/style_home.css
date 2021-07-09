@@ -7,6 +7,7 @@
     outline: none;
 }
 
+
 #global{
     display: flex;
 }
@@ -14,14 +15,20 @@
 #chat{
     width: 30%;
     height: 550px;
-    background-color: transparent;
-    border-right: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: #1a1922;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 4px;
 }
 
 #chat h1 {
     text-align: center;
     padding: 5px;
     font-family: "Raleway";
+    color: white;
+    border-bottom: 1px solid #363346e7;
 }
 
 #chat #chat-mensagens {
@@ -32,23 +39,32 @@
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     margin-right: 15px;
+    color: white;
+
+}
+#chat #chat-mensagens #msg .name {
+    font-size: 18px;
+    font-family: sans-serif;
 }
 
 #chat #chat-mensagens #msg {
     background: transparent;
     padding: 10px;
     border-radius: 7px;
-    margin: 7px;
+    margin: 10px;
+    background: #22202c;
+    box-shadow: 1px 3px 0px #363346;
+}
+#chat #chat-mensagens #msg:hover {
+    background: #2d2a3a;
+    box-shadow: 1px 3px 0px #413e55;
 }
 
-#chat #chat-mensagens #msg h3 {
-    color: black;
-}
-
-#chat #chat-mensagens #msg p {
+#chat #chat-mensagens #msg .message {
     margin-left: 10px;
     width: 100%;
     word-wrap: break-word;
+    opacity: 0.3;
 }
 
 #chat form {
@@ -57,6 +73,8 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    margin-left: 0%;
+    
 }
 
 #chat form input[type="text"] {
@@ -64,7 +82,7 @@
     height: 50%;
     margin-left: 0;
     border-radius: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.747);
+    border: 1px solid rgba(206, 206, 206, 0.747);
     padding: 5px;
     background: #1a1922;
     color: whitesmoke;
@@ -88,6 +106,6 @@
 #conteudo{
     width: 70%;
     max-height: 90vh;
-    background-color: #ffffff;
     overflow-y: scroll;
+    margin: 10px 10px 10px 10px;
 }
