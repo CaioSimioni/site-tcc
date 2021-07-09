@@ -54,7 +54,13 @@ if(isset($_FILES['arquivo'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
     <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
+
     <link rel="stylesheet" href="../CSS/estilo_perfil.css">
+
+    <link rel="stylesheet" href="../CSS/style_home.css">
+    <link rel="stylesheet" href="../CSS/style_perfil.css">
+
+
 
 </head>
 <body onload="ajax()">
@@ -80,8 +86,6 @@ if(isset($_FILES['arquivo'])){
                 
                 
             </div>
-
-
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
@@ -98,6 +102,22 @@ if(isset($_FILES['arquivo'])){
 
             <div id="conteudo">
             
+
+    <div id="global">
+        <div class="conteudo">
+            <div class="img">
+                <img class="img-perfil" src="upload/<?php echo $imagem; ?>" alt="logo">
+            </div>
+            <div class="divis"></div>
+            <div class="info">
+                <h3>Nome</h3>
+                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+                <h3>Email</h3>
+                <h5><?php $usu=$_SESSION['email_usuario']; echo ($usu);?></h5>
+                <h3>Nome</h3>
+                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+            </div>
+
         </div>
     </div>
 

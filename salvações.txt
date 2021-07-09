@@ -1,0 +1,8 @@
+<form action="perfil.php" method="POST" enctype="multipart/form-data">
+            Arquivo: <input type="file" required name="arquivo">
+            <input type="submit" value="salvar">
+        </form>
+
+
+        <?php $usu=$_SESSION['nome_usuario']; echo $usu  ?> </td>
+                <td><?php $email= $_SESSION['email_usuario']; echo $email ?>
