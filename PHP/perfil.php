@@ -13,18 +13,19 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 //o update de uma imagem, excluir a que ele tinha, tenho uma ideia de no processo de clicar em salvar, descobrir o
 // nome da imagem anterior e excluir a que tinha antes. A Pagina Upload serve pra guardar as imagens.
 
-
-$cod_usu=$_SESSION['codigo_usuario'];
 $msg=false;
+$cod_usu=$_SESSION['codigo_usuario'];
+ $imagem=$_SESSION['imagem']; 
 
 //acredito que aqui que esteja causando a falha do F5
 
 if(isset($_FILES['arquivo'])){
     $extensao = strtolower(substr($_FILES['arquivo'] ['name'],-4));
-    $novo_nome = md5(time()).$extensao;
+    $novo_nome =$cod_usu.$extensao;
     $diretorio="upload/";
     
    // aqui ele move a imagem que fica flutuando por ai pra pasta
+   array_map('unlink',glob("upload/$novo_nome"));
    move_uploaded_file($_FILES['arquivo'] ['tmp_name'],$diretorio.$novo_nome);
    
    //aqui ele manda o comando update com o nome da imagem e a data do upload, da pra usar a data pra alguma coisa talvez.
@@ -34,7 +35,9 @@ if(isset($_FILES['arquivo'])){
     //Usei o $pdo pq ele é basicamente a variável conexão.
         if($pdo->query($sql_code)){ $msg="Arquivo enviado com sucesso"; }
         else{$msg="Arquivo na enviado com sucesso"; }
+        echo "<script> window.location.href='redirecionar.php' </script>";
 }
+
 
 ?>
 
@@ -67,7 +70,7 @@ if(isset($_FILES['arquivo'])){
    Arquivo: <input type="file" required name="arquivo">
              <input type="submit" value="salvar">
     </form>
-
+    <img class="logo" src="upload/<?php echo $imagem; ?>" alt="logo">
         <table>
      <tr>
         <td>nome</td>

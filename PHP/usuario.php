@@ -56,7 +56,7 @@ Class Usuario{
                 return false; //Usuario já cadastrado
                 
             }else{
-                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha) VALUES(:u, :e, :s)");
+                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha, imagem,data) VALUES(:u, :e, :s,'icon.pgn',now())");
                 $sql->bindValue(":u", $usuario);
                 $sql->bindValue(":e", $email);
                 $sql->bindValue(":s", md5($senha));
@@ -69,7 +69,7 @@ Class Usuario{
     public function entrar($usuario, $senha){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT codigo_usuario, usuario, email FROM usuario WHERE usuario = :u AND senha = :s");
+        $sql = $pdo->prepare("SELECT * FROM usuario WHERE usuario = :u AND senha = :s");
         $sql->bindValue(":u", $usuario);
         $sql->bindValue(":s", md5($senha));
         $sql->execute();
@@ -77,9 +77,10 @@ Class Usuario{
         if($sql->rowCount() > 0){
 
             $dados = $sql->fetch();
-            $_SESSION['codigo_usuario'] = $dados['codigo_usuario'];
-            $_SESSION['nome_usuario'] = $dados['usuario'];
+            $_SESSION['codigo_usuario']= $dados['codigo_usuario'];
+            $_SESSION['nome_usuario']  =  $dados['usuario'];
             $_SESSION['email_usuario'] = $dados['email'];
+            $_SESSION['imagem'] = $dados['imagem'];
             $_SESSION['logged'] = True;
             return true;  //Login com sucesso.
         }else{
