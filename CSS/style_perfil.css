@@ -4,36 +4,46 @@
 .global {
     display: flex;
 }
-.container {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    margin: 30px auto;
-    width: 60%;
+
+.conteudo {
+    width: 50%;
     height: auto;
+    display: flex;
     background: #1a1922;
-    border: 2px solid rgba(0, 0, 0, 0.384);
-    border-radius: 7px;
+    padding: 2% 20px;
+    margin: 10vh auto;
+    border-radius: 4px;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.274);
+    align-items: center;
 }
-
-
-.container img {
+.conteudo .img-perfil {
     width: 150px;
     height: 150px;
+    border-radius: 50%;
+    background:transparent;
 }
-.container .line {
+.conteudo .divis {
     width: 1px;
     height: 100%;
     background: white;
-    margin-left: 20px;
+    margin: auto 10px auto 10px;
 }
+.conteudo .info {
 
-.container ul li {
-    list-style: none;
-    align-items: center;
+    width: 100%;
+    height: auto;
     color: white;
-    font-family: "Raleway";
-    margin: 10px;
+    padding: 10px;
+    font-family: 'Raleway';
+    border-radius: 4px;
+}
+.conteudo .info h3 {
+    font-family: sans-serif;
+    font-weight: 100;
+    margin-top: 15px;
+
+}
+.conteudo .info h5 {
+    margin: 3px 5px 15px;
     font-weight: 900;
-    font-size: 19px;
 }

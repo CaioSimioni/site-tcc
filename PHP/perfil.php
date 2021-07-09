@@ -51,6 +51,7 @@ if(isset($_FILES['arquivo'])){
     <title>Polo</title>
     <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style_home.css">
+    <link rel="stylesheet" href="../CSS/style_perfil.css">
 
 
 
@@ -60,30 +61,20 @@ if(isset($_FILES['arquivo'])){
         include "../COMPONENTS/cabecalho.html";
     ?>
 
-
-
-  <h1>      Upload de Imagem </h1>
-  <!--Aqui da pra por uma mensagezinha de que a imagem concluiu o upload ou não.-->
-   <form action="perfil.php" method="POST" enctype="multipart/form-data">
-   Arquivo: <input type="file" required name="arquivo">
-             <input type="submit" value="salvar">
-    </form>
-    <img class="logo" src="upload/<?php echo $imagem; ?>" alt="logo">
-        <table>
-     <tr>
-        <td>nome</td>
-        <td>E-mail</td>
-     </tr>
-
-     <tr>
-        <td><?php $usu=$_SESSION['nome_usuario']; echo $usu  ?> </td>
-        <td><?php $email= $_SESSION['email_usuario']; echo $email ?>
-     </tr>
-
-    </table>
-
-        <div id="conteudo">
-            
+    <div id="global">
+        <div class="conteudo">
+            <div class="img">
+                <img class="img-perfil" src="upload/<?php echo $imagem; ?>" alt="logo">
+            </div>
+            <div class="divis"></div>
+            <div class="info">
+                <h3>Nome</h3>
+                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+                <h3>Email</h3>
+                <h5><?php $usu=$_SESSION['email_usuario']; echo ($usu);?></h5>
+                <h3>Nome</h3>
+                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+            </div>
         </div>
     </div>
 
