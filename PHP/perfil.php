@@ -25,11 +25,11 @@ $imagem=$_SESSION['imagem'];
 if(isset($_FILES['arquivo'])){
     $extensao = strtolower(substr($_FILES['arquivo'] ['name'],-4));
     $novo_nome =$cod_usu.$extensao;
-    $diretorio="upload/";
+    $diretorio="../ASSETS/avatarUsers/";
     $_SESSION['imagem'] = $novo_nome;
     
    // aqui ele move a imagem que fica flutuando por ai pra pasta
-   array_map('unlink',glob("upload/$novo_nome"));
+   array_map('unlink',glob("../ASSETS/avatarUsers/$novo_nome"));
    move_uploaded_file($_FILES['arquivo'] ['tmp_name'],$diretorio.$novo_nome);
 
     
@@ -39,7 +39,7 @@ if(isset($_FILES['arquivo'])){
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
         if($pdo->query($sql_code)){
-            echo "<h1>Imagem mudada</h1>";
+            $msg = "foi";
         }else{
             $msg="Arquivo na enviado com sucesso"; 
         }
@@ -77,7 +77,7 @@ if(isset($_FILES['arquivo'])){
     <div id="global">
         <div class="conteudo">
             <div class="img">
-                <img class="img-perfil" src="./Upload/<?php echo $imagem; ?>" alt="icon_usuario">
+                <img class="img-perfil" src="../ASSETS/avatarUsers/<?php echo $imagem; ?>" alt="icon_usuario">
                 <button id="mudarAvatar">Mudar Avatar</button>
             </div>
             <div class="divis"></div>

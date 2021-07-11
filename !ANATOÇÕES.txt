@@ -8,10 +8,7 @@
      * Criar tabela no BD
      * Feed de notícias
      * Sistema de postagem de notícias
-
-[Usuário]
-     * Sistema de Cookies(Sessão)
-
+     
 [Tópicos/Chat]
      * Criar tabela BD
      * Criar os Tópicos

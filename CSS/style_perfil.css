@@ -34,9 +34,9 @@
 }
 .conteudo .img-perfil {
     max-width: 150px;
-    max-width: 150px;
+    max-height: 150px;
     min-width: 150px;
-    min-width: 150px;
+    min-height: 150px;
     overflow: visible;
     border-radius: 50%;
     background:transparent;
@@ -114,8 +114,8 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+
 }
 .popup .box form input[type="file"] {
     display: none;
@@ -132,7 +132,7 @@ label {
     text-align: center;
     padding: 10px;
     border-radius: 3px;
-    margin: 25px;
+    margin: 20%;
 }
 .popup .box form input[type="submit"] {
     cursor: pointer;
@@ -200,4 +200,10 @@ label {
 #mudarAvatar:hover {
     background: rgb(17, 49, 87, 0.6);
     transition: 300ms ease;
+}
+
+.name-arquivo {
+    font-family: "Raleway";
+    font-weight: 900;
+    margin-top: -35px;
 }
