@@ -17,9 +17,9 @@
 #chat{
     width: 30%;
     height: 550px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
     background-color: #1a1922;
     border: 1px solid rgba(255, 255, 255, 0.055);
     border-radius: 4px;
@@ -105,9 +105,76 @@
     font-family: "Fredoka One";
 }
 
+
+
 #conteudo{
     width: 70%;
-    max-height: 90vh;
-    overflow-y: scroll;
-    margin: 10px 10px 10px 10px;
+    max-height: 76vh;
+    margin: 20px 20px 20px 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#conteudo h1 {
+    font-family: "Nunito";
+    text-align: center;
+}
+#conteudo .noticia {
+    width: 70%;
+    min-height: 200px;
+    padding: 10px;
+    background: #1a1922;
+    ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.329);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.noticia h1 {
+    color: white;
+}
+.noticia img {
+    width: 70%;
+    height: auto;
+    margin: 20px;
+    border-radius: 4px;
+}
+.noticia p {
+    color: white;
+    font-family: "Raleway";
+    font-weight: 700;
+    text-align: justify;
+    font-size: 14px;
+    text-align: left;
+}
+
+@media screen and (min-width: 931px) {
+    #conteudo {
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 930px){
+    #chat {
+        display: none;
+    }
+    #conteudo {
+        margin-bottom: 60px;
+        margin-top: 60px;
+        width: 100%;
+        height: auto;
+        border: none;
+        overflow-y: scroll;
+    }
+    #global {
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -76,6 +76,12 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 
         <div id="conteudo">
+            <h1>Noticias Mais Recentes</h1>
+            <div class="noticia">
+                <h1>Nova temporada Apex Legends</h1> <!--Titulo da notica-->
+                <img src="../ASSETS/FotosNotícias/apexlegends.jpg" alt=""> <!--Imagem da notica-->
+                <p>Nova temporada do apex legends chega cheia de bugs e erros</p><!--Descrição da notica-->
+            </div>
             
         </div>
 
