@@ -18,7 +18,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 $msg=false;
 $cod_usu=$_SESSION['codigo_usuario'];
-$imagem=$_SESSION['imagem'];
+$imagem=$_SESSION['imagem']; 
 
 //acredito que aqui que esteja causando a falha do F5
 
@@ -26,25 +26,20 @@ if(isset($_FILES['arquivo'])){
     $extensao = strtolower(substr($_FILES['arquivo'] ['name'],-4));
     $novo_nome =$cod_usu.$extensao;
     $diretorio="upload/";
-    $_SESSION['imagem'] = $novo_nome;
     
    // aqui ele move a imagem que fica flutuando por ai pra pasta
    array_map('unlink',glob("upload/$novo_nome"));
    move_uploaded_file($_FILES['arquivo'] ['tmp_name'],$diretorio.$novo_nome);
-
-    
    
    //aqui ele manda o comando update com o nome da imagem e a data do upload, da pra usar a data pra alguma coisa talvez.
     $sql_code="UPDATE `usuario` SET `imagem` = '$novo_nome',data=now() WHERE `usuario`.`codigo_usuario` = $cod_usu;";
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
-        if($pdo->query($sql_code)){
-            echo "<h1>Imagem mudada</h1>";
-        }else{
-            $msg="Arquivo na enviado com sucesso"; 
-        }
+        if($pdo->query($sql_code)){ echo "<script>window.alert('Arquivo enviado com sucesso')</script>"; }
+        else{$msg="Arquivo na enviado com sucesso"; }
         echo "<script> window.location.href='redirecionar.php' </script>";
 }
+
 
 ?>
 
@@ -73,6 +68,41 @@ if(isset($_FILES['arquivo'])){
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
+    <div id="global">         </div>
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="upload/<?php echo $imagem; ?>"  width=160px height=170px alt="img-avatar">
+
+                <button  onclick="inicialModal('modal-promocao');" type="button" class="boton-avatar" >
+                    <i class="far fa-image">
+                 <a>   <img src="upload/icon.png" alt="img-avatar"> </a>
+                                 
+                    </i>
+                    </button>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"><?php $usu=$_SESSION['nome_usuario']; echo $usu   ?></h3>
+                <p class="texto">Email: <?php $email= $_SESSION['email_usuario']; echo $email ?></p>
+            </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+            <div id="conteudo">
+            
 
     <div id="global">
         <div class="conteudo">
@@ -114,16 +144,13 @@ if(isset($_FILES['arquivo'])){
             <p id="close" class="close">X</p>
             <form action="perfil.php" method="POST" enctype="multipart/form-data">
                 <label id="btn" for="arquivo">Escolher Arquivo</label>
-                <input id="file" type="file" accept=".jpg,.jpeg,.png" required name="arquivo" oninput="mostrarNomeImagem()">
-                <div id="nome-arquivo"></div>
-                <input id="enviar" type="submit" value="Enviar">
+                <input id="file" type="file" accept=".jpg" required name="arquivo">
+                <input type="submit" value="Enviar">
             </form>
         </div>
     </div>
 
-    <script src="../ACTIONS/perfil.js">
-
-    </script>
+    <script src="../ACTIONS/perfil.js"></script>
 
 </body>
 </html>

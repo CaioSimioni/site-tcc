@@ -35,8 +35,10 @@
 .conteudo .img-perfil {
     max-width: 150px;
     max-width: 150px;
+    min-width: 150px;
+    min-width: 150px;
     overflow: visible;
-    border-radius: 5%;
+    border-radius: 50%;
     background:transparent;
     color: white;
     border: 3px solid white;

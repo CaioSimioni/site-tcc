@@ -20,7 +20,13 @@ x.addEventListener("click", function() {
     retiraP("popup");
 })
 
-
 label.addEventListener('click', () => {
     int.click();
+    
 });
+
+let name_arquivo = document.getElementById('nome-arquivo');
+
+function mostrarNomeImagem(){
+    name_arquivo.innerHTML = "<p><?php $novo_nome?></p>"
+}
