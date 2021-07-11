@@ -107,7 +107,7 @@ if(isset($_FILES['arquivo'])){
     <div id="global">
         <div class="conteudo">
             <div class="img">
-                <img class="img-perfil" src="./Upload/<?php echo $imagem; ?>" alt="logo">
+                <img class="img-perfil" src="./Upload/<?php echo $imagem; ?>" alt="icon_usuario">
                 <button id="mudarAvatar">Mudar Avatar</button>
             </div>
             <div class="divis"></div>
