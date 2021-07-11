@@ -18,7 +18,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 $msg=false;
 $cod_usu=$_SESSION['codigo_usuario'];
- $imagem=$_SESSION['imagem']; 
+$imagem=$_SESSION['imagem']; 
 
 //acredito que aqui que esteja causando a falha do F5
 
@@ -35,7 +35,7 @@ if(isset($_FILES['arquivo'])){
     $sql_code="UPDATE `usuario` SET `imagem` = '$novo_nome',data=now() WHERE `usuario`.`codigo_usuario` = $cod_usu;";
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
-        if($pdo->query($sql_code)){ $msg="Arquivo enviado com sucesso"; }
+        if($pdo->query($sql_code)){ echo "<script>window.alert('Arquivo enviado com sucesso')</script>"; }
         else{$msg="Arquivo na enviado com sucesso"; }
         echo "<script> window.location.href='redirecionar.php' </script>";
 }
@@ -59,11 +59,12 @@ if(isset($_FILES['arquivo'])){
 
     <link rel="stylesheet" href="../CSS/style_home.css">
     <link rel="stylesheet" href="../CSS/style_perfil.css">
+    <script src=""></script>
 
 
 
 </head>
-<body onload="ajax()">
+<body>
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
@@ -106,68 +107,50 @@ if(isset($_FILES['arquivo'])){
     <div id="global">
         <div class="conteudo">
             <div class="img">
-                <img class="img-perfil" src="upload/<?php echo $imagem; ?>" alt="logo">
+                <img class="img-perfil" src="./Upload/<?php echo $imagem; ?>" alt="logo">
+                <button id="mudarAvatar">Mudar Avatar</button>
             </div>
             <div class="divis"></div>
             <div class="info">
-                <h3>Nome</h3>
-                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
-                <h3>Email</h3>
-                <h5><?php $usu=$_SESSION['email_usuario']; echo ($usu);?></h5>
-                <h3>Nome</h3>
-                <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);?></h5>
+                <div class="block">
+                    <h3>Nome de usuario</h3>
+                    <h5><?php $usu=$_SESSION['nome_usuario']; echo ucfirst($usu);  ?></h5>
+                </div>
+                <div class="block">
+                    <h3>Email</h3>
+                    <h5><?php $usu=$_SESSION['email_usuario']; echo $usu;  ?></h5>
+                </div>
+                <div class="block">
+                    <h3>Cargo no site</h3>
+                    <h5><?php
+                        if($_SESSION['codigo_usuario'] == 5 or $_SESSION['codigo_usuario'] == 12) {
+                            echo "Admin";
+                        }else {
+                            echo "Usuario";
+                        }
+                    ?></h5>
+                </div>
             </div>
 
         </div>
-    </div>
 
+    </div>
     <?php
         include "../COMPONENTS/rodape.html";
     ?>
-  
 
-<style>
+    <div id="popup" class="popup">
+        <div class="box">
+            <p id="close" class="close">X</p>
+            <form action="perfil.php" method="POST" enctype="multipart/form-data">
+                <label id="btn" for="arquivo">Escolher Arquivo</label>
+                <input id="file" type="file" accept=".jpg" required name="arquivo">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
 
-</style>
+    <script src="../ACTIONS/perfil.js"></script>
 
-   <div id="modal-promocao" class="modal-container">
-       <div class="modal">
-       <button class="fechar">x</button>
-       <section class="seccion-perfil-usuario">
-
-       <div class="perfil-usuario-portadaa">
-                <div class="perfil-usuario-avatar-upload">
-                    <img src="upload/<?php echo $imagem; ?>" width=160px height=150px alt="img-avatar">
-                 </div>                
-            </div>
-
-
-   <form class="forms" action="perfil.php" method="POST" enctype="multipart/form-data">
-                 <label >  <input type="file"  value="Selecionar Imagem" required name="arquivo"> </label>                
-                 
-
-                           <input type="submit" value="Salvar">
-    </form>
-
-  </div>
-</div> 
-
-
- <script>
-   function inicialModal(modalId){
-       const modal=document.getElementById(modalId);
-       if(modal){
-       modal.classList.add('mostrar');
-       modal.addEventListener('click',(e)=>{
-           if(e.target.id==modalId || e.target.className=='fechar'){
-         modal.classList.remove('mostrar');
-           }
-       });
-       }
-
-   }
-   
-
-     </script>
 </body>
 </html>
