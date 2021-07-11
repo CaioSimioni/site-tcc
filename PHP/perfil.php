@@ -15,7 +15,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 $msg=false;
 $cod_usu=$_SESSION['codigo_usuario'];
- $imagem=$_SESSION['imagem']; 
+$imagem=$_SESSION['imagem']; 
 
 //acredito que aqui que esteja causando a falha do F5
 
@@ -33,7 +33,7 @@ if(isset($_FILES['arquivo'])){
     $_FILES['arquivo']=null;
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
-        if($pdo->query($sql_code)){ $msg="Arquivo enviado com sucesso"; }
+        if($pdo->query($sql_code)){ echo "<script>window.alert('Arquivo enviado com sucesso')</script>"; }
         else{$msg="Arquivo na enviado com sucesso"; }
         echo "<script> window.location.href='redirecionar.php' </script>";
 }
@@ -52,11 +52,12 @@ if(isset($_FILES['arquivo'])){
     <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style_home.css">
     <link rel="stylesheet" href="../CSS/style_perfil.css">
+    <script src=""></script>
 
 
 
 </head>
-<body onload="ajax()">
+<body>
     <?php
         include "../COMPONENTS/cabecalho.html";
     ?>
@@ -64,11 +65,8 @@ if(isset($_FILES['arquivo'])){
     <div id="global">
         <div class="conteudo">
             <div class="img">
-                <img class="img-perfil" src="upload/<?php echo $imagem; ?>" alt="logo">
-                <form action="perfil.php" method="POST" enctype="multipart/form-data">
-                    <input type="file" required name="arquivo">
-                    <input type="submit" value="salvar">
-                </form>
+                <img class="img-perfil" src="./Upload/<?php echo $imagem; ?>" alt="logo">
+                <button id="mudarAvatar">Mudar Avatar</button>
             </div>
             <div class="divis"></div>
             <div class="info">
@@ -80,13 +78,34 @@ if(isset($_FILES['arquivo'])){
                     <h3>Email</h3>
                     <h5><?php $usu=$_SESSION['email_usuario']; echo $usu;  ?></h5>
                 </div>
+                <div class="block">
+                    <h3>Cargo no site</h3>
+                    <h5><?php
+                        if($_SESSION['codigo_usuario'] == 5 or $_SESSION['codigo_usuario'] == 12) {
+                            echo "Admin";
+                        }else {
+                            echo "Usuario";
+                        }
+                    ?></h5>
+                </div>
             </div>
         </div>
 
     </div>
-
     <?php
         include "../COMPONENTS/rodape.html";
     ?>
+    <div id="popup" class="popup">
+        <div class="box">
+            <p id="close" class="close">X</p>
+            <form action="perfil.php" method="POST" enctype="multipart/form-data">
+                <label id="btn" for="arquivo">Escolher Arquivo</label>
+                <input id="file" type="file" accept=".jpg" required name="arquivo">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <script src="../ACTIONS/perfil.js"></script>
 </body>
 </html>
