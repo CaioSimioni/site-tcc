@@ -59,8 +59,8 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <?php
                 $idUsuario = $_SESSION['codigo_usuario'];
                 $nomeUsuario = $_SESSION['nome_usuario'];
-                $msgUsuario = $_POST['mensagem'] ?? NULL;
-                /* Ele tá erro mas é por causa do Leitor do PHP, mas essa função ?? já existe no PHP.*/
+                $msgUsuario = isset($_POST['mensagem']) ? $_POST_['mensagem'] : NULL;
+                /* Se exitir $_POST['mensagem'] receba $_POST['mensagem'] senão receba NULL*/
 
                 if($msgUsuario){
                     $sql = $pdo->query("INSERT INTO `chat-geral` (`id_usuario`, `nome_usuario`, `mensagem`) VALUES ('$idUsuario', '$nomeUsuario', '$msgUsuario')");
