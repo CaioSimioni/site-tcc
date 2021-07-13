@@ -59,8 +59,12 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <?php
                 $idUsuario = $_SESSION['codigo_usuario'];
                 $nomeUsuario = $_SESSION['nome_usuario'];
-                $msgUsuario = isset($_POST['mensagem']) ? $_POST_['mensagem'] : NULL;
-                /* Se exitir $_POST['mensagem'] receba $_POST['mensagem'] senão receba NULL*/
+                $msgUsuario = isset($_POST['mensagem']) ? $_POST['mensagem'] : NULL;
+                /* 
+                Se exitir $_POST['mensagem'] receba $_POST['mensagem'] senão receba NULL
+                Poderia colocar ->  $msgUsuario = $_POST['mensagem'] ?? NULL;
+                mas para sumir o erro quefica tanto no leitor de PHP do VSCode dexei desse jeito  mesmo.
+                */
 
                 if($msgUsuario){
                     $sql = $pdo->query("INSERT INTO `chat-geral` (`id_usuario`, `nome_usuario`, `mensagem`) VALUES ('$idUsuario', '$nomeUsuario', '$msgUsuario')");
