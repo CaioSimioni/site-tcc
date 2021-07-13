@@ -18,6 +18,11 @@
                 <li><a href="../PHP/camps.php">E-Sports</a></li>
                 <li><a href="#">Notícias</a></li>
                 <li><a href="#">Tópicos</a></li>
+                <?php
+                    if($_SESSION['adm'] == true) {
+                        echo "<li><a href='../PHP/admin.php'>Administração</a></li>";
+                    }
+                ?>
                 <li><a href="../ACTIONS/logout.php">Sair</a></li>
             </ul>
         </nav>

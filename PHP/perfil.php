@@ -71,7 +71,7 @@ if(isset($_FILES['arquivo'])){
 </head>
 <body>
     <?php
-        include "../COMPONENTS/cabecalho.html";
+        include "../COMPONENTS/cabecalho.php";
     ?>
 
     <div id="global">

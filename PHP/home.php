@@ -42,7 +42,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 </head>
 <body onload="ajax()">
     <?php
-        include "../COMPONENTS/cabecalho.html";
+        include "../COMPONENTS/cabecalho.php";
     ?>
     <div id="global">
 

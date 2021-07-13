@@ -21,7 +21,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 <body>
     <div id="global">
         <?php
-            include "../COMPONENTS/cabecalho.html";
+            include "../COMPONENTS/cabecalho.php";
         ?>
         <div class="div_principal">
             <div class="card">

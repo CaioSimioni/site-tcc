@@ -26,7 +26,7 @@ $datacamp = "11/07/2021";
 </head>
 <body>
     <?php
-        include "../COMPONENTS/cabecalho.html";
+        include "../COMPONENTS/cabecalho.php";
     ?>
 
     <div class="global">

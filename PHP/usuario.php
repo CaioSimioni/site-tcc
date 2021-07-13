@@ -80,6 +80,7 @@ Class Usuario{
             $_SESSION['codigo_usuario']= $dados['codigo_usuario'];
             $_SESSION['nome_usuario']  =  $dados['usuario'];
             $_SESSION['email_usuario'] = $dados['email'];
+            $_SESSION['adm'] = $dados['adm'];
             $_SESSION['imagem'] = $dados['imagem'];
             $_SESSION['logged'] = True;
             return true;  //Login com sucesso.
