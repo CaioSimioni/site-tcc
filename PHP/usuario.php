@@ -41,7 +41,7 @@ Class Usuario{
         global $pdo;
 
         $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
-        $sql->bindValue(":e", $email);
+        $sql->bindValue(":e", $email);  // Substitui o valor de :e pelo valor da variavel $email
         $sql->execute();
 
         if($sql->rowCount() > 0){
