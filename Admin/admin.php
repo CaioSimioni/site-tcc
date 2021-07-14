@@ -1,5 +1,5 @@
 <?php
-require "usuario.php";
+require "../User/usuario.php";
 $u = new Usuario;
 $u->conectar();
 
@@ -24,9 +24,8 @@ if($_SESSION['adm'] == false) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style_home.css">
-    <link rel="stylesheet" href="../CSS/style_adm.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_adm.css">
 
     <script src=""></script>
 
@@ -35,7 +34,7 @@ if($_SESSION['adm'] == false) {
 </head>
 <body>
     <?php
-        include "../COMPONENTS/cabecalho.php";
+        include "../Templates/cabecalho.php";
     ?>
 
     <div class="global">
@@ -120,7 +119,7 @@ if($_SESSION['adm'] == false) {
     </div>
 
     <?php
-        include "../COMPONENTS/rodape.html";
+        include "../Templates/rodape.php";
     ?>
 </body>
 </html>

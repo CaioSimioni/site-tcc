@@ -1,5 +1,5 @@
 <?php
-require_once "usuario.php";  //  Importo o arquivo usuario.php
+require_once "../Usuario/usuario.php";  //  Importo o arquivo usuario.php
 $u = new Usuario;   // Crio um objeto de Usuario
 
 ?>
@@ -11,21 +11,21 @@ $u = new Usuario;   // Crio um objeto de Usuario
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="../css/style_cadastrar.css">
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_cadastrar.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
     <div id="global">
 
         <!-- Cabeçalho do site -->
         <header class="header">
-            <img class="logo" src="../ASSETS/polo_logo_white@2x.png" alt="logo">
+            <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
             <nav>
                 <ul class="nav__links">
                     <li><a href="../index.php">Início</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../HTML/sobre_nos.html"><button>Sobre nós</button></a>
+            <a class="cta" href="../Pages/sobre_nos.html"><button>Sobre nós</button></a>
         </header>
 
         <?php
@@ -91,10 +91,10 @@ $u = new Usuario;   // Crio um objeto de Usuario
         
         <!-- Rodapé do site -->
         <footer id="final">
-            <img src="../ASSETS/polo_logo_white@2x.png">
+            <img src="../Materials/polo_logo_white@2x.png">
             <span>&copy;Copyright POLO-2021</span>
             <ul>
-                <li><a href="../PHP/sobre_nos.php">Sobre nós</a></li>
+                <li><a href="../Pages/sobre_nos.html">Sobre nós</a></li>
                 <li><a href="">Fale conosco </a></li>
                 <li><a href="">Política de privacidade </a></li>
                 <li><a href="">aqui são redes sociais</a></li>

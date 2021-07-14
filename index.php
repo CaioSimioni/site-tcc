@@ -1,12 +1,11 @@
 <?php
-require "./PHP/usuario.php";    // Importo o arquivo usuario.php
-$u = new Usuario; // Cria um objeto de Usuario
+    require "./User/usuario.php";    // Importo o arquivo usuario.php
+    $u = new Usuario; // Cria um objeto de Usuario
 
-if(isset($_SESSION['codigo_usuario']) ){
-    echo "<script> window.location.href='./PHP/home.php' </script>";
-    exit;
-}
-
+    if(isset($_SESSION['codigo_usuario']) ){
+        echo "<script> window.location.href='./Pages/home.php' </script>";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +15,8 @@ if(isset($_SESSION['codigo_usuario']) ){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="./CSS/style_index.css">
-    <link rel="shortcut icon" href="./ASSETS/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Css/style_index.css">
+    <link rel="shortcut icon" href="./Materials/polo_icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -25,13 +24,13 @@ if(isset($_SESSION['codigo_usuario']) ){
 
         <!-- Cabeçalho do site -->
         <header class="header">
-            <img class="logo" src="./ASSETS/polo_logo_white@2x.png" alt="logo">
+            <img class="logo" src="./Materials/polo_logo_white@2x.png" alt="logo">
             <nav>
                 <ul class="nav__links">
-                    <li><a href="./PHP/cadastrar.php">Cadastrar</a></li>
+                    <li><a href="./Pages/cadastrar.php">Cadastrar</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="./HTML/sobre_nos.html"><button>Sobre nós</button></a>
+            <a class="cta" href="./Pages/sobre_nos.php"><button>Sobre nós</button></a>
         </header>
 
         <!-- Parte de indrodução do site, Bem vindo e login -->
@@ -56,7 +55,7 @@ if(isset($_SESSION['codigo_usuario']) ){
                     <input type="text" name="usuario" placeholder="Usuário">
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" value="ACESSAR">
-                    <a href="./PHP/cadastrar.php">Cadastrar-se</a>
+                    <a href="./Pages/cadastrar.php">Cadastrar-se</a>
                 </form>
 
                 <!-- Parte do PHP de Login -->
@@ -76,7 +75,7 @@ if(isset($_SESSION['codigo_usuario']) ){
                                 
                                 if($u->entrar($usuario, $senha)){
                                     
-                                    echo "<script> window.location.href='./PHP/home.php' </script>";
+                                    echo "<script> window.location.href='./Pages/home.php' </script>";
                                     exit;
 
                                 }else{
@@ -96,10 +95,10 @@ if(isset($_SESSION['codigo_usuario']) ){
 
         <!-- Rodapé do site -->
         <footer id="final">
-            <img src="../ASSETS/polo_logo_white@2x.png">
+            <img src="../Materials/polo_logo_white@2x.png">
             <span>&copy;Copyright POLO-2021</span>
             <ul>
-                <li><a href="../PHP/sobre_nos.php">Sobre nós</a></li>
+                <li><a href="../Pages/sobre_nos.php">Sobre nós</a></li>
                 <li><a href="">Fale conosco </a></li>
                 <li><a href="">Política de privacidade </a></li>
                 <li><a href="">aqui são redes sociais</a></li>

@@ -1,5 +1,5 @@
 <?php
-require "usuario.php";
+require "../User/usuario.php";
 $u = new Usuario;
 $u->conectar();
 
@@ -9,47 +9,34 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     exit;
 }
 
-// credito do css para 
-
-
-//funcionou, porém sempre que da F5 ele manda a imagem dnv, e tem que descobrir um jeito de sempre que a pessoa fizer
-//o update de uma imagem, excluir a que ele tinha, tenho uma ideia de no processo de clicar em salvar, descobrir o
-// nome da imagem anterior e excluir a que tinha antes. A Pagina Upload serve pra guardar as imagens.
-
-$msg=false;
-$cod_usu=$_SESSION['codigo_usuario'];
-$imagem=$_SESSION['imagem'];
+$msg = false;
+$cod_usu = $_SESSION['codigo_usuario'];
+$imagem = $_SESSION['imagem'];
 
 //acredito que aqui que esteja causando a falha do F5
 
 if(isset($_FILES['arquivo'])){
     $extensao = strtolower(substr($_FILES['arquivo'] ['name'],-4));
-    $novo_nome =$cod_usu.$extensao;
-    $diretorio="../ASSETS/avatarUsers/";
+    $novo_nome = $cod_usu.$extensao;
+    $diretorio = "../Materials/UsersAvatar/";
     $_SESSION['imagem'] = $novo_nome;
     
    // aqui ele move a imagem que fica flutuando por ai pra pasta
-   array_map('unlink',glob("../ASSETS/avatarUsers/$novo_nome"));
-   move_uploaded_file($_FILES['arquivo'] ['tmp_name'],$diretorio.$novo_nome);
+   array_map('unlink', glob("../Materials/UsersAvatar/$novo_nome"));
+   move_uploaded_file($_FILES['arquivo'] ['tmp_name'], $diretorio.$novo_nome);
 
-    
-   
    //aqui ele manda o comando update com o nome da imagem e a data do upload, da pra usar a data pra alguma coisa talvez.
     $sql_code="UPDATE `usuario` SET `imagem` = '$novo_nome',data=now() WHERE `usuario`.`codigo_usuario` = $cod_usu;";
     
     //Usei o $pdo pq ele é basicamente a variável conexão.
         if($pdo->query($sql_code)){
             $msg = "foi";
+            echo "<script> window.location.href = '../User/reload.php' </script>";
         }else{
-            $msg="Arquivo na enviado com sucesso"; 
+            $msg = "Arquivo na enviado com sucesso";
         }
-        echo "<script> window.location.href='redirecionar.php' </script>";
 }
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -58,26 +45,20 @@ if(isset($_FILES['arquivo'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="../CSS/estilo_perfil.css">
-
-    <link rel="stylesheet" href="../CSS/style_home.css">
-    <link rel="stylesheet" href="../CSS/style_perfil.css">
-    <script src=""></script>
-
-
+    <link rel="stylesheet" href="../Css/style_perfil.css">
 
 </head>
 <body>
     <?php
-        include "../COMPONENTS/cabecalho.php";
+        include "../Templates/cabecalho.php";
     ?>
 
     <div id="global">
         <div class="conteudo">
             <div class="img">
-                <img class="img-perfil" src="../ASSETS/avatarUsers/<?php echo $imagem; ?>" alt="icon_usuario">
+                <img class="img-perfil" src="../Materials/UsersAvatar/<?php echo $imagem; ?>" alt="icon_usuario">
                 <button id="mudarAvatar">Mudar Avatar</button>
             </div>
             <div class="divis"></div>
@@ -93,8 +74,8 @@ if(isset($_FILES['arquivo'])){
                 <div class="block">
                     <h3>Cargo no site</h3>
                     <h5><?php
-                        if($_SESSION['codigo_usuario'] == 5 or $_SESSION['codigo_usuario'] == 12) {
-                            echo "Admin";
+                        if($_SESSION['adm']) {
+                            echo "Administrador";
                         }else {
                             echo "Usuario";
                         }
@@ -106,7 +87,7 @@ if(isset($_FILES['arquivo'])){
 
     </div>
     <?php
-        include "../COMPONENTS/rodape.html";
+        include "../Templates/rodape.php";
     ?>
 
     <div id="popup" class="popup">
@@ -121,9 +102,7 @@ if(isset($_FILES['arquivo'])){
         </div>
     </div>
 
-    <script src="../JS/perfil.js">
-
-    </script>
+    <script src="../Js/perfil.js"></script>
 
 </body>
 </html>

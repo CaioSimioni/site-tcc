@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,20 +9,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="../CSS/style_sobre_nos.css">
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_sobre_nos.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
     <div id="global">
-        <header class="header">
-            <img class="logo" src="../ASSETS/polo_logo_white@2x.png" alt="logo">
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="../index.php">Início</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="#"><button>Sobre nós</button></a>
-        </header>
+        <?php
+            if (isset($_SESSION['logged'])) {
+                include "../Templates/cabecalho.php";
+            }else{
+                ?>
+                <header class="header">
+                    <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
+                    <nav>
+                        <ul class="nav__links">
+                            <li><a href="../index.php">Início</a></li>
+                        </ul>
+                    </nav>
+                    <a class="cta" href="#"><button>Sobre nós</button></a>
+                </header>
+                <?php
+            }
+        ?>
         <div class="div_principal">
             <div class="card">
                 <h1>O que é o Polo?</h1>
@@ -49,16 +61,25 @@
                 </p>
             </div>
         </div>
-        <footer id="final">
-            <img src="../ASSETS/polo_logo_white@2x.png">
-            <span>&copy;Copyright POLO-2021</span>
-            <ul>
-                <li><a href="../PHP/sobre_nos.php">Sobre nós</a></li>
-                <li><a href="">Fale conosco </a></li>
-                <li><a href="">Política de privacidade </a></li>
-                <li><a href="">aqui são redes sociais</a></li>
-            </ul>
-        </footer>
+        <?php
+            
+            if (isset($_SESSION['logged'])) {
+                include "../Templates/rodape.php";
+            }else{
+                ?>
+                <footer id="final">
+                    <img src="../Materials/polo_logo_white@2x.png">
+                    <span>&copy;Copyright POLO-2021</span>
+                    <ul>
+                        <li><a href="../Pages/sobre_nos.html">Sobre nós</a></li>
+                        <li><a href="">Fale conosco </a></li>
+                        <li><a href="">Política de privacidade </a></li>
+                        <li><a href="">aqui são redes sociais</a></li>
+                    </ul>
+                </footer>
+                <?php
+            }
+        ?>
     </div>
 </body>
 </html>

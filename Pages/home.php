@@ -1,5 +1,5 @@
 <?php
-require "usuario.php";
+require "../User/usuario.php";
 $u = new Usuario;
 $u->conectar();
 
@@ -17,8 +17,8 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style_home.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_home.css">
 
 <script type="text/javascript">
 
@@ -31,7 +31,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
                 document.getElementById('chat-mensagens').innerHTML = req.responseText;
             }
         }
-        req.open('GET', 'chat.php', true)
+        req.open('GET', '../User/chat.php', true)
         req.send();
     }
 
@@ -42,7 +42,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 </head>
 <body onload="ajax()">
     <?php
-        include "../COMPONENTS/cabecalho.php";
+        include "../Templates/cabecalho.php";
     ?>
     <div id="global">
 
@@ -83,7 +83,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             <h1>Noticias Mais Recentes</h1>
             <div class="noticia">
                 <h1>Nova temporada Apex Legends</h1> <!--Titulo da notica-->
-                <img src="../ASSETS/FotosNotícias/apexlegends.jpg" alt=""> <!--Imagem da notica-->
+                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt=""> <!--Imagem da notica-->
                 <p>Nova temporada do apex legends chega cheia de bugs e erros</p><!--Descrição da notica-->
             </div>
             
@@ -91,7 +91,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
     </div>
     <?php
-        include "../COMPONENTS/rodape.html";
+        include "../Templates/rodape.php";
     ?>
 </body>
 </html>

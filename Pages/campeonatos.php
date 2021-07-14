@@ -1,5 +1,5 @@
 <?php
-require "./usuario.php";
+require "../User/usuario.php";
 $u = new Usuario;
 $u->conectar();
 
@@ -20,13 +20,12 @@ $datacamp = "11/07/2021";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo - Campenatos</title>
-    <link rel="shortcut icon" href="../ASSETS/polo_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style_home.css">
-    <link rel="stylesheet" href="../CSS/style_campeonatos.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_campeonatos.css">
 </head>
 <body>
     <?php
-        include "../COMPONENTS/cabecalho.php";
+        include "../Templates/cabecalho.php";
     ?>
 
     <div class="global">
@@ -45,7 +44,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/apexlegends.jpg" alt="">
+                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -63,7 +62,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/apexlegends.jpg" alt="">
+                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -81,7 +80,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/apexlegends.jpg" alt="">
+                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -102,7 +101,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/league-of-legends.png" alt="">
+                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -120,7 +119,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/league-of-legends.png" alt="">
+                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -138,7 +137,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/league-of-legends.png" alt="">
+                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -159,7 +158,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/valorant" alt="">
+                <img src="../Materials/ImagesNoticias/valorant" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -177,7 +176,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/valorant.jpg" alt="">
+                <img src="../Materials/ImagesNoticias/valorant.jpg" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -195,7 +194,7 @@ $datacamp = "11/07/2021";
                     ?></p>
                     <p id="data"><?php echo '|⠀'.$datacamp?></p>
                 </div>
-                <img src="../ASSETS/FotosNotícias/valorant.jpg" alt="">
+                <img src="../Materials/ImagesNoticias/valorant.jpg" alt="">
                 <div class="div-btn">
                     <a href=""><button class="btn">Ver Mais</button></a>
                 </div>
@@ -204,11 +203,7 @@ $datacamp = "11/07/2021";
     </div>
 
     <?php
-        include "../COMPONENTS/rodape.html";
+        include "../Templates/rodape.php";
     ?>
-    <script src="../JS/camps.js">
-    document.getElementsByClassName()
-
-</script>
 </body>
 </html>
