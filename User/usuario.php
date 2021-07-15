@@ -56,7 +56,7 @@ Class Usuario{
                 return false; //Usuario já cadastrado
                 
             }else{
-                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha, imagem,data) VALUES(:u, :e, :s,'icon.png',now())");
+                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha, imagem,data,adm) VALUES(:u, :e, :s,'icon.png',now()),0");
                 $sql->bindValue(":u", $usuario);
                 $sql->bindValue(":e", $email);
                 $sql->bindValue(":s", md5($senha));

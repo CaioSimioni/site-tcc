@@ -5,7 +5,14 @@
 
     require "../Noticia/noticia.php";
     $new = new Noticia;
+    global $pdo;
+
+    $id_noticia = addslashes($_POST['id_noticia']);  
+    $new->excluirNoticia($id_noticia);
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,11 +27,13 @@
         include "../Templates/cabecalho.php";
     ?>
     <div id="global">
-        <form method="POST" action="noticiaCadastro.php">
-           Id da noticia<input type="text">
+        <form method="POST" action="noticiaExcluir.php">
+           Id da noticia<input type="text" name="id_noticia">
             <input type="submit" value="Excluir">
         </form>
     </div>
+     
+     
     <?php
         include "../Templates/rodape.php";
     ?>
