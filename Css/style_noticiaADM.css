@@ -3,10 +3,25 @@
 }
 
 #forms_newNoticia{
-    margin: auto;
+    margin: 50px auto;
     display: block;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .atrib_noticia{
+    padding: 5px;
+    margin: 5px;
+}
+
+#newNoticia_descricao{
     display: block;
+    height: 100px;
+    width: 100%;
+}
+
+#newNoticia_fonte{
+    width: 100%;
 }

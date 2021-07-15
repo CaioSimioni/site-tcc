@@ -14,11 +14,13 @@ class Noticia{
         * data
     */
 
-    public function cadastrarNoticia ($titulo , $descricao, $fonte, $data){
+    public function cadastrarNoticia ($titulo , $descricao, $fonte, $path_imagem, $data){
+        global $pdo;
 
+        $sql = $pdo->prepare("INSERT INTO ");
     }
 
-    public function editarNoticia ($id_noticia, $titulo, $descricao){
+    public function editarNoticia ($id_noticia, $titulo, $descricao, $fonte, $path_imagem){
 
     }
 

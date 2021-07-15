@@ -23,11 +23,13 @@
     ?>
     <div id="global">
         <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia">
-            Título<input type="text" class="atrib_noticia">
-            Descrição<input type="text" class="atrib_noticia">
-            Data<input type="date" class="atrib_noticia">
-            imagem<input type="file" class="atrib_noticia">
-            <input type="submit" class="atrib_noticia">
+            <h1>Nova notícia</h1>
+            <p class="atrib_noticia">Título: <input type="text" id="newNoticia_titulo"></p> 
+            <p class="atrib_noticia">Descrição: <input type="text" id="newNoticia_descricao"></p>
+            <p class="atrib_noticia">Fonte: <input type="text" id="newNoticia_fonte"></p>
+            <p class="atrib_noticia">Data: <input type="date" id="new_noticia_data"></p>
+            <p class="atrib_noticia">Imagem: <input type="file" id="newNoticia_imagem"></p>
+            <input type="submit" class="atrib_noticia" id="newNoticia_submit">
         </form>
     </div>
     <?php
