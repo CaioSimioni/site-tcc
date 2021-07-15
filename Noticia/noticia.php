@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 class Noticia{
     private $pdo;
@@ -9,16 +8,17 @@ class Noticia{
         Atribudos Notícia
         * id_noticia
         * titulo
-        * conteúdo
+        * descricao
         * fonte
+        * path_imagem
         * data
     */
 
-    public function cadastrarNoticia ($titulo , $conteudo, $fonte, $data){
+    public function cadastrarNoticia ($titulo , $descricao, $fonte, $data){
 
     }
 
-    public function editarNoticia ($id_noticia, $titulo, $conteudo){
+    public function editarNoticia ($id_noticia, $titulo, $descricao){
 
     }
 
