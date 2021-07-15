@@ -41,7 +41,7 @@ if($_SESSION['adm'] == false) {
         <section class="sec">
             <h1>Funções De Notícias</h1>
             <div class="box">
-                <a href="">
+                <a href="./noticiaCadastro.php">
                     <div class="cards">
                         <h3>Nova Notícia</h3>
                         <p>Crie uma notícia que poderá ser vista na home do site</p>
