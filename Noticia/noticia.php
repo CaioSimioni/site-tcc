@@ -17,7 +17,8 @@ class Noticia{
     public function cadastrarNoticia ($titulo , $descricao, $fonte, $path_imagem, $data){
         global $pdo;
 
-        $sql = $pdo->prepare("INSERT INTO ");
+        $sql = $pdo->prepare("INSERT INTO `noticia`(`fonte`, `data`, `descricao`, `titulo`, `imagem`) 
+        VALUES($fonte)");
     }
 
     public function editarNoticia ($id_noticia, $titulo, $descricao, $fonte, $path_imagem){
