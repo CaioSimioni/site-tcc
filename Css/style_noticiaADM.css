@@ -1,0 +1,12 @@
+#global{
+    margin: auto;
+}
+
+#forms_newNoticia{
+    margin: auto;
+    display: block;
+}
+
+.atrib_noticia{
+    display: block;
+}
