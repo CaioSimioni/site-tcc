@@ -11,7 +11,7 @@
                 <li><a href="../Pages/campeonatos.php">E-Sports</a></li>
                 <li><a href="#">Tópicos</a></li>
                 <?php
-                    if($_SESSION['adm'] == true) {
+                    if($_SESSION['adm']) {
                         echo "<li><a href='../Admin/admin.php'>Administração</a></li>";
                     }
                 ?>
