@@ -10,10 +10,11 @@ class Noticia{
         * id_noticia
         * titulo
         * conteúdo
+        * fonte
         * data
     */
 
-    public function cadastrarNoticia ($titulo , $conteudo){
+    public function cadastrarNoticia ($titulo , $conteudo, $fonte, $data){
 
     }
 
