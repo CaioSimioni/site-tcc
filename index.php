@@ -73,7 +73,7 @@
                             
                             if($u->msgErro == ""){  // Verifica se o retorno foi uma mensagem de erro
                                 
-                                if($u->entrar($usuario, $senha)){
+                                if($u->entrarUsuario($usuario, $senha)){
                                     
                                     echo "<script> window.location.href='./Pages/home.php' </script>";
                                     exit;
