@@ -37,7 +37,7 @@ Class Usuario{
         }
     }
 
-    public function cadastrar($usuario, $email, $senha, $confirmarSenha){
+    public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha){
         global $pdo;
 
         $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
@@ -66,7 +66,7 @@ Class Usuario{
         }
     }
 
-    public function entrar($usuario, $senha){
+    public function entrarUsuario($usuario, $senha){
         global $pdo;
 
         $sql = $pdo->prepare("SELECT * FROM usuario WHERE usuario = :u AND senha = :s");
@@ -89,7 +89,7 @@ Class Usuario{
         }
     }
 
-    public function sair(){
+    public function sairUsuario(){
         unset($_SESSION['codigo_usuario']);
         unset($_SESSION['nome_usuario']);
         unset($_SESSION['email_usuario']);
