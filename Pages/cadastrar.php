@@ -1,5 +1,5 @@
 <?php
-require_once "../Usuario/usuario.php";  //  Importo o arquivo usuario.php
+require_once "../User/usuario.php";  //  Importo o arquivo usuario.php
 $u = new Usuario;   // Crio um objeto de Usuario
 
 ?>
