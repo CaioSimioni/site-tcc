@@ -44,7 +44,7 @@ $u = new Usuario;   // Crio um objeto de Usuario
 
                         if($senha == $confirmarSenha){
                             
-                            if($u->cadastrar($usuario, $email, $senha, $confirmarSenha)){
+                            if($u->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
                                 
                                 ?>
                                 <div id="msg-sucesso">
