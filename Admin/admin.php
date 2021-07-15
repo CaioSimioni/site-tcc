@@ -53,7 +53,7 @@ if($_SESSION['adm'] == false) {
                         <p>Edite dados de uma notícia</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="./noticiaExcluir.php">
                     <div class="cards">
                         <h3>Excluir Notícia</h3>
                         <p>Exclua totalmente os dados da notícia que desejar</p>
