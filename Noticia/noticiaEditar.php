@@ -46,7 +46,7 @@
      <td> <?php echo $dado['descricao']; ?> </td>
      <td> <?php echo $dado['titulo']; ?></td>
      <td> <?php echo $dado['imagem']; ?> </td>
-     <td><a href=" <?php echo $not; $new->excluirNoticia($not);  ?>"> <button> Excluir  </button><a> </td>
+    <?php echo "<td><a href='deletaNoticia.php?cod=$not'>Excluir</a></td>" ?>
    
  </tr>
 <?php } ?>
