@@ -104,7 +104,8 @@ if(isset($_FILES['arquivo'])){
         </div>
     </div>
 
-    <script src="../Js/perfil.js"></script>
+<script src="../Js/perfil.js">
+</script>
 
 </body>
 </html>

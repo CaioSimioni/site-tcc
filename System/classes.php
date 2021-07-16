@@ -31,6 +31,7 @@ class BancoBD{
 
         try{  // Tenta fazer o PDO
             $pdo = new PDO("mysql:dbname=".$nome.";host=".$host, $usuario, $senha);
+            return true;
         }catch(PDOException $e){  // o Erro do PDO = $e
             $msgErro = $e->getMessage();
         }
@@ -114,9 +115,8 @@ class Noticia{
     public function cadastrarNoticia ($titulo , $descricao, $fonte, $data, $imagem){
         global $pdo;
         
-        $sql = $pdo->prepare("INSERT INTO `noticia`(`fonte`,`data`,`descricao`,`titulo`,`imagem`) VALUES($fonte, :d, $descricao, $titulo, :i)");
+        $sql = $pdo->prepare("INSERT INTO `noticia` (`id_noticia`, `fonte`, `data`, `descricao`, `titulo`, `imagem`) VALUES ('', '$fonte', :d, '$descricao', '$titulo', '$imagem');");
         $sql->bindValue(":d", strval($data));
-        $sql->bindValue(":i", strval($imagem));
         $sql->execute();
 
         if($sql->rowCount() > 0){

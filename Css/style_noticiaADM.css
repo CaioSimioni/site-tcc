@@ -25,3 +25,9 @@
 #newNoticia_fonte{
     width: 100%;
 }
+
+#mensagem{
+    text-align: center;
+    height: 20px;
+    margin-bottom: 20px;
+}
