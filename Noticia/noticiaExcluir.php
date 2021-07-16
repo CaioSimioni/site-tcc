@@ -3,16 +3,26 @@
     $user = new Usuario;
     $banco = new BancoBD;
     $new = new Noticia;
+    $banco->conectar(); 
+ 
+    
+
 
     global $pdo;
-
+    if(isset($_POST['id_noticia'])){
     $id_noticia = addslashes($_POST['id_noticia']);  
     $new->excluirNoticia($id_noticia);
+    }
+    
 ?>
 
 
 
-
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

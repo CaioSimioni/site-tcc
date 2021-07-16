@@ -2,11 +2,12 @@
      require "../System/classes.php";
      $user = new Usuario;
      $banco = new BancoBD;
- 
+     $new = new Noticia;
+
      $banco->conectar();
- 
-        global $pdo;
-        $sql=$pdo->prepare("SELECT id_noticia FROM noticia");
+   
+     global $pdo;
+        $sql=$pdo->prepare("SELECT * FROM noticia");
         $sql->execute();
         
 
@@ -37,14 +38,15 @@
       <td> titulo</td>
       <td> Imagem </td>
     </tr> 
- <?php  while($dado=$sql->fetch_array()){  ?>
+ <?php  while($dado=$sql->fetch()){  ?>
      <tr>
-     <td><?php echo $dado['id_noticia']; ?> </td>
+     <td><?php  echo $dado['id_noticia']; $not= $dado['id_noticia']; ?> </td>
      <td> <?php echo $dado['fonte']; ?></td>
      <td> <?php echo date("d/m/Y",strtotime($dado['data']));  ?> </td>
      <td> <?php echo $dado['descricao']; ?> </td>
      <td> <?php echo $dado['titulo']; ?></td>
      <td> <?php echo $dado['imagem']; ?> </td>
+     <td><a href=" <?php echo $not; $new->excluirNoticia($not);  ?>"> <button> Excluir  </button><a> </td>
    
  </tr>
 <?php } ?>
@@ -52,7 +54,6 @@
 </table>
 
 
- 
 
     <?php
         include "../Templates/rodape.php";
