@@ -4,6 +4,19 @@
     $noticia = new Noticia;
     $banco = new BancoBD;
 
+    if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
+        echo "<script> alert('Falha na autenticação de usuário!')</script>";    
+        echo "<script>window.location.href='../index.php'</script>";
+        exit;
+    }
+    
+    if($_SESSION['adm'] == false) {
+        echo "<script>alert('Você não tem permissão para entrar nesta área')</script>";
+        echo "<script>window.location.href='../index.php'</script>";
+        exit;
+    }
+
+
     $titulo    = isset($_POST['titulo'])    ? $_POST['titulo']    : NULL;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : NULL;
     $fonte     = isset($_POST['fonte'])     ? $_POST['fonte']     : NULL;
