@@ -15,7 +15,7 @@
                         echo "<li><a href='../Admin/admin.php'>Administração</a></li>";
                     }
                 ?>
-                <li><a href="../User/logout.php">Sair</a></li>
+                <li><a href="../System/logout.php">Sair</a></li>
             </ul>
         </nav>
         <a class="cta" href="../Pages/perfil.php"><button>Perfil</button></a>

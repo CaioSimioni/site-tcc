@@ -3,7 +3,6 @@ require "../System/classes.php";
 $user = new Usuario;
 $banco = new BancoBD;
 
-
 $banco->conectar();
 
 if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
@@ -44,19 +43,19 @@ if($_SESSION['adm'] == false) {
         <section class="sec">
             <h1>Funções De Notícias</h1>
             <div class="box">
-                <a href="./noticiaCadastro.php">
+                <a href="../Noticia/noticiaCadastro.php">
                     <div class="cards">
                         <h3>Nova Notícia</h3>
                         <p>Crie uma notícia que poderá ser vista na home do site</p>
                     </div>
                 </a>
-                <a href="./noticiaEditar.php">
+                <a href="../Noticia/noticiaEditar.php">
                     <div class="cards">
                         <h3>Editar Notícia</h3>
                         <p>Edite dados de uma notícia</p>
                     </div>
                 </a>
-                <a href="./noticiaExcluir.php">
+                <a href="../Noticia/noticiaExcluir.php">
                     <div class="cards">
                         <h3>Excluir Notícia</h3>
                         <p>Exclua totalmente os dados da notícia que desejar</p>

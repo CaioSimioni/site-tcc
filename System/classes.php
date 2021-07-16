@@ -1,8 +1,9 @@
 <?php
-// Origem do código: https://youtube.com/playlist?list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
 session_start();
 
 class BancoBD{
+    private $pdo;
+    public $msgErro = "";
 
     //  Testa a conexão com o banco de dados
     public function conectar(){
