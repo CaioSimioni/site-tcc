@@ -4,7 +4,6 @@
     $banco = new BancoBD;
 
     $banco->conectar();
-
 ?>
 
 <!DOCTYPE html>
