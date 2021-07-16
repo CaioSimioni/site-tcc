@@ -47,7 +47,7 @@ if($_SESSION['adm'] == false) {
                         <p>Crie uma notícia que poderá ser vista na home do site</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="./noticiaEditar.php">
                     <div class="cards">
                         <h3>Editar Notícia</h3>
                         <p>Edite dados de uma notícia</p>
