@@ -41,7 +41,7 @@ $banco = new BancoBD;
 
                     $banco->conectar(); //Faz a conexão com o banco
 
-                    if($u->msgErro == ""){
+                    if($banco->msgErro == ""){
 
                         if($senha == $confirmarSenha){
                             
