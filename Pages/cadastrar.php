@@ -41,7 +41,7 @@ $banco = new BancoBD;
 
                     $banco->conectar(); //Faz a conexão com o banco
 
-                    if($u->msgErro == ""){
+                    if($banco->msgErro == ""){
 
                         if($senha == $confirmarSenha){
                             
@@ -103,6 +103,12 @@ $banco = new BancoBD;
         </footer>
 
     </div>
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 
 </body>
 </html>
