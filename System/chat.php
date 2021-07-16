@@ -1,7 +1,7 @@
 <?php
 require "usuario.php";
-$u = new Usuario;
-$u->conectar();
+$banco = new BancoBD;
+$banco->conectar();
 
 $sql = $pdo->query("SELECT * FROM `chat-geral` ORDER BY id_mensagem");
 

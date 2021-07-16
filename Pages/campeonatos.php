@@ -1,7 +1,9 @@
 <?php
-require "../User/usuario.php";
-$u = new Usuario;
-$u->conectar();
+require "../System/classes.php";
+$user = new Usuario;
+$banco = new BancoBD;
+
+$banco->conectar();
 
 if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     echo "<script> alert('Falha na autenticação de usuário!')</script>";    

@@ -1,6 +1,7 @@
 <?php
-require_once "../User/usuario.php";  //  Importo o arquivo usuario.php
-$u = new Usuario;   // Crio um objeto de Usuario
+require_once "../System/classes.php";  //  Importo o arquivo usuario.php
+$user = new Usuario;   // Crio um objeto de Usuario
+$banco = new BancoBD;
 
 ?>
 
@@ -38,13 +39,13 @@ $u = new Usuario;   // Crio um objeto de Usuario
 
                 if(!empty($usuario) && !empty($email) && !empty($senha) && !empty($confirmarSenha)){
 
-                    $u->conectar(); //Faz a conexão com o banco
+                    $banco->conectar(); //Faz a conexão com o banco
 
                     if($u->msgErro == ""){
 
                         if($senha == $confirmarSenha){
                             
-                            if($u->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
+                            if($user->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
                                 
                                 ?>
                                 <div id="msg-sucesso">
