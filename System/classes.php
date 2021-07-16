@@ -34,6 +34,7 @@ class BancoBD{
             return true;
         }catch(PDOException $e){  // o Erro do PDO = $e
             $msgErro = $e->getMessage();
+            return false;
         }
     }
 
@@ -126,6 +127,38 @@ class Noticia{
         }
     }
 
+    public function salvarImagemNoticia($id_noticia, $imagem){
+
+    }
+
+    public function pegarNoticia($id_noticia){
+
+    }
+
+    public function selecionarNoticias(){
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM noticia");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            
+            while($row = $sql->fetch()){
+                echo "<tr>";
+                $id_noticia = $row['id_noticia'];
+                echo "<td>".$row['id_noticia']."</td>";
+                echo "<td>".$row['titulo']."</td>";
+                echo "<td><a href='noticiaEditar.php?idnoticia=$id_noticia'>Editar</a></td>";
+                echo "<td><a href='noticiaExcluir.php?idnoticia=$id_noticia'>Excluir</a></td>";
+                echo "</tr>";
+            }
+
+        }else{
+
+        }
+
+    }
+
     public function editarNoticia ($id_noticia, $titulo, $descricao){
         global $pdo;
     }
@@ -134,8 +167,14 @@ class Noticia{
     public function excluirNoticia ($id_noticia){
         global $pdo;
 
-        $sql=$pdo->prepare( "DELETE FROM `noticia` WHERE `noticia`.`id_noticia` = '$id_noticia'");
+        $sql=$pdo->prepare( "DELETE FROM `noticia` WHERE `id_noticia` = '$id_noticia'");
         $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

@@ -9,8 +9,6 @@
      global $pdo;
         $sql=$pdo->prepare("SELECT * FROM noticia");
         $sql->execute();
-        
-
 
 ?>
 
@@ -28,6 +26,7 @@
     <?php
         include "../Templates/cabecalho.php";
     ?>
+
     
     <table border="1">
      <tr>
@@ -52,7 +51,6 @@
 <?php } ?>
  
 </table>
-
 
 
     <?php
