@@ -46,21 +46,15 @@ if($_SESSION['adm'] == false) {
                 <a href="../Noticia/noticiaCadastro.php">
                     <div class="cards">
                         <h3>Nova Notícia</h3>
-                        <p>Crie uma notícia que poderá ser vista na home do site</p>
+                        <p>Crie uma notícia que poderá ser vista na home do site.</p>
                     </div>
                 </a>
-                <a href="../Noticia/noticiaEditar.php">
+                <a href="../Noticia/noticiaSelecionar.php">
                     <div class="cards">
-                        <h3>Editar Notícia</h3>
-                        <p>Edite dados de uma notícia</p>
+                        <h3>Selecionar Notícia</h3>
+                        <p>Selecione uma notícia para editar ou excluir.</p>
                     </div>
-                </a>
-                <a href="../Noticia/noticiaExcluir.php">
-                    <div class="cards">
-                        <h3>Excluir Notícia</h3>
-                        <p>Exclua totalmente os dados da notícia que desejar</p>
-                    </div>
-                </a>
+                </a> 
             </div>
         </section>
 
