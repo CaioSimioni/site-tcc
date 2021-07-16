@@ -1,14 +1,13 @@
 <?php
-    require "../User/usuario.php";
-    $u = new Usuario;
-    $u->conectar();
-
-    require "../Noticia/noticia.php";
-    $new = new Noticia;
-
+     require "../System/classes.php";
+     $user = new Usuario;
+     $banco = new BancoBD;
+ 
+     $banco->conectar();
+ 
         global $pdo;
-        $consultar="SELECT id_noticia FROM noticia";
-        $con=$pdo->query($consultar) or die($pdo->error);
+        $sql=$pdo->prepare("SELECT id_noticia FROM noticia");
+        $sql->execute();
         
 
 
@@ -32,20 +31,21 @@
     <table border="1">
      <tr>
       <td> Codigo</td>
-      <td> titulo </td>
-      <td> fonte </td>
-      <td> Data de Upload </td>
+      <td> Fonte </td>
+      <td> Data </td>
+      <td>descricao</td>
+      <td> titulo</td>
       <td> Imagem </td>
-      <td> Descricao </td>
     </tr> 
- <?php  while($dado=$con->fetch_array()){  ?>
+ <?php  while($dado=$sql->fetch_array()){  ?>
      <tr>
      <td><?php echo $dado['id_noticia']; ?> </td>
-     <td> <?php echo $dado['titulo']; ?></td>
      <td> <?php echo $dado['fonte']; ?></td>
-     <td> <?php echo $dado['data']; ?> </td>
-     <td> <?php echo $dado['imagem']; ?> </td>
+     <td> <?php echo date("d/m/Y",strtotime($dado['data']));  ?> </td>
      <td> <?php echo $dado['descricao']; ?> </td>
+     <td> <?php echo $dado['titulo']; ?></td>
+     <td> <?php echo $dado['imagem']; ?> </td>
+   
  </tr>
 <?php } ?>
  
