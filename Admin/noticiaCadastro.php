@@ -1,10 +1,10 @@
 <?php
-    require "../User/usuario.php";
-    $u = new Usuario;
-    $u->conectar();
+    require "../System/classes.php";
+    $user = new Usuario;
+    $banco = new BancoBD;
 
-    require "../Noticia/noticia.php";
-    $new = new Noticia;
+    $banco->conectar();
+
 ?>
 
 <!DOCTYPE html>

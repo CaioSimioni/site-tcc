@@ -1,6 +1,7 @@
 <?php
-    require "./User/usuario.php";    // Importo o arquivo usuario.php
-    $u = new Usuario; // Cria um objeto de Usuario
+    require "./System/classes.php";    // Importo o arquivo usuario.php
+    $banco = new BancoBD;
+    $user = new Usuario; // Cria um objeto de Usuario
 
     if(isset($_SESSION['codigo_usuario']) ){
         echo "<script> window.location.href='./Pages/home.php' </script>";
@@ -69,11 +70,11 @@
                         // Verifica se os campos estão vazios
                         if(!empty($usuario) && !empty($senha)){
                             
-                            $u->conectar(); //Faz a conexão com o banco
+                            $banco->conectar(); //Faz a conexão com o banco
                             
-                            if($u->msgErro == ""){  // Verifica se o retorno foi uma mensagem de erro
+                            if($banco->msgErro == ""){  // Verifica se o retorno foi uma mensagem de erro
                                 
-                                if($u->entrarUsuario($usuario, $senha)){
+                                if($user->entrarUsuario($usuario, $senha)){
                                     
                                     echo "<script> window.location.href='./Pages/home.php' </script>";
                                     exit;

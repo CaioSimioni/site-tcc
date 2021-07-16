@@ -1,10 +1,9 @@
 <?php
-    require "../User/usuario.php";
-    $u = new Usuario;
-    $u->conectar();
-
-    require "../Noticia/noticia.php";
+    require "../System/classes.php";
+    $user = new Usuario;
+    $banco = new BancoBD;
     $new = new Noticia;
+
     global $pdo;
 
     $id_noticia = addslashes($_POST['id_noticia']);  

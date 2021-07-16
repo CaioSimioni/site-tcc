@@ -2,9 +2,7 @@
 // Origem do código: https://youtube.com/playlist?list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
 session_start();
 
-Class Usuario{
-    private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
-    public $msgErro = "";
+class BancoBD{
 
     //  Testa a conexão com o banco de dados
     public function conectar(){
@@ -36,6 +34,12 @@ Class Usuario{
             $msgErro = $e->getMessage();
         }
     }
+
+}
+
+Class Usuario{
+    private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
+    public $msgErro = "";
 
     public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha){
         global $pdo;
@@ -88,6 +92,49 @@ Class Usuario{
         }else{
             return false; //Login não funcionou.
         }
+    }
+
+}
+
+class Noticia{
+    private $pdo;
+    public $msgError = "";
+
+    /*
+        Atribudos Notícia
+        * id_noticia
+        * titulo
+        * descricao
+        * fonte
+        * path_imagem
+        * data
+    */
+
+    public function cadastrarNoticia ($titulo , $descricao, $fonte, $data, $imagem){
+        global $pdo;
+        
+        $sql = $pdo->prepare("INSERT INTO `noticia`(`fonte`,`data`,`descricao`,`titulo`,`imagem`) VALUES($fonte, :d, $descricao, $titulo, :i)");
+        $sql->bindValue(":d", strval($data));
+        $sql->bindValue(":i", strval($imagem));
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function editarNoticia ($id_noticia, $titulo, $descricao){
+        global $pdo;
+    }
+
+
+    public function excluirNoticia ($id_noticia){
+        global $pdo;
+
+        $sql=$pdo->prepare( "DELETE FROM `noticia` WHERE `noticia`.`id_noticia` = '$id_noticia'");
+        $sql->execute();
     }
 
 }
