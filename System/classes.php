@@ -149,7 +149,7 @@ class Noticia{
                 echo "<td>".$row['id_noticia']."</td>";
                 echo "<td>".$row['titulo']."</td>";
                 echo "<td><a href='noticiaEditar.php?idnoticia=$id_noticia'>Editar</a></td>";
-                echo "<td><a href='noticiaExcluir.php?idnoticia=$id_noticia'>Excluir</a></td>";
+                echo "<td><a href='deletaNoticia.php?idnoticia=$id_noticia'>Excluir</a></td>";
                 echo "</tr>";
             }
 

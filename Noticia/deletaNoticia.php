@@ -6,9 +6,9 @@
 
     $banco->conectar();
 
-$cod = $_GET['cod'];
+$cod = $_GET['idnoticia'];
 $sql=$pdo->prepare( "DELETE FROM `noticia` WHERE `noticia`.`id_noticia` = '$cod'");
 $sql->execute();
-echo "<script>window.location.href='noticiaEditar.php'</script>";
+echo "<script>window.location.href='noticiaSelecionar.php'</script>";
 ?>
 
