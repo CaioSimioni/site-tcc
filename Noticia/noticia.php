@@ -15,6 +15,7 @@ class Noticia{
     */
     
 
+
     public function cadastrarNoticia ($titulo , $descricao, $fonte, $data){
         
         global $pdo;
@@ -24,7 +25,8 @@ class Noticia{
 
     public function editarNoticia ($id_noticia, $titulo, $descricao){
         global $pdo;
-    }
+
+
 
     public function excluirNoticia ($id_noticia){
     global $pdo;

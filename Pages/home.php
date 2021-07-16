@@ -19,76 +19,14 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Css/style_home.css">
-
-<script type="text/javascript">
-
-    function ajax(){
-
-        var req = new XMLHttpRequest();
-        req.onreadystatechange = function(){
-
-            if(req.readyState == 4 && req.status == 200){
-                document.getElementById('chat-mensagens').innerHTML = req.responseText;
-            }
-        }
-        req.open('GET', '../User/chat.php', true)
-        req.send();
-    }
-
-    setInterval(function(){ajax();}, 1000)
-
 </script>
 
 </head>
-<body onload="ajax()">
+<body>
     <?php
         include "../Templates/cabecalho.php";
     ?>
     <div id="global">
-
-        <div id="chat">
-
-            <h1>Chat geral</h1>
-            <div id="chat-mensagens">
-
-            </div>
-            <form method="POST" action="home.php">
-                <input placeholder="Diga ola :D" type="text" name="mensagem" maxlength="100">
-                <input type="submit" valeu="Enviar">
-            </form>
-            <?php
-                $idUsuario = $_SESSION['codigo_usuario'];
-                $nomeUsuario = $_SESSION['nome_usuario'];
-                $msgUsuario = isset($_POST['mensagem']) ? $_POST['mensagem'] : NULL;
-                /* 
-                Se exitir $_POST['mensagem'] receba $_POST['mensagem'] senão receba NULL
-                Poderia colocar ->  $msgUsuario = $_POST['mensagem'] ?? NULL;
-                mas para sumir o erro quefica tanto no leitor de PHP do VSCode dexei desse jeito  mesmo.
-                */
-
-                if($msgUsuario){
-                    $sql = $pdo->query("INSERT INTO `chat-geral` (`id_usuario`, `nome_usuario`, `mensagem`) VALUES ('$idUsuario', '$nomeUsuario', '$msgUsuario')");
-                    $_POST['mensagem'] = NULL;
-                    $msgUsuario = NULL;
-                }
-
-                
-
-            ?>
-
-        </div>
-
-
-        <div id="conteudo">
-            <h1>Noticias Mais Recentes</h1>
-            <div class="noticia">
-                <h1>Nova temporada Apex Legends</h1> <!--Titulo da notica-->
-                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt=""> <!--Imagem da notica-->
-                <p>Nova temporada do apex legends chega cheia de bugs e erros</p><!--Descrição da notica-->
-            </div>
-            
-        </div>
-
     </div>
     <?php
         include "../Templates/rodape.php";
