@@ -115,7 +115,7 @@ class Noticia{
     public function cadastrarNoticia ($titulo , $descricao, $fonte, $data, $imagem){
         global $pdo;
         
-        $sql = $pdo->prepare("INSERT INTO `noticia` (`id_noticia`, `fonte`, `data`, `descricao`, `titulo`, `imagem`) VALUES ('', '$fonte', :d, '$descricao', '$titulo', '$imagem');");
+        $sql = $pdo->prepare("INSERT INTO `noticia` (`fonte`, `data`, `descricao`, `titulo`, `imagem`) VALUES ('$fonte', :d, '$descricao', '$titulo', '$imagem');");
         $sql->bindValue(":d", strval($data));
         $sql->execute();
 
