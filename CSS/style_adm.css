@@ -1,50 +1,64 @@
 
 *{
     box-sizing: border-box;
+    font-family: "Raleway";
+    overflow-x: hidden
+;
 }
 
-.sec {
-    width: 70%;
+section {
+    margin: 50px auto 190px;
+    text-align: center;
+}
+section h1 {
+    font-size: 40px;
+}
+
+section .cards {
+    display: flex;
+    justify-content: space-around;
     height: auto;
-    padding: 30px;
+}
+section .cards .box {
+    width: 25%;
+    margin: 20px;
+    height: auto;
     background: #1a1922;
-    margin: 130px auto;
-    border-radius: 7px;
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+section .cards .box .title {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+section .cards .box .objs {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
     align-items: center;
-    justify-content: space-around;
-    color: white;
-    font-family: "Raleway";
+    gap: 20px;
 }
-.sec h1 {
-    font-size: 35px;
-    margin-bottom: 30px;
-}
-.sec .box {
+section .cards .box .objs .item {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+    text-align: left;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 900;
+    gap: 5px;
+    width: 90%;
     height: auto;
-    
-}
-.sec .box a {
-    text-decoration: none;
-    color: white;
-    width: 30%;
-    height: auto;
-    min-height: 20%;
     padding: 15px;
-    box-shadow: 0px 4px 6px black;
-    background-color: #2c2a33;
+    background: rgb(17, 49, 87, 0.6);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
     border-radius: 4px;
-    margin: 10px;
+    cursor: pointer;
 }
-.sec .box a .cards h3 {
-    font-size: 22px;
+section .cards .box .objs .novo {
+    background: rgba(10, 122, 44, 0.6);
 }
-.sec .box a .cards p {
-    margin-top: 5px;
-    margin-left: 5px;
+
+section .cards .box .objs #sele-esports {
+    font-size: 15px;
 }

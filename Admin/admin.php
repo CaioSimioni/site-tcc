@@ -29,7 +29,7 @@ if($_SESSION['adm'] == false) {
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Css/style_adm.css">
 
-    <script src=""></script>
+    <script src="../Js/adm.js"></script>
 
 
 
@@ -40,78 +40,82 @@ if($_SESSION['adm'] == false) {
     ?>
 
     <div class="global">
-        <section class="sec">
-            <h1>Funções De Notícias</h1>
-            <div class="box">
-                <a href="../Noticia/noticiaCadastro.php">
-                    <div class="cards">
-                        <h3>Nova Notícia</h3>
-                        <p>Crie uma notícia que poderá ser vista na home do site.</p>
-                    </div>
-                </a>
-                <a href="../Noticia/noticiaSelecionar.php">
-                    <div class="cards">
-                        <h3>Selecionar Notícia</h3>
-                        <p>Selecione uma notícia para editar ou excluir.</p>
-                    </div>
-                </a> 
-            </div>
-        </section>
+        <section>
+            <h1>Moderação</h1>
+            <div class="cards">
 
-        <section class="sec">
-            <h1>Funções De Campeonatos</h1>
-            <div class="box">
-                <a href="">
-                    <div class="cards">
-                        <h3>Novo Campeonato</h3>
-                        <p>Crie um campeonato que poderá ser visto na haba E-sports do site</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="cards">
-                        <h3>Editar Campeonato</h3>
-                        <p>Edite dados de um campeonato</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="cards">
-                        <h3>Excluir Campeonato</h3>
-                        <p>Exclua totalmente os dados de um campeonato que desejar</p>
-                    </div>
-                </a>
-            </div>
-        </section>
+                <div class="box">
+                    <p class="title">Usuario</p>
+                    <div class="objs">
 
-        <section class="sec">
-            <h1>Funções Sobre Usuários</h1>
-            <div class="box">
-                <a href="">
-                    <div class="cards">
-                        <h3>Novo Usuario</h3>
-                        <p>Crie um usuário que poderá ter as informações que você colocar</p>
+                        <div class="item novo" id="new-usuario">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/></g></g></svg>
+                            <p>Novo Usuários</p>
+                        </div>
+
+                        <div class="item sele" id="sele-usuario">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <p>Selecionar Usuários</p>
+                        </div>
+
                     </div>
-                </a>
-                <a href="">
-                    <div class="cards">
-                        <h3>Editar Usuário</h3>
-                        <p>Edite dados de um usuário</p>
+                </div>
+
+                <div class="box">
+                    <p class="title">Noticias</p>
+                    <div class="objs">
+
+                        <div onclick="newNot()" class="item novo" id="new-not">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/></g></g></svg>
+                            <p>Nova Noticias</p>
+                        </div>
+
+                        <div onclick="seleNot()" class="item sele" id="sele-not">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <p>Selecionar Noticias</p>
+                        </div>
+
                     </div>
-                </a>
-                <a href="">
-                    <div class="cards">
-                        <h3>Excluir Usuário</h3>
-                        <p>Exclua totalmente os dados de um usuário que desejar</p>
+                </div>
+
+                <div class="box">
+                    <p class="title">E-Sports</p>
+                    <div class="objs">
+
+                        <div class="item novo" id="new-esports">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/></g></g></svg>
+                            <p>Novo Campeonato</p>
+                        </div>
+
+                        <div class="item sele" id="sele-esports">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <p>Selecionar Campeonato</p>
+                        </div>
+
                     </div>
-                </a>
-                <a href="">
-                    <div class="cards">
-                        <h3>Banir Usuário</h3>
-                        <p>Dê banimento em um usuário que desejar</p>
+                </div>
+
+                <div class="box">
+                    <p class="title">Tópicos</p>
+                    <div class="objs">
+                        
+                        <div class="item novo" id="new-topicos">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/></g></g></svg>
+                            <p>Novo Tópicos</p>
+                        </div>
+
+                        <div class="item" id="sele-topicos">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <p>Selecionar de Tópicos</p>
+                        </div>
+
                     </div>
-                </a>
+                </div>
+
             </div>
+            
+            
         </section>
-        
     </div>
 
     <?php

@@ -138,26 +138,25 @@ class Noticia{
     public function selecionarNoticias(){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * FROM noticia");
+        $sql = $pdo->prepare("SELECT * FROM `noticia` ORDER BY `noticia`.`id_noticia` DESC");
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            
             while($row = $sql->fetch()){
-                echo "<tr>";
+                echo "<tr class='conteudo'>";
                 $id_noticia = $row['id_noticia'];
                 echo "<td>".$row['id_noticia']."</td>";
                 echo "<td>".$row['titulo']."</td>";
                 echo "<td>".$row['data']."</td>";
-                echo "<td><a href='noticiaEditar.php?idnoticia=$id_noticia'>Editar</a></td>";
-                echo "<td><a href='deletaNoticia.php?idnoticia=$id_noticia'>Excluir</a></td>";
+                echo "<td class='func'><a class='editar' href='noticiaEditar.php?idnoticia=$id_noticia'>Editar</a>";
+                echo "<a class='excluir' href='deletaNoticia.php?idnoticia=$id_noticia'>Excluir</a></td>";
                 echo "</tr>";
             }
+            return true;
 
         }else{
-
+            return false;
         }
-
     }
 
     public function editarNoticia ($id_noticia, $titulo, $descricao){

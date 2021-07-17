@@ -55,7 +55,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="../Css/style_noticiaADM.css">
+    <link rel="stylesheet" href="../Css/style_newNoticia.css">
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -65,11 +65,11 @@
     <div id="global">
         <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia">
             <h1>Nova notícia</h1>
-            <p class="atrib_noticia">Título: <input    type="text" id="newNoticia_titulo"    name="titulo"    ></p> 
-            <p class="atrib_noticia">Descrição: <input type="text" id="newNoticia_descricao" name="descricao" ></p>
-            <p class="atrib_noticia">Fonte: <input     type="text" id="newNoticia_fonte"     name="fonte"     ></p>
-            <p class="atrib_noticia">Data: <input      type="date" id="new_noticia_data"     name="data"      ></p>
-            <p class="atrib_noticia">Imagem: <input    type="file" id="newNoticia_imagem"    name="imagem"    ></p>
+            <input placeholder="Título" type="text" id="newNoticia_titulo"    name="titulo">
+            <textarea placeholder="Descrição" name="descricao"></textarea>
+            <input placeholder="Fonte" type="text" id="newNoticia_fonte"     name="fonte">
+            <input type="date" id="new_noticia_data"     name="data">
+            <input type="file" id="newNoticia_imagem"    name="imagem"    >
             <input type="submit" class="atrib_noticia" id="newNoticia_submit">
         </form>
         <div id="mensagem"></div>

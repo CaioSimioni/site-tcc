@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="../Css/style_noticiaADM.css">
+    <link rel="stylesheet" href="../Css/style_noticiaSeleciona.css">
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -21,22 +21,27 @@
         include "../Templates/cabecalho.php";
     ?>
     <div id="global">
-        <table border="1">
-            <tr>
-                <td> Codigo</td>
-                <td> titulo</td>
-                <td> Data </td>
-            </tr> 
-            <?php
-                if($banco->conectar()){
+        <table>
+            <thead>
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Título</strong></td>
+                    <td><strong>Data</strong></td>
+                    <td><strong>Funções</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    if($banco->conectar()){
 
-                    $new->selecionarNoticias();
+                        $new->selecionarNoticias();
 
-                }else{
-                    echo "<script> alert('Não foi possível conectar-se ao Banco') ;</script>";
-                    echo "<script> window.location.href = '../Admin/admin.php'</script>";
-                }
-            ?>
+                    }else{
+                        echo "<script> alert('Não foi possível conectar-se ao Banco') ;</script>";
+                        echo "<script> window.location.href = '../Admin/admin.php'</script>";
+                    }
+                ?>
+            </tbody>
         </table>
     </div>
     <?php
