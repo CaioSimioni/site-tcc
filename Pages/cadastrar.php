@@ -26,7 +26,7 @@ $banco = new BancoBD;
                     <li><a href="../index.php">Início</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../Pages/sobre_nos.html"><button>Sobre nós</button></a>
+            <a class="cta" href="../Pages/sobre_nos.php"><button>Sobre nós</button></a>
         </header>
 
         <?php
@@ -90,7 +90,7 @@ $banco = new BancoBD;
                 </form>
             </div>
         
-        <!-- Rodapé do site -->
+        <!-- Rodapé do site 
         <footer id="final">
             <img src="../Materials/polo_logo_white@2x.png">
             <span>&copy;Copyright POLO-2021</span>
@@ -101,6 +101,12 @@ $banco = new BancoBD;
                 <li><a href="">aqui são redes sociais</a></li>
             </ul>
         </footer>
+
+        -->
+
+        <?php
+            include "../Templates/rodape.php"
+        ?>
 
     </div>
 
