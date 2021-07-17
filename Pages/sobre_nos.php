@@ -63,22 +63,7 @@ session_start();
         </div>
         <?php
             
-            if (isset($_SESSION['logged'])) {
-                include "../Templates/rodape.php";
-            }else{
-                ?>
-                <footer id="final">
-                    <img src="../Materials/polo_logo_white@2x.png">
-                    <span>&copy;Copyright POLO-2021</span>
-                    <ul>
-                        <li><a href="../Pages/sobre_nos.html">Sobre nós</a></li>
-                        <li><a href="">Fale conosco </a></li>
-                        <li><a href="">Política de privacidade </a></li>
-                        <li><a href="">aqui são redes sociais</a></li>
-                    </ul>
-                </footer>
-                <?php
-            }
+            include "../Templates/rodape.php";
         ?>
     </div>
 </body>
