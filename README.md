@@ -4,7 +4,7 @@
     * Caio
     * Felipe Augusto
     * Fernando
-    * Giselli
+    * Giselle
     * Gustavo Menezes
     Da turma de 3º ETIM de Desenvolvimento de sistemas da escola ETEC Tenente Aviador Gustavo Klug no ano de 2021.
 
