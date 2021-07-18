@@ -1,4 +1,4 @@
-# site-tcc
+# Projeto de TCC, site Polo
 
     Link para o site Polo: http://polo-main.atwebpages.com/
 
