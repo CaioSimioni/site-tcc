@@ -8,7 +8,7 @@
     * Gustavo Menezes
     Da turma de 3º ETIM de Desenvolvimento de sistemas da escola ETEC Tenente Aviador Gustavo Klug no ano de 2021.
 
-    O código do projeto é totalmente livre para fins educativos e de projetos sem fins lucrativos, sem assim o uso
+    O código do projeto é totalmente livre para fins educativos e de projetos sem fins lucrativos, sendo assim o uso
     proibido para fins comercias ou empresariais.
     O objetivo do TCC foi a simulação de uma empresa que deveria buscar contribuir para a sociedade utilizando 
     alguma forma de Software, contruído com base no que foi ensinado em sala de aula.  Por isso o site utiliza
