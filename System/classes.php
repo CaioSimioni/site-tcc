@@ -109,7 +109,7 @@ class Noticia{
         * titulo
         * descricao
         * fonte
-        * path_imagem
+        * imagem
         * data
     */
 
@@ -128,6 +128,9 @@ class Noticia{
     }
 
     public function salvarImagemNoticia($id_noticia, $imagem){
+        /*
+            Está função serve para salvar no banco de imagens na pasta Materials, a imagem atribuída a uma notícia.
+        */
 
     }
 

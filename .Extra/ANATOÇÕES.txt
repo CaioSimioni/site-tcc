@@ -5,7 +5,6 @@
      * Exportar os arquivos
 
 [Nóticias]
-     * Criar tabela no BD
      * Feed de notícias
      * Sistema de postagem de notícias
      

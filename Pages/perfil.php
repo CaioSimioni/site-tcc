@@ -18,7 +18,7 @@ $imagem = $_SESSION['imagem'];
 //acredito que aqui que esteja causando a falha do F5
 
 if(isset($_FILES['arquivo'])){
-    $extensao = strtolower(substr($_FILES['arquivo'] ['name'],-4));
+    $extensao = strtolower(substr($_FILES['arquivo'] ['name'], -4));
     $novo_nome = $cod_usu.$extensao;
     $diretorio = "../Materials/UsersAvatar/";
     $_SESSION['imagem'] = $novo_nome;
