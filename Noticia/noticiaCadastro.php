@@ -21,7 +21,7 @@
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : NULL;
     $fonte     = isset($_POST['fonte'])     ? $_POST['fonte']     : NULL;
     $data      = isset($_POST['data'])      ? $_POST['data']      : NULL;
-    $imagem    = isset($_POST['imagem'])    ? $_POST['imagem']    : NULL;
+    $imagem    = isset($_FILES['imagem'])    ? $_FILES['imagem']    : NULL;
 
     if($titulo && $descricao && $fonte && $data && $imagem){
 
@@ -30,7 +30,9 @@
             if($banco->conectar()){
 
                 if($noticia->cadastrarNoticia($titulo, $descricao, $fonte, $data, $imagem)){
+
                     echo "<script> alert('Notícia cadastrada com sucesso.');</script>";
+                    echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
 
                 }else{
                     echo "<script> alert('Não foi possível cadastrar a notícia.');</script>";
@@ -62,13 +64,15 @@
     <?php
         include "../Templates/cabecalho.php";
     ?>
+    
     <div id="global">
-        <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia">
-            <h1>Nova notícia</h1>
+        <h1>Nova notícia</h1>
+        <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia" enctype="multipart/form-data">
             <input placeholder="Título" type="text" id="newNoticia_titulo"    name="titulo">
-            <textarea placeholder="Descrição" name="descricao"></textarea>
+            <input placeholder="Descrição" type="text" id="newNoticia_descricao" name="descricao">
             <input placeholder="Fonte" type="text" id="newNoticia_fonte"     name="fonte">
             <input type="date" id="new_noticia_data"     name="data">
+            <label onclick="a()" id="btn" for="imagem"></label>
             <input type="file" id="newNoticia_imagem"    name="imagem"    >
             <input type="submit" class="atrib_noticia" id="newNoticia_submit">
         </form>
@@ -78,11 +82,18 @@
         include "../Templates/rodape.php";
     ?>
 
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+
+        let i = document.getElementById("newNoticia_imagem")
+        function a() {
+            i.click()
+        }
+    </script>
+
+
 
 </body>
 </html>

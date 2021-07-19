@@ -34,7 +34,11 @@
                 <?php
                     if($banco->conectar()){
 
-                        $new->selecionarNoticias();
+                        if($new->selecionarNoticias()){
+
+                        }else{
+                            echo "<script> document.getElementById(`global`).innerHTML = `<p id='nenhuma_noticia'> Nenhuma noticia cadastrada. <a href='noticiaCadastro.php' > Cadastrar noticia </a></p>`;</script>";
+                        }
 
                     }else{
                         echo "<script> alert('Não foi possível conectar-se ao Banco') ;</script>";
@@ -47,6 +51,8 @@
     <?php
         include "../Templates/rodape.php";
     ?>
+
+
 
 </body>
 </html>

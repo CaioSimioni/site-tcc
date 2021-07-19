@@ -1,5 +1,6 @@
-let label = document.getElementById("btn");
-let int = document.getElementById("file");
+
+
+
 function mostrarNomeImagem(){
     let name_arquivo_div = document.getElementById('nome-arquivo');
     let name_arquivo = document.getElementById('file').value;
