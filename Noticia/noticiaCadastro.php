@@ -73,7 +73,7 @@
             <input placeholder="Fonte" type="text" id="newNoticia_fonte"     name="fonte">
             <input type="date" id="new_noticia_data"     name="data">
             <label onclick="a()" id="btn" for="imagem"></label>
-            <input type="file" id="newNoticia_imagem"    name="imagem"    >
+            Somente .jpg<input type="file" id="newNoticia_imagem"    name="imagem"    >
             <input type="submit" class="atrib_noticia" id="newNoticia_submit">
         </form>
         <div id="mensagem"></div>

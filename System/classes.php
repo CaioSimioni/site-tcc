@@ -124,7 +124,7 @@ class Noticia{
 
         $arquivoExtensao = explode('.', $imagem['name']);
 
-        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'png' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' ){
+        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' ){
             move_uploaded_file($imagem['tmp_name'], '../Materials/ImagensNoticias/'.$imagem['name']);
             $imagemInserirda = true;
         }else{
