@@ -68,13 +68,30 @@
     <div id="global">
         <h1>Nova notícia</h1>
         <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia" enctype="multipart/form-data">
-            <input placeholder="Título" type="text" id="newNoticia_titulo"    name="titulo">
-            <input placeholder="Descrição" type="text" id="newNoticia_descricao" name="descricao">
-            <input placeholder="Fonte" type="text" id="newNoticia_fonte"     name="fonte">
-            <input type="date" id="new_noticia_data"     name="data">
-            <label onclick="a()" id="btn" for="imagem"></label>
-            Somente .jpg<input type="file" id="newNoticia_imagem"    name="imagem"    >
-            <input type="submit" class="atrib_noticia" id="newNoticia_submit">
+            <div class="campo div-title">
+                <p>Título</p>
+                <input type="text" id="newNoticia_titulo"    name="titulo">
+            </div>
+            <div class="campo div-descricao">
+                <p>Descrição</p>    
+                <textarea id="newNoticia_descricao" name="descricao"></textarea>
+            </div>
+            <div class="campo div-fonte">
+                <p>Fonte</p>
+                <input type="text" id="newNoticia_fonte"     name="fonte">
+            </div>
+            <p>Data</p>
+            <div class="campo div-data-file">
+                <input type="date" id="new_noticia_data"     name="data">
+                <label onclick="a()" for="imagem">Enviar Imagem</label>
+            </div>
+            <div class="campo div-nome-arquivo">
+                <div id="nome-arquivo">1382647fe3534eb1fde7cfb3fc2886b9.jpg</div>
+            </div>
+            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem" accept=".jpg">
+            <div class="campo div-submit">
+                <input type="submit" class="atrib_noticia" id="newNoticia_submit">
+            </div>
         </form>
         <div id="mensagem"></div>
     </div>
@@ -82,16 +99,7 @@
         include "../Templates/rodape.php";
     ?>
 
-    <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
-
-        let i = document.getElementById("newNoticia_imagem")
-        function a() {
-            i.click()
-        }
-    </script>
+    <script src="../Js/newNot.js"></script>
 
 
 

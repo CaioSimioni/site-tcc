@@ -1,5 +1,12 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
 #global {
     display: block;
+    font-family: "Raleway";
 }
 h1 {
     text-align: center;
@@ -16,20 +23,99 @@ form  {
     background: #1a1922;
     margin: 30px auto 70px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
 }
-form input {
-    width: 80%;
-    height: auto;
-    padding: 10px;
-    margin: 10px auto;
+.campo input {
+    width: 98%;
+    height: 30px;
+    padding: 1%;
+    margin: 5px 0 20px;
     border-radius: 4px;
+    font-size: 14px;
+    background: rgb(243, 243, 243);
+    border: 2px  solid rgba(0, 0, 0, 0.527);
 }
-form input {
-    min-width: 70%;
+#newNoticia_descricao {
+    border-radius: 4px;
+    max-width: 98%;
+    min-width: 98%;
+    min-height: 180px;
+    margin: 5px 0 20px;
+    padding: 1%;
+    background: rgb(235, 235, 235);
+    border: 2px  solid rgba(0, 0, 0, 0.527);
 }
-form input[type="date"] {
-    max-width: 30%;
+.campo input:focus {
+    transition: 300ms;
+    background: white;
+}
+#newNoticia_descricao:focus {
+    transition: 300ms;
+    background: white;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.div-data-file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-data-file input {
+    width: 40%;
+    margin: 0;
+}
+.div-data-file label {
+    width: 40%;
+    background: rgb(10, 122, 44);
+    height: 30px;
+    border-bottom: 5px solid rgb(8, 90, 33);
+    border-radius: 4px;
+    padding: 1%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 900;
+    cursor: pointer;
+}
+.div-data-file label:hover {
+    background-color: rgb(9, 95, 35);
+    border-bottom: 5px solid rgb(7, 68, 26);
+    transition: 300ms;
+}
+.div-submit {
+    margin: 30px auto 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.div-submit input {
+    margin: 0;
+    width: 42%;
+    font-size: 16px;
+    padding: 1%;
+    height: 45px;
+    background: rgb(23, 65, 117);
+    color: white;
+    border: none;
+    border-bottom: 5px solid rgb(16, 47, 85);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.div-submit input:hover {
+    background: rgb(17, 48, 87);
+    transition: 300ms;
+    border-bottom: 5px solid rgb(12, 35, 63);
+}
+.div-nome-arquivo {
+    display: flex;
+    justify-content: flex-end;
+}
+.div-nome-arquivo #nome-arquivo {
+    width: 42%;
+    height: auto;
+    margin-top: 10px;
 }

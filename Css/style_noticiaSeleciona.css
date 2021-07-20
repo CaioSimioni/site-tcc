@@ -9,7 +9,7 @@ table {
     height: auto;
     border-radius: 05px;
     color: black;
-    margin: 30vh auto;
+    margin: 20vh auto 45vh;
     background: var(--br);
     font-size: 18px;
     border-collapse: collapse;
