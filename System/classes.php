@@ -116,6 +116,9 @@ class Noticia{
     public function cadastrarNoticia ($titulo , $descricao, $fonte, $data, $imagem){
         global $pdo;
         $imagemInserirda = false;
+
+        $titulo = str_replace("'", "\'", $titulo);
+        $fonte = str_replace("'", "\'", $fonte);
         
         $arquivo = $imagem['name'];
         $sql = $pdo->prepare("INSERT INTO `noticia` (`fonte`, `data`, `descricao`, `titulo`, `imagem`) VALUES ('$fonte', :d, '$descricao', '$titulo', '$arquivo');");
