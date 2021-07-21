@@ -15,21 +15,7 @@ session_start();
 <body>
     <div id="global">
         <?php
-            if (isset($_SESSION['logged'])) {
-                include "../Templates/cabecalho.php";
-            }else{
-                ?>
-                <header class="header">
-                    <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
-                    <nav>
-                        <ul class="nav__links">
-                            <li><a href="../index.php">Início</a></li>
-                        </ul>
-                    </nav>
-                    <a class="cta" href="#"><button>Sobre nós</button></a>
-                </header>
-                <?php
-            }
+            include "../Templates/cabecalho.php";
         ?>
         <div class="div_principal">
             <div class="card">

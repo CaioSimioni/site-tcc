@@ -37,7 +37,7 @@
                         if($new->selecionarNoticias()){
 
                         }else{
-                            echo "<script> document.getElementById(`global`).innerHTML = `<p id='nenhuma_noticia'> Nenhuma noticia cadastrada. <a href='noticiaCadastro.php' > Cadastrar noticia </a></p>`;</script>";
+                            echo "<script> document.getElementById(`global`).innerHTML = `<p id='nenhuma_noticia'> Nenhuma noticia cadastrada -> <a href='noticiaCadastro.php' > Cadastrar noticia </a></p>`;</script>";
                         }
 
                     }else{

@@ -19,15 +19,9 @@ $banco = new BancoBD;
     <div id="global">
 
         <!-- Cabeçalho do site -->
-        <header class="header">
-            <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="../index.php">Início</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="../Pages/sobre_nos.php"><button>Sobre nós</button></a>
-        </header>
+        <?php
+            include "../Templates/cabecalho.php";
+        ?>
 
         <?php
             // verificar se clicou no  botao
