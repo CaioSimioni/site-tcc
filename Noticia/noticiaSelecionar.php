@@ -21,32 +21,34 @@
         include "../Templates/cabecalho.php";
     ?>
     <div id="global">
-        <table>
-            <thead>
-                <tr>
-                    <td><strong>ID</strong></td>
-                    <td><strong>Título</strong></td>
-                    <td><strong>Data</strong></td>
-                    <td><strong>Funções</strong></td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    if($banco->conectar()){
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <td><strong>ID</strong></td>
+                        <td><strong>Título</strong></td>
+                        <td class="data"><strong>Data</strong></td>
+                        <td><strong>Funções</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        if($banco->conectar()){
 
-                        if($new->selecionarNoticias()){
+                            if($new->selecionarNoticias()){
+
+                            }else{
+                                echo "<script> document.getElementById(`global`).innerHTML = `<p id='nenhuma_noticia'> Nenhuma noticia cadastrada -> <a href='noticiaCadastro.php' > Cadastrar noticia </a></p>`;</script>";
+                            }
 
                         }else{
-                            echo "<script> document.getElementById(`global`).innerHTML = `<p id='nenhuma_noticia'> Nenhuma noticia cadastrada -> <a href='noticiaCadastro.php' > Cadastrar noticia </a></p>`;</script>";
+                            echo "<script> alert('Não foi possível conectar-se ao Banco') ;</script>";
+                            echo "<script> window.location.href = '../Admin/admin.php'</script>";
                         }
-
-                    }else{
-                        echo "<script> alert('Não foi possível conectar-se ao Banco') ;</script>";
-                        echo "<script> window.location.href = '../Admin/admin.php'</script>";
-                    }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </section>
     </div>
     <?php
         include "../Templates/rodape.php";

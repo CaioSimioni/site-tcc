@@ -176,7 +176,7 @@ class Noticia{
                 $id_noticia = $row['id_noticia'];
                 echo "<td>".$row['id_noticia']."</td>";
                 echo "<td>".$row['titulo']."</td>";
-                echo "<td>".$row['data']."</td>";
+                echo "<td class='dataDb'>".$row['data']."</td>";
                 echo "<td class='func'><a class='editar' href='noticiaEditar.php?idnoticia=$id_noticia'>Editar</a>";
                 echo "<a class='excluir' href='deletaNoticia.php?idnoticia=$id_noticia'>Excluir</a></td>";
                 echo "</tr>";

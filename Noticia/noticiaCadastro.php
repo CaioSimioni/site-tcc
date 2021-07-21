@@ -83,12 +83,14 @@
             <p>Data</p>
             <div class="campo div-data-file">
                 <input type="date" id="new_noticia_data"     name="data">
-                <label onclick="a()" for="imagem">Enviar Imagem</label>
+                <div class="imagem">
+                    <label onclick="a()" for="imagem">Enviar Imagem</label>
+                    <div id="nome-arquivo">Nenhum Arquivo Selecionado</div>
+                </div>
             </div>
             <div class="campo div-nome-arquivo">
-                <div id="nome-arquivo"></div>
             </div>
-            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem" accept=".jpg">
+            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
             <div class="campo div-submit">
                 <input type="submit" class="atrib_noticia" id="newNoticia_submit">
             </div>

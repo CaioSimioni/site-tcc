@@ -59,13 +59,13 @@ input[type="file"] {
 
 .div-data-file {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 .div-data-file input {
     width: 40%;
-    margin: 0;
+    margin: 0px 0 20px;
+
 }
 .div-data-file label {
     width: 40%;
@@ -110,12 +110,8 @@ input[type="file"] {
     transition: 300ms;
     border-bottom: 5px solid rgb(12, 35, 63);
 }
-.div-nome-arquivo {
+.div-data-file .imagem {
     display: flex;
-    justify-content: flex-end;
-}
-.div-nome-arquivo #nome-arquivo {
-    width: 42%;
-    height: auto;
-    margin-top: 10px;
+    align-items: center;
+    gap: 10px;
 }

@@ -57,3 +57,16 @@ header{
 .header button:hover{
     background-color: rgb(17, 49, 87, 0.6);
 }
+
+@media (max-width: 1020px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    header img{
+        margin: 0 auto;
+    }
+}
