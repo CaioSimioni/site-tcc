@@ -25,7 +25,7 @@
 
     if($titulo && $descricao && $fonte && $data && $imagem){
 
-        if(!empty($titulo) || !empty($descricao) || !empty($fonte) || !empty($data) || !empty($imagem)){
+        if(!empty($titulo) or !empty($descricao) or !empty($fonte) or !empty($data) or !empty($imagem)){
 
             if($banco->conectar()){
 

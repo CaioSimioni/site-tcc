@@ -29,6 +29,8 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
         include "../Templates/cabecalho.php";
     ?>
     <div id="global">
+
+
     </div>
     <?php
         include "../Templates/rodape.php";
