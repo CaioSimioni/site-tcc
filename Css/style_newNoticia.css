@@ -18,11 +18,11 @@ form  {
     width: 50%;
     height: auto;
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.151);
     background: #1a1922;
     margin: 30px auto 70px;
-    padding: 20px;
+    padding: 30px;
 }
 .campo input {
     width: 98%;
