@@ -86,7 +86,7 @@
                 <label onclick="a()" for="imagem">Enviar Imagem</label>
             </div>
             <div class="campo div-nome-arquivo">
-                <div id="nome-arquivo">1382647fe3534eb1fde7cfb3fc2886b9.jpg</div>
+                <div id="nome-arquivo"></div>
             </div>
             <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem" accept=".jpg">
             <div class="campo div-submit">
