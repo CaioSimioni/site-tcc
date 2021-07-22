@@ -30,7 +30,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     ?>
     <div id="global">
 
-
+asdasdasdasdasdasd
     </div>
     <?php
         include "../Templates/rodape.php";

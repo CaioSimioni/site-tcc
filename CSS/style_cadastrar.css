@@ -6,63 +6,7 @@
     margin: 0px;
     outline: none;
 }
-
-/* ============= CABEÇALHO =============== */
-
-.header li,.header a,.header button{
-    font-family: "Fredoka One", cursive;
-    font-weight: 500;
-    font-size: 16px;
-    color: #e9ebf5;
-    text-decoration: none;
-}
-
-header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 30px 10%;
-    background-color: #1a1922;
-    flex-wrap: wrap;
-}
-
-.logo{
-    margin-right: auto;
-    width: 180px;
-    height: 60px;
-}
-
-.nav__links{
-    list-style: none;
-}
-
-.nav__links li{
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-.nav__links li a{
-    transition: all 0.3s ease 0s;
-}
-
-.nav__links li a:hover{
-    color: #30508b;
-}
-
-.header button{
-    padding: 9px 25px;
-    background-color: rgb(17, 49, 87, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.header button:hover{
-    background-color: rgb(17, 49, 87, 0.6);
-}
-
-.global {
+#global {
     justify-content: center;
 }
 
@@ -156,65 +100,8 @@ div.msg-erro{
     text-align: center;
 }
 
-@media only screen and (max-width: 1000px) {
-
-    #final {
-        display: inline;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1020px) {
+    .formulario {
+        width: 80%;
     }
-    #final span {
-        margin: 0 auto 0 auto;
-        margin-top: 30px;
-    }
-    
-}
-
-
-/*===============FINAL / FOOTER ================*/
-#final{
-    padding: 10px 10%;
-    background-color: #1a1922;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    bottom: 1px;
-}
-
-#final ul{
-    display: flex;
-    margin: auto;
-}
-
-#final ul li {
-    list-style: none;
-}
-
-#final ul li {
-    margin-left: 40px;
-}
-
-#final ul li a {
-    text-decoration: none;
-    color: white;
-    font-family: "Raleway", cursive;
-    font-weight: bold;
-    font-size: 10pt;
-}
-
-#final img {
-    width: 70px;
-    height: 25px;
-    /*margin-top: 20px;*/
-    margin-right: 10px;
-}
-
-#final ul li a:hover {
-    color: #30508b;
-    transition: 300ms ease;
-}
-
-#final span{
-    color: #f4f4f8;
-    font-size: 10pt;
 }

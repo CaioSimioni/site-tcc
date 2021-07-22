@@ -32,9 +32,7 @@ session_start();
                 <h1>Quem somos?</h1>
                 <p>
                     Toda a equipe é formata por: Caio, Felipe, Fernando, Giselle e Gustavo.
-                </p>
-                <p>
-                    Todos alunos do 3º ETIM de Desenvolvimento de Sistemas da escola ETEC Tenente Aviador Gustavo 
+                    Alunos do 3º ETIM de Desenvolvimento de Sistemas da escola ETEC Tenente Aviador Gustavo 
                     Klug no ano de 2021.
                 </p>
             </div>

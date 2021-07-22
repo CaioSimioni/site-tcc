@@ -127,3 +127,19 @@
     color: rgb(172, 30, 30);
     font-weight: 900;
 }
+
+@media (max-width: 1020px) {
+    #indroducao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    .formulario {
+        width: 60%;
+    }
+    .bem_vindo {
+        width: 60%;
+    }
+}

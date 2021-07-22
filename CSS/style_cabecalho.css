@@ -32,7 +32,7 @@ header{
 
 .nav__links li{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px;
     
 }
 
@@ -68,5 +68,18 @@ header{
     }
     header img{
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 770px) {
+    .nav__links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    header nav .nav__links li a{
+        font-size: 14pt;
     }
 }

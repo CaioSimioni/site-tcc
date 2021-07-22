@@ -15,22 +15,20 @@
     bottom: 1px;
 }
 
-#final ul{
+#final nav ul{
     display: flex;
     margin: auto;
     justify-content: center;
     align-items: center;
+    gap: 30px
 }
 
-#final ul li {
+#final nav ul li {
     list-style: none;
 }
 
-#final ul li {
-    margin-left: 40px;
-}
 
-#final ul li a {
+#final nav ul li a {
     text-decoration: none;
     color: white;
     font-family: "Raleway", cursive;
@@ -47,15 +45,36 @@
     width: 70px;
     height: 25px;
     /*margin-top: 20px;*/
-    margin-right: 10px;
 }
 
-#final ul li a:hover {
+#final nav ul li a:hover {
     color: #30508b;
     transition: 300ms ease;
 }
 
 #final span{
     color: #f4f4f8;
-    font-size: 10pt;
+    font-size: 12pt;
+}
+
+@media (max-width: 1020px) {
+    #final {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #final nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    #final nav ul li a{
+        font-size: 12pt;
+    }
+    #final img {
+        width: 125px;
+        height: 45px;
+    }
 }

@@ -24,7 +24,7 @@ section .cards .box {
     border-radius: 12px;
     padding: 20px;
     width: 20%;
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.767);
 }
 section .cards .box .title {
     font-size: 24px;
@@ -66,6 +66,7 @@ section .cards .box .objs .item {
         gap: 50px;
     }
     section .cards .box {
-        width: 50%;
+        width: 80%;
     }
+
 }
