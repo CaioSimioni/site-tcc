@@ -1,14 +1,12 @@
 <?php
-     require "../System/classes.php";
-     $user = new Usuario;
-     $banco = new BancoBD;
-     $new = new Noticia;
+    require "../System/classes.php";
+    $user = new Usuario;
+    $banco = new BancoBD;
+    $new = new Noticia;
 
-     $banco->conectar();
-   
-     global $pdo;
-        $sql=$pdo->prepare("SELECT * FROM noticia");
-        $sql->execute();
+    $banco->conectar();
+
+    
 
 ?>
 
