@@ -26,7 +26,7 @@
                 <thead>
                     <tr>
                         <td><strong>ID</strong></td>
-                        <td><strong>Título</strong></td>
+                        <td class="title"><strong>Título</strong></td>
                         <td class="data"><strong>Data</strong></td>
                         <td><strong>Funções</strong></td>
                     </tr>

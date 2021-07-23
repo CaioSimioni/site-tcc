@@ -19,39 +19,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
-    <link rel="stylesheet" href="../Css/style_noticiaADM.css">
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_noticiaEdita.css">
 </head>
 <body>
     <?php
         include "../Templates/cabecalho.php";
     ?>
 
-    
-    <table border="1">
-     <tr>
-      <td> Codigo</td>
-      <td> Fonte </td>
-      <td> Data </td>
-      <td>descricao</td>
-      <td> titulo</td>
-      <td> Imagem </td>
-    </tr> 
- <?php  while($dado=$sql->fetch()){  ?>
-     <tr>
-     <td><?php  echo $dado['id_noticia']; $not= $dado['id_noticia']; ?> </td>
-     <td> <?php echo $dado['fonte']; ?></td>
-     <td> <?php echo date("d/m/Y",strtotime($dado['data']));  ?> </td>
-     <td> <?php echo $dado['descricao']; ?> </td>
-     <td> <?php echo $dado['titulo']; ?></td>
-     <td> <?php echo $dado['imagem']; ?> </td>
-    <?php echo "<td><a href='deletaNoticia.php?cod=$not'>Excluir</a></td>" ?>
-   
- </tr>
-<?php } ?>
- 
-</table>
-
+    <div id="global">
+        <form action="" method="post">
+            <div class="campo div-title">
+                <p>Título</p>
+                <input type="text" id="newNoticia_titulo"    name="titulo">
+            </div>
+            <div class="campo div-descricao">
+                <p>Descrição</p>    
+                <textarea id="newNoticia_descricao" name="descricao"></textarea>
+            </div>
+            <div class="campo div-fonte">
+                <p>Fonte</p>
+                <input type="text" id="newNoticia_fonte"     name="fonte">
+            </div>
+            <p>Data</p>
+            <div class="campo div-data-file">
+                <input type="date" id="new_noticia_data"     name="data">
+                <div class="imagem">
+                    <label onclick="a()" for="imagem">Enviar Imagem</label>
+                    <div id="nome-arquivo">Nenhum Arquivo Selecionado</div>
+                </div>
+            </div>
+            <div class="campo div-nome-arquivo">
+            </div>
+            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
+            <div class="campo div-submit">
+                <input type="submit" class="atrib_noticia" id="newNoticia_submit">
+            </div>
+        </form>
+    </div>
 
     <?php
         include "../Templates/rodape.php";
