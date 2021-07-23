@@ -85,17 +85,17 @@
                 <input type="date" id="new_noticia_data"     name="data">
                 <div class="imagem">
                     <label onclick="a()" for="imagem">Enviar Imagem</label>
-                    <div id="nome-arquivo">Nenhum Arquivo Selecionado</div>
+                    <div id="nome-arquivo">Nenhum Arquivo Enviado</div>
                 </div>
             </div>
             <div class="campo div-nome-arquivo">
             </div>
             <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
             <div class="campo div-submit">
+                <a class="btn-voltar" href="../Admin/admin.php">Voltar</a>
                 <input type="submit" class="atrib_noticia" id="newNoticia_submit">
             </div>
         </form>
-        <div id="mensagem"></div>
     </div>
     <?php
         include "../Templates/rodape.php";

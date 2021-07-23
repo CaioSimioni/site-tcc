@@ -49,6 +49,7 @@
                 </tbody>
             </table>
         </section>
+        <button class="btn-voltar"><a href="../Admin/admin.php">Voltar</a></button>
     </div>
     <?php
         include "../Templates/rodape.php";

@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 #global {
     display: flex;
+    flex-direction: column;
 }
 
 section {
-    margin: 20vh auto 45vh;
+    margin-top: 20vh;
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 section table {
@@ -25,12 +28,14 @@ section table {
     margin: 0 auto;
 
 }
+
 section table thead tr td {
     border-collapse: collapse;
     border: 1px solid rgba(100, 100, 100, 0.356);
     background: #1a1922;
     color: white;
     padding: 15px;
+    
 }
 section table thead tr .title {
     min-width: 200px;
@@ -44,7 +49,6 @@ section table tbody tr td{
     border: 1px solid rgba(100, 100, 100, 0.356);
     padding: 10px;
     max-width: 800px;
-    word-wrap:break-word
 }
 
 section tbody tr:hover {
@@ -90,9 +94,27 @@ section tbody tr:hover {
 .title {
     max-width: 10%;
 }
-
+.btn-voltar {
+    width: 20%;
+    padding: 15px;
+    background: rgb(16, 133, 60);
+    border: none;
+    margin: 8vh auto 10vh;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.btn-voltar a{
+    color: white;
+    font-family: "Raleway";
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+}
 @media (max-width: 1215px) {
     section {
         overflow-x: scroll;
+    }
+    .btn-voltar {
+        width: 60%;
     }
 }
