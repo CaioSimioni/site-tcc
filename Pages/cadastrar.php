@@ -39,7 +39,7 @@ $banco = new BancoBD;
 
                         if($senha == $confirmarSenha){
                             
-                            if($user->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
+                            if($user->cadastrarUsuario($usuario, $email, $senha)){
                                 
                                 ?>
                                 <div id="msg-sucesso">
