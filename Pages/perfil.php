@@ -33,7 +33,7 @@ if(isset($_FILES['arquivo'])){
     //Usei o $pdo pq ele é basicamente a variável conexão.
         if($pdo->query($sql_code)){
             $msg = "foi";
-            echo "<script> window.location.href = '../User/reload.php' </script>";
+            echo "<script> window.location.href = '../System/reload.php' </script>";
         }else{
             $msg = "Arquivo na enviado com sucesso";
         }
