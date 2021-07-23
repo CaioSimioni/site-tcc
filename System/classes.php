@@ -44,7 +44,7 @@ Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
     public $msgErro = "";
 
-    public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha){
+    public function cadastrarUsuario($usuario, $email, $senha){
         global $pdo;
 
         $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
@@ -102,6 +102,7 @@ Class Usuario{
 class Noticia{
     private $pdo;
     public $msgError = "";
+    public $noticiaValues;
 
     /*
         Atribudos Notícia
@@ -160,6 +161,29 @@ class Noticia{
     }
 
     public function pegarNoticia($id_noticia){
+        global $pdo;
+        global $noticiaValues;
+        
+        $sql = $pdo->prepare("SELECT * FROM `noticia` WHERE `id_noticia` = '$id_noticia'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+
+            $dados = $sql->fetch();
+
+            $titulo_noticia = $dados['titulo'];
+            $descricao_noticia = $dados['descricao'];
+            $fonte_noticia = $dados['fonte'];
+            $data_noticia = $dados['data'];
+            $imagem_noticia = $dados['imagem'];
+
+            $noticiaValues = array($titulo_noticia, $descricao_noticia, $fonte_noticia, $data_noticia, $imagem_noticia);
+
+            return $noticiaValues;
+
+        }else{
+            return false;
+        }
 
     }
 

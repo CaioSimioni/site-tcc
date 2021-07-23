@@ -41,7 +41,7 @@ form  {
 }
 
 input[type="file"] {
-    display: none;
+    display: block;
 }
 
 .div-data-file {
