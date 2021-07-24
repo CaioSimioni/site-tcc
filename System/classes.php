@@ -1,4 +1,5 @@
 <?php
+/* Arquivo usuado para a orientação a objeto. */
 session_start();
 
 class BancoBD{
@@ -30,7 +31,7 @@ Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
     public $msgErro = "";
 
-    public function cadastrarUsuario($usuario, $email, $senha){
+    public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha){
         global $pdo;
 
         $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
@@ -49,13 +50,20 @@ Class Usuario{
                 return false; //Usuario já cadastrado
                 
             }else{
-                $sql = $pdo->prepare("INSERT INTO usuario(usuario, email, senha, imagem,data,adm) VALUES(:u, :e, :s,'icon.png',now()),0");
+                // $sql = $pdo->prepare("INSERT INTO `usuario`( `usuario`, `email`, `senha`, `imagem`, `data`, `adm`) VALUES(:u, :e, :s,'icon.png',now()),0");
 
+                $sql = $pdo->prepare("INSERT INTO `usuario` (`codigo_usuario`, `usuario`, `senha`, `email`, `adm`, `imagem`, `data`) VALUES (NULL, :u, :s, :e, 0, 'icon.png', now())");
                 $sql->bindValue(":u", $usuario);
                 $sql->bindValue(":e", $email);
                 $sql->bindValue(":s", md5($senha));
                 $sql->execute();
-                return true; //Novo usuário cadastrado.
+
+                if($sql->rowCount() > 0){
+                    return true; //Novo usuário cadastrado.
+                }else{
+                    return false; // Não foi possível cadastrar o usuário.
+                }
+                
             }
         }
     }
