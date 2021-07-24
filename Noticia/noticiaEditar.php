@@ -1,23 +1,63 @@
 <?php
+
     require "../System/classes.php";
     $user = new Usuario;
     $banco = new BancoBD;
     $new = new Noticia;
 
+    if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
+        echo "<script> alert('Falha na autenticação de usuário!')</script>";    
+        echo "<script>window.location.href='../index.php'</script>";
+        exit;
+    }
+
+    if($_SESSION['adm'] == false) {
+        echo "<script>alert('Você não tem permissão para entrar nesta área')</script>";
+        echo "<script>window.location.href='../index.php'</script>";
+        exit;
+    }
+
     $banco->conectar();
 
     $cod_noticia = isset($_GET['idnoticia']) ? $_GET['idnoticia'] : NULL;
 
-    if($cod_noticia){
-
-        $noticia = $new->pegarNoticia($cod_noticia);
-
+    if($cod_noticia){  
+        $noticia = $new->pegarNoticia($cod_noticia);    // Seleciona a notícia que será editada.
         $titulo_new     = isset($noticia[0]) ? $noticia[0] : NULL;
         $descricao_new  = isset($noticia[1]) ? $noticia[1] : NULL;
         $fonte_new      = isset($noticia[2]) ? $noticia[2] : NULL;
         $data_new       = isset($noticia[3]) ? $noticia[3] : NULL;
         $imagem_new     = isset($noticia[4]) ? $noticia[4] : NULL;
+    }
 
+    $titulo     = isset($_POST['titulo'])     ? $_POST['titulo']    : NULL;
+    $descricao  = isset($_POST['descricao'])  ? $_POST['descricao'] : NULL;
+    $fonte      = isset($_POST['fonte'])      ? $_POST['fonte']     : NULL;
+    $data       = isset($_POST['data'])       ? $_POST['data']      : NULL;
+    $imagem     = isset($_POST['imagem'])     ? $_POST['imagem']    : NULL;
+
+    if($titulo && $descricao && $fonte && $data && $imagem){
+
+        if(!empty($titulo) or !empty($descricao) or !empty($fonte) or !empty($data) or !empty($imagem)){
+
+            if($banco->conectar()){
+
+                if($noticia->editarNoticia($cod_noticia, $titulo, $descricao, $fonte, $data, $imagem)){
+
+                    echo "<script> alert('Notícia editada com sucesso.');</script>";
+                    echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
+
+                }else{
+                    echo "<script> alert('Não foi possível editar a notícia.');</script>";
+                }
+
+            }else{
+                echo "<script> alert('Impossível conectar com o Banco.');</script>";
+            }
+
+        }else{
+            echo "<script> alert('Preencha todos os campos!');</script>";
+        }
     }
 
 ?>
@@ -38,25 +78,25 @@
     ?>
 
     <div id="global">
-        <form action="" method="post">
+        <form action="noticiaEditar.php" method="POST" enctype="multipart/form-data">
             <div class="campo div-title">
                 <p>Título</p>
-                <input type="text" id="newNoticia_titulo" name="titulo" value="<?php echo $titulo_new;?>">
+                <input type="text" id="newNoticia_titulo" name="titulo" value="<?php if($titulo_new){echo $titulo_new;}?>">
             </div>
             <div class="campo div-descricao">
                 <p>Descrição</p>    
-                <textarea id="newNoticia_descricao" name="descricao"> <?php echo$descricao_new;?></textarea>
+                <textarea id="newNoticia_descricao" name="descricao"> <?php if($descricao_new){echo $descricao_new;}?></textarea>
             </div>
             <div class="campo div-fonte">
                 <p>Fonte</p>
-                <input type="text" id="newNoticia_fonte" name="fonte" value="<?php echo $fonte_new;?>">
+                <input type="text" id="newNoticia_fonte" name="fonte" value="<?php if($fonte_new){echo $fonte_new;}?>">
             </div>
             <p>Data</p>
             <div class="campo div-data-file">
-                <input type="date" id="new_noticia_data" name="data" value="<?php echo $data_new;?>">
+                <input type="date" id="new_noticia_data" name="data" value="<?php if($data_new){echo $data_new;}?>">
                 <div class="imagem">
                     <label onclick="a()" for="imagem">Enviar Imagem</label>
-                    <div id="nome-arquivo"><?php echo $imagem_new;?></div>
+                    <div id="nome-arquivo"><?php if($imagem_new){echo $imagem_new;}?></div>
                 </div>
             </div>
             <div class="campo div-nome-arquivo">
@@ -71,6 +111,8 @@
     <?php
         include "../Templates/rodape.php";
     ?>
+
+<script src="../Js/noticia.js"></script>
 
 </body>
 </html>

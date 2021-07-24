@@ -128,7 +128,7 @@ class Noticia{
 
         $arquivoExtensao = explode('.', $imagem['name']);
 
-        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' ){
+        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'png'){
             move_uploaded_file($imagem['tmp_name'], '../Materials/ImagensNoticias/'.$imagem['name']);
             $imagemInserirda = true;
         }else{
@@ -212,8 +212,32 @@ class Noticia{
         }
     }
 
-    public function editarNoticia ($id_noticia, $titulo, $descricao){
+    public function editarNoticia ($id_noticia, $titulo, $descricao, $fonte, $data, $imagem){
         global $pdo;
+        $imagemInserirda = false;
+
+        $titulo = str_replace("'", "\'", $titulo);
+        $fonte = str_replace("'", "\'", $fonte);
+        
+        $arquivo = $imagem['name'];
+        $sql = $pdo->prepare("UPDATE `noticia` SET `fonte` = '$fonte', `descricao` = '$descricao', `titulo` = '$titulo', `imagem` = '$arquivo' WHERE `noticia`.`id_noticia` = '$id_noticia'");
+        $sql->bindValue(":d", strval($data));
+        $sql->execute();
+
+        $arquivoExtensao = explode('.', $imagem['name']);
+
+        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'png'){
+            move_uploaded_file($imagem['tmp_name'], '../Materials/ImagensNoticias/'.$imagem['name']);
+            $imagemInserirda = true;
+        }else{
+            $imagemInserirda = false;
+        }
+
+        if($sql->rowCount() > 0 && $imagemInserirda){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 

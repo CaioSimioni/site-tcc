@@ -1,4 +1,5 @@
 <?php
+
     require "../System/classes.php";
     $user  = new Usuario;
     $noticia = new Noticia;
@@ -9,13 +10,12 @@
         echo "<script>window.location.href='../index.php'</script>";
         exit;
     }
-    
+
     if($_SESSION['adm'] == false) {
         echo "<script>alert('Você não tem permissão para entrar nesta área')</script>";
         echo "<script>window.location.href='../index.php'</script>";
         exit;
     }
-
 
     $titulo    = isset($_POST['titulo'])    ? $_POST['titulo']    : NULL;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : NULL;
@@ -90,7 +90,7 @@
             </div>
             <div class="campo div-nome-arquivo">
             </div>
-            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
+            <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem" accept=".png,.jpg,.jpeg">
             <div class="campo div-submit">
                 <a class="btn-voltar" href="../Admin/admin.php">Voltar</a>
                 <input type="submit" class="atrib_noticia" id="newNoticia_submit">
@@ -101,9 +101,7 @@
         include "../Templates/rodape.php";
     ?>
 
-    <script src="../Js/newNot.js"></script>
-
-
+    <script src="../Js/noticia.js"></script>
 
 </body>
 </html>
