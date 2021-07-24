@@ -30,36 +30,6 @@
         $imagem_new     = isset($noticia[4]) ? $noticia[4] : NULL;
     }
 
-    $titulo     = isset($_POST['titulo'])     ? $_POST['titulo']    : NULL;
-    $descricao  = isset($_POST['descricao'])  ? $_POST['descricao'] : NULL;
-    $fonte      = isset($_POST['fonte'])      ? $_POST['fonte']     : NULL;
-    $data       = isset($_POST['data'])       ? $_POST['data']      : NULL;
-    $imagem     = isset($_POST['imagem'])     ? $_POST['imagem']    : NULL;
-
-    if($titulo && $descricao && $fonte && $data && $imagem){
-
-        if(!empty($titulo) or !empty($descricao) or !empty($fonte) or !empty($data) or !empty($imagem)){
-
-            if($banco->conectar()){
-
-                if($noticia->editarNoticia($cod_noticia, $titulo, $descricao, $fonte, $data, $imagem)){
-
-                    echo "<script> alert('Notícia editada com sucesso.');</script>";
-                    echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
-
-                }else{
-                    echo "<script> alert('Não foi possível editar a notícia.');</script>";
-                }
-
-            }else{
-                echo "<script> alert('Impossível conectar com o Banco.');</script>";
-            }
-
-        }else{
-            echo "<script> alert('Preencha todos os campos!');</script>";
-        }
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -78,14 +48,15 @@
     ?>
 
     <div id="global">
-        <form action="noticiaEditar.php" method="POST" enctype="multipart/form-data">
+        <form action="editaNoticia.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="cod_noticia" value="<?php if($cod_noticia){echo $cod_noticia;}?>">
             <div class="campo div-title">
                 <p>Título</p>
                 <input type="text" id="newNoticia_titulo" name="titulo" value="<?php if($titulo_new){echo $titulo_new;}?>">
             </div>
             <div class="campo div-descricao">
                 <p>Descrição</p>    
-                <textarea id="newNoticia_descricao" name="descricao"> <?php if($descricao_new){echo $descricao_new;}?></textarea>
+                <textarea id="newNoticia_descricao" name="descricao"><?php if($descricao_new){echo$descricao_new;}?></textarea>
             </div>
             <div class="campo div-fonte">
                 <p>Fonte</p>

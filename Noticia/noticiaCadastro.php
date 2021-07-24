@@ -17,11 +17,11 @@
         exit;
     }
 
-    $titulo    = isset($_POST['titulo'])    ? $_POST['titulo']    : NULL;
-    $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : NULL;
-    $fonte     = isset($_POST['fonte'])     ? $_POST['fonte']     : NULL;
-    $data      = isset($_POST['data'])      ? $_POST['data']      : NULL;
-    $imagem    = isset($_FILES['imagem'])    ? $_FILES['imagem']    : NULL;
+    $titulo    = isset($_POST['titulo'])     ? $_POST['titulo']    : NULL;
+    $descricao = isset($_POST['descricao'])  ? $_POST['descricao'] : NULL;
+    $fonte     = isset($_POST['fonte'])      ? $_POST['fonte']     : NULL;
+    $data      = isset($_POST['data'])       ? $_POST['data']      : NULL;
+    $imagem    = isset($_FILES['imagem'])    ? $_FILES['imagem']   : NULL;
 
     if($titulo && $descricao && $fonte && $data && $imagem){
 
