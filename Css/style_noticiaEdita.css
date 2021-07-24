@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 #global{
     display: flex;
 }
@@ -10,6 +11,7 @@ form  {
     background: #1a1922;
     margin: 30px auto 70px;
     padding: 30px;
+    font-family: "Raleway";
 }
 .campo input {
     width: 98%;
@@ -48,6 +50,11 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
 }
+.div-data-file .imagem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
 .div-data-file input {
     width: 40%;
@@ -76,7 +83,7 @@ input[type="file"] {
 .div-submit {
     margin: 30px auto 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 .div-submit input {
@@ -96,4 +103,24 @@ input[type="file"] {
     background: rgb(17, 48, 87);
     transition: 300ms;
     border-bottom: 5px solid rgb(12, 35, 63);
+}
+
+.btn-voltar {
+    margin: 0;
+    width: 42%;
+    font-size: 16px;
+    height: 45px;
+    background: rgb(209, 62, 4);
+    color: white;
+    border: none;
+    border-bottom: 5px solid rgb(161, 46, 0);
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
 }

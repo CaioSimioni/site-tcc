@@ -70,19 +70,19 @@
         <form method="POST" action="noticiaCadastro.php" id="forms_newNoticia" enctype="multipart/form-data">
             <div class="campo div-title">
                 <p>Título</p>
-                <input type="text" id="newNoticia_titulo"    name="titulo">
+                <input type="text" id="newNoticia_titulo"    name="titulo" required>
             </div>
             <div class="campo div-descricao">
                 <p>Descrição</p>    
-                <textarea id="newNoticia_descricao" name="descricao"></textarea>
+                <textarea id="newNoticia_descricao" required name="descricao"></textarea>
             </div>
             <div class="campo div-fonte">
                 <p>Fonte</p>
-                <input type="text" id="newNoticia_fonte"     name="fonte">
+                <input type="text" id="newNoticia_fonte"  required   name="fonte">
             </div>
             <p>Data</p>
             <div class="campo div-data-file">
-                <input type="date" id="new_noticia_data"     name="data">
+                <input type="date" id="new_noticia_data"  required   name="data">
                 <div class="imagem">
                     <label onclick="a()" for="imagem">Enviar Imagem</label>
                     <div id="nome-arquivo">Nenhum Arquivo Enviado</div>

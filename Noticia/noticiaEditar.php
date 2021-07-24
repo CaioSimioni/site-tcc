@@ -74,6 +74,7 @@
             </div>
             <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
             <div class="campo div-submit">
+                <a class="btn-voltar" href="../Admin/admin.php">Voltar</a>
                 <input type="submit" class="atrib_noticia" id="newNoticia_submit">
             </div>
         </form>

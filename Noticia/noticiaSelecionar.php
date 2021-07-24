@@ -61,7 +61,6 @@
                 </tbody>
             </table>
         </section>
-        <a class="btn-voltar" href="../Admin/admin.php">Voltar</a>
     </div>
     <?php
         include "../Templates/rodape.php";
