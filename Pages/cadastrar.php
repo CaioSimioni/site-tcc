@@ -33,13 +33,11 @@ $banco = new BancoBD;
 
                 if(!empty($usuario) && !empty($email) && !empty($senha) && !empty($confirmarSenha)){
 
-                    $banco->conectar(); //Faz a conexão com o banco
-
-                    if($banco->msgErro == ""){
+                    if($banco->conectar()){
 
                         if($senha == $confirmarSenha){
                             
-                            if($user->cadastrarUsuario($usuario, $email, $senha)){
+                            if($user->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
                                 
                                 ?>
                                 <div id="msg-sucesso">
