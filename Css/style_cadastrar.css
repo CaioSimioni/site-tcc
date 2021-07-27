@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+#global {
+    justify-content: center;
+}
+
+.formulario{
+    display: block;
+    width: 50%;
+    justify-content: center;
+    height: auto;
+    margin: 20px 10px 10px 20px;
+    background-color: rgb(23, 26, 31);
+    color: #e9ebf5;
+    border-radius: 12px;
+    font-family: 'Raleway';
+    padding: 15px;
+    margin: 85px auto;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.678);
+    animation: formu 2s linear;
+}
+
+
+.formulario h1{
+    text-align: center;
+}
+
+.formulario input{
+    display: block;
+    margin: 15px auto;
+    height: 30px;
+    width: 60%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.formulario input[type="text"], .formulario input[type="password"]{
+    background: transparent;
+    text-align: center;
+    border: none;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.formulario input[type="text"]:focus, .formulario input[type="password"]:focus{
+    background-color: white;
+    color: black;
+}
+
+.formulario input[type="submit"]{
+    width: auto;
+    padding: 0 20px;
+    border-radius: 10px;
+    color: #e9ebf5;
+    background-color: #294270;
+    border: none;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover{
+    background-color: #1e2f50;
+}
+
+.formulario a{
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    color: #e9ebf5;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.formulario a:hover{
+    color: #a6c5ff;
+}
+
+div#msg-sucesso{
+    width: 440px;
+    margin: 50px auto 10px auto;
+    font-family: 'Raleway';
+    font-weight: 900;
+    padding: 10px;
+    color: green;
+    text-align: center;
+}
+
+div.msg-erro{
+    font-family: 'Raleway';
+    font-weight: 900;
+    width: 440px;
+    margin: 50px auto 10px auto;
+    padding: 10px;
+    color: red;
+    text-align: center;
+}
+
+@media (max-width: 1020px) {
+    .formulario {
+        width: 80%;
+    }
+}
