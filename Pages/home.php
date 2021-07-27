@@ -14,8 +14,6 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 $noticias_cards = $new->exibirNoticiasHome();
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +42,7 @@ $noticias_cards = $new->exibirNoticiasHome();
                     <p class="title"><?php echo $noticias_cards['noticia-1']['titulo']?></p>
                     <p class="data"><?php echo $noticias_cards['noticia-1']['data']?></p>
                 </div>
-                <div data-el="1" class="card">
+                <div class="card">
                     <img  class="img" src="../Materials/ImagensNoticias/<?php echo $noticias_cards['noticia-2']['imagem']?>" alt="">
                     <p class="title"><?php echo $noticias_cards['noticia-2']['titulo']?></p>
                     <p class="data"><?php echo $noticias_cards['noticia-2']['data']?></p>
