@@ -1,0 +1,107 @@
+.global {
+    margin: 100px auto 100px;
+    text-align: center;
+    font-family: "Raleway";
+    font-weight: 900;
+}
+.global h1 {
+    margin-bottom: 20px;
+}
+.sec-apex {
+    width: 100%;
+    height: auto;
+    background: #1a1922;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 700ms;
+    margin-bottom: 100px;
+}
+.sec-apex .camp {
+    width: 20%;
+    height: auto;
+    background: white;
+    border-radius: 4px;
+    color: black;
+    align-items: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.322);
+    font-family: "Nunito";
+    padding: 10px;
+    flex-direction: column;
+    margin: 30px;
+    transition: 700ms;
+}
+.sec-apex .camp h2 {
+    font-weight: 900;
+
+}
+.sec-apex .camp .stats {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.sec-apex .camp .stats #status #resSta {
+    background:blue;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+.sec-apex img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.sec-apex .div-btn {
+    text-align: left;
+    margin-top: 10px;
+}
+.sec-apex .div-btn a button{
+    width: 40%;
+    border: none;
+    height: auto;
+    padding: 7px;
+    background: rgb(17, 49, 87);
+    font-size: 16px;
+    border-radius: 2px;
+    color: white;
+}
+.sec-apex .div-btn a button:hover {
+    background: rgb(12, 32, 58);
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .sec-apex .camp {
+        width: 50%;
+        transition: 700ms;
+    }
+    .sec-apex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    .sec-apex .camp {
+        width: 70%;
+        transition: 700ms;
+    }
+    .sec-apex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
