@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Quicksand:wght@300&family=Rubik:wght@300&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+
+#global{
+    display: flex;
+}
+
+#section {
+    width: 100vw;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #1a1922;
+    margin: 20vh auto;
+    font-family: "Nunito";
+}
+#section .titulo {
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+}
+#box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card {
+    width: 25%;
+    height: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.212);
+    word-break: keep-all;
+}
+.card .img {
+    max-width: 100%;
+    cursor: pointer;
+    max-height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card .title {
+    margin: 10px;
+    color: black;
+    font-family: "Nunito";
+    font-weight: 900;
+    font-size: 17px;
+}
+.card .data {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    font-weight: 660;
+}
+
+#popup {
+    z-index: 9000;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.712);
+    display: none;
+}
+#popup.visivel {
+    display: block;
+    animation: a 300ms;
+}
+
+@keyframes a {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 1024px) {
+    #box {
+        flex-direction: column;
+        gap: 100px;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        width: 80%;
+    }
+}
