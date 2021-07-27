@@ -136,24 +136,6 @@ class Noticia{
         }
     }
 
-    public function editarImagemNoticia($id_noticia, $arquivo){
-        /*
-            Está função serve para salvar no banco de imagens na pasta Materials, a imagem atribuída a uma notícia.
-        */
-
-        $arquivoExtensao = explode('.', $arquivo['name']);
-
-        if($arquivoExtensao[ sizeof( $arquivoExtensao) - 1] == 'png' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' ){
-
-            move_uploaded_file($arquivo['tmp_name'], '../Materials/ImagesNoticias/'.$arquivo['name']);
-            return true;
-
-        }else{
-            //  Arquivo enviado não é do formato desejado.
-            return false;
-        }
-    }
-
     public function pegarNoticia($id_noticia){
         global $pdo;
         global $noticiaValues;
@@ -206,43 +188,22 @@ class Noticia{
         }
     }
 
-    public function editarNoticia ($id_noticia, $titulo, $descricao, $fonte, $data, $imagem){
-        global $pdo;
-        $imagemInserirda = false;
-
-        $titulo = str_replace("'", "\'", $titulo);
-        $fonte = str_replace("'", "\'", $fonte);
-        
-        $arquivo = $imagem['name'];
-        $sql = $pdo->prepare("UPDATE `noticia` SET `fonte` = '$fonte', `descricao` = '$descricao', `titulo` = '$titulo', `imagem` = '$arquivo' WHERE `noticia`.`id_noticia` = '$id_noticia'");
-        $sql->bindValue(":d", strval($data));
-        $sql->execute();
-
-        $arquivoExtensao = explode('.', $imagem['name']);
-
-        if($arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'jpeg' or $arquivoExtensao[sizeof($arquivoExtensao) - 1] == 'png'){
-            move_uploaded_file($imagem['tmp_name'], '../Materials/ImagensNoticias/'.$imagem['name']);
-            $imagemInserirda = true;
-        }else{
-            $imagemInserirda = false;
-        }
-
-        if($sql->rowCount() > 0 && $imagemInserirda){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-
-    public function excluirNoticia ($id_noticia){
+    public function exibirNoticiasHome(){
         global $pdo;
 
-        $sql=$pdo->prepare( "DELETE FROM `noticia` WHERE `id_noticia` = '$id_noticia'");
+        $sql = $pdo->prepare("SELECT `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC");
         $sql->execute();
 
-        if($sql->rowCount() > 0){
-            return true;
+        if ($sql->rowCount() > 0) {
+            $row = $sql->fetchAll();
+
+            $noticias_cards = array(
+                "noticia-1" => $row[0],
+                "noticia-2" => $row[1],
+                "noticia-3" => $row[2]
+            );
+            return $noticias_cards;
+
         }else{
             return false;
         }
