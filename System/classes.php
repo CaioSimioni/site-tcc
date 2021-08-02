@@ -196,11 +196,11 @@ class Noticia{
 
         if ($sql->rowCount() > 0) {
             $row = $sql->fetchAll();
-
+            
             $noticias_cards = array(
-                "noticia-1" => $row[0],
-                "noticia-2" => $row[1],
-                "noticia-3" => $row[2]
+                "noticia 1" => $row[0],
+                "noticia 2" => $row[1],
+                "noticia 3" => $row[2]
             );
             return $noticias_cards;
 
