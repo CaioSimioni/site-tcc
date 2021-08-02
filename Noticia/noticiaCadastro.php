@@ -85,7 +85,7 @@
                 <input type="date" id="new_noticia_data"  required   name="data">
                 <div class="imagem">
                     <label onclick="a()" for="imagem">Enviar Imagem</label>
-                    <div id="nome-arquivo">Nenhum Arquivo Enviado</div>
+                    <div id="nome-arquivo">Nenhum Arquivo Enviado. (800 x 450) pixels</div>
                 </div>
             </div>
             <div class="campo div-nome-arquivo">
