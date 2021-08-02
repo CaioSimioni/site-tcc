@@ -191,7 +191,7 @@ class Noticia{
     public function exibirNoticiasHome(){
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC");
+        $sql = $pdo->prepare("SELECT `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC LIMIT 3;");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
