@@ -7,7 +7,7 @@
         if(isset($_SESSION['logged'])){
             ?>
             <header class="header">
-                <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
+                <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo" onclick="goHomeLogged()">
                 <nav>
                     <ul class="nav__links">
                         <li><a href="../Pages/home.php">Home</a></li>
@@ -27,7 +27,7 @@
         }else{
             ?>
             <header class="header">
-                <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo">
+                <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo" onclick="goHome()">
                 <nav>
                     <ul class="nav__links">
                         <li><a href="../index.php">Inicio</a></li>
@@ -40,6 +40,13 @@
         }
     ?>
     
-
+<script>
+    function goHome(){
+        window.location.href = "../index.php"
+    }
+    function goHomeLogged(){
+        window.location.href = "../Pages/home.php"
+    }
+</script>
 </body>
 </html>

@@ -91,6 +91,13 @@ Class Usuario{
         }
     }
 
+    public function editarUsuario($codUsuario, $nomeUsuario, $emailUsuario, $admin){
+        global $pdo;
+
+        
+
+    }
+
 }
 
 class Noticia{
