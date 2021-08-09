@@ -98,6 +98,35 @@ Class Usuario{
 
     }
 
+    public function selecionarUsuarios(){
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM `usuario` ORDER BY `usuario`.`codigo_usuario` DESC");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+
+            while($row = $sql->fetch()){
+                echo "<tr class='conteudo'>";
+                $codigo_usuario = $row['codigo_usuario'];
+                echo "<td>".$row['codigo_usuario']."</td>";
+                echo "<td>".$row['usuario']."</td>";
+                if($row['adm'] == 1){
+                    echo "<td> Admin </td>";
+                }else{
+                    echo "<td> Usuário </td>";
+                }
+                echo "<td class='func'><a class='editar' href='usuarioEditar.php?idnoticia=$codigo_usuario'>Editar</a>";
+                echo "<a class='excluir' href='deletaUsuario.php?idnoticia=$codigo_usuario'>Excluir</a></td>";
+                echo "</tr>";
+            }
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+
 }
 
 class Noticia{
