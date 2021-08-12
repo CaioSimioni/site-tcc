@@ -15,7 +15,7 @@ section h1 {
 }
 section .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 section .cards .box {
     background: #1a1922;

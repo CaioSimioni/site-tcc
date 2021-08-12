@@ -17,6 +17,7 @@ section {
 section table {
     font-family: "arial";
     max-width: 70%;
+    min-width: 50%;
     height: auto;
     border-radius: 05px;
     color: black;

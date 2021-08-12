@@ -34,8 +34,8 @@
     <?php include "../Templates/cabecalho.php"; ?>
 
     <div id="global">
-        <section>
-            <table>
+        <section class="section">
+            <table class="tabela">
                 <thead>
                     <tr>
                         <td>Código</td>
