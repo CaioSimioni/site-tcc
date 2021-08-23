@@ -3,6 +3,7 @@
     unset($_SESSION['codigo_usuario']);
     unset($_SESSION['nome_usuario']);
     unset($_SESSION['email_usuario']);
+    unset($_SESSION['adm']);
     unset($_SESSION['imagem']);
     unset($_SESSION['logged']);
     session_destroy();

@@ -31,7 +31,7 @@ Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
     public $msgErro = "";
 
-    public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha){
+    public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha, $adm){
         global $pdo;
 
         $sql = $pdo->prepare("SELECT codigo_usuario FROM usuario WHERE email = :e");  // Faz o comando no Banco de dados
@@ -52,10 +52,11 @@ Class Usuario{
             }else{
                 // $sql = $pdo->prepare("INSERT INTO `usuario`( `usuario`, `email`, `senha`, `imagem`, `data`, `adm`) VALUES(:u, :e, :s,'icon.png',now()),0");
 
-                $sql = $pdo->prepare("INSERT INTO `usuario` (`codigo_usuario`, `usuario`, `senha`, `email`, `adm`, `imagem`, `data`) VALUES (NULL, :u, :s, :e, 0, 'icon.png', now())");
+                $sql = $pdo->prepare("INSERT INTO `usuario` (`codigo_usuario`, `usuario`, `senha`, `email`, `adm`, `imagem`, `data`) VALUES (NULL, :u, :s, :e, :a, 'icon.png', now())");
                 $sql->bindValue(":u", $usuario);
                 $sql->bindValue(":e", $email);
                 $sql->bindValue(":s", md5($senha));
+                $sql->bindValue(":a", $adm);
                 $sql->execute();
 
                 if($sql->rowCount() > 0){
@@ -116,8 +117,8 @@ Class Usuario{
                 }else{
                     echo "<td> Usuário </td>";
                 }
-                echo "<td class='func'><a class='editar' href='usuarioEditar.php?idnoticia=$codigo_usuario'>Editar</a>";
-                echo "<a class='excluir' href='deletaUsuario.php?idnoticia=$codigo_usuario'>Excluir</a></td>";
+                echo "<td class='func'><a class='editar' href='usuarioEditar.php?idusuario=$codigo_usuario'>Editar</a>";
+                echo "<a class='excluir' href='deletaUsuario.php?idusuario=$codigo_usuario'>Excluir</a></td>";
                 echo "</tr>";
             }
             return true;

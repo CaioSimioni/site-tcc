@@ -37,7 +37,7 @@ $banco = new BancoBD;
 
                         if($senha == $confirmarSenha){
                             
-                            if($user->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha)){
+                            if($user->cadastrarUsuario($usuario, $email, $senha, $confirmarSenha, 0)){  // O valor 0 correponde ao cargo Comum
                                 
                                 ?>
                                 <div id="msg-sucesso">
