@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#global{
+    margin: auto;
+}
+
+#form_cadastrar{
+    margin: 30px auto 40px auto;
+    border: 2px solid black;
+    padding: 5px;
+    width: 50%;
+}
+
+.form_element{
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#form_cadastrar input[type="submit"]{
+    width: 80px;
+    height: 30px;
+}
