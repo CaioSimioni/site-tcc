@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Css/style_selecionarUsuario.css">
+    <link rel="stylesheet" href="../Css/style_usuarioSelecionar.css">
 </head>
 <body>
     
@@ -51,9 +51,8 @@
                             if($usuario->selecionarUsuarios()){
 
                             }else{
-
+                                echo "<script> alert('[Erro] Não foi possível selecionar os usuários.') </script>";
                             }
-
                         }
                     ?>
                 </tbody>
