@@ -64,33 +64,41 @@
 
             <input type="hidden" name="cod_usuario" value="<?php echo$cod_usuario ?>">
 
-            <div id="usuario_nome">
-                <label for="in_usuario">Nome: </label>
-                <input type="text" name="usuario" id="in_usuario" value="<?php echo $usuario_nome ?>">
+            <div class="usuario nome">
+                <label for="in_usuario">Nome</label>
+                <input type="text" name="usuario" id="in_usuario" class="campo" value="<?php echo $usuario_nome ?>">
             </div>
 
-            <div id="usuario_email">
-                <label for="in_email">Email: </label>
-                <input type="text" name="email" id="in_email" value="<?php echo $usuario_email ?>">
+            <div class="usuario email">
+                <label for="in_email">Email</label>
+                <input type="text" name="email" id="in_email" class="campo" value="<?php echo $usuario_email ?>">
             </div>
 
-            <div id="usuario_cargo">
+            <div class="usuario cargo">
                 <?php
                     if($usuario_cargo == 1){ ?>
-                        <input type="radio" name="cargo" id="in_cargo_comum" value="comum">
-                        <label for="in_cargo_comum">Usuario </label>
-                        <input type="radio" name="cargo" id="in_cargo_admin" value="admin" checked>
-                        <label for="in_cargo_admin">Admin </label>
+                        <div class="radio rU">
+                            <input type="radio" name="cargo" id="in_cargo_comum" value="comum">
+                            <label for="in_cargo_comum">Usuario </label>
+                        </div>
+                        <div class="radio rA">
+                            <input type="radio" name="cargo" id="in_cargo_admin" value="admin" checked>
+                            <label for="in_cargo_admin">Admin </label>
+                        </div>
                     <?php }else{ ?>
-                        <input type="radio" name="cargo" id="in_cargo_comum" value="comum" checked>
-                        <label for="in_cargo_comum">Usuario </label>
-                        <input type="radio" name="cargo" id="in_cargo_admin" value="admin">
-                        <label for="in_cargo_admin">Admin </label>
+                        <div class="radio rU">
+                            <input type="radio" name="cargo" id="in_cargo_comum" value="comum" checked>
+                            <label for="in_cargo_comum">Usuario </label>
+                        </div>
+                        <div class="radio rA">
+                            <input type="radio" name="cargo" id="in_cargo_admin" value="admin">
+                            <label for="in_cargo_admin">Admin </label>
+                        </div>
                     <?php }
                 ?>
             </div>
 
-            <input type="submit" value="Editar">
+            <input type="submit" class="btn" value="Editar">
         </form>
 
     </div>

@@ -76,29 +76,54 @@
         ?>
 
         <form action="#" method="post" id="form_cadastrar">
-            <h1 class="form_element">Cadastrar novo usuário</h1>
-            <p class="form_element">
-                Nome: <input type="text" name="usuario">
-            </p>
-            <p class="form_element">
-                Email: <input type="email" name="email">
-            </p>
-            <p class="form_element">
-                Senha: <input type="password" name="senha" id="senha">
-            </p>
-            <p class="form_element">
-                Confirmar senha: <input type="password" name="conf_senha" id="conf_senha">
-            </p>
-            <p class="form_element" id="cargos">
-                Cargo: 
-                <input type="radio" name="cargo" id="cargo_comum" value="Usuario" checked><label for="cargo_comum">Usuario</label>
-                <input type="radio" name="cargo" id="cargo_admin" value="Admin"><label for="cargo_admin">Administrador</label>
-            </p>
-            <input type="submit" value="Cadastrar" class="form_element">
+            <h1 class="title">Cadastrar novo usuário</h1>
+            <div class="content">
+                
+                <div class="group name">
+                    <p>Nome</p>
+                    <input required class="campo" type="text" name="usuario">
+                </div>
+
+                <div class="group email">
+                    <p>E-mail</p>
+                    <input required class="campo" type="email" name="email">
+                </div>
+
+                <div class="group senha">
+                    <p>Senha</p>
+                    <input required class="campo" type="password" name="senha" id="senha">
+                </div>
+
+                <div class="group confsenha">
+                    <p>Confirmar Senha</p>
+                    <input required class="campo" type="password" name="conf_senha" id="conf_senha">
+                </div>
+
+                <div class="group radio">
+                    
+                    <h2 class="title-radio">Cargos</h2>
+
+                    <div class="user">
+                        <input type="radio" name="cargo" class="cargo-user che" id="cargo_comum" value="Usuario" checked>
+                        <label for="cargo_comum">Usuario</label>
+                    </div>
+
+                    <div class="adm">
+                        <input type="radio" name="cargo" class="cargo-adm" id="cargo_admin" value="Admin">
+                        <label for="cargo_admin">Administrador</label>
+                    </div>
+                
+                </div>
+                
+                
+                
+                
+                <input type="submit" value="Cadastrar" class="btn">
+            </div>
         </form>
 
     </div>
     <?php include "../Templates/rodape.php" ?>
-
+    <script src="../Js/usuario_cadastro.js"></script>
 </body>
 </html>
