@@ -55,7 +55,7 @@
                 <input type="text" id="newNoticia_titulo" name="titulo" value="<?php if($titulo_new){echo $titulo_new;}?>">
             </div>
             <div class="campo div-descricao">
-                <p>Descrição</p>    
+                <p>Descrição</p>
                 <textarea id="newNoticia_descricao" name="descricao"><?php if($descricao_new){echo$descricao_new;}?></textarea>
             </div>
             <div class="campo div-fonte">
