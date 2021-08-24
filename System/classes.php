@@ -30,6 +30,7 @@ class BancoBD{
 Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
     public $msgErro = "";
+    public $usuarioValues;
 
     public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha, $adm){
         global $pdo;
@@ -92,10 +93,41 @@ Class Usuario{
         }
     }
 
-    public function editarUsuario($codUsuario, $nomeUsuario, $emailUsuario, $admin){
+    public function pegarUsuario($codigo_usuario){
+        global $pdo;
+        global $usuarioValues;
+        
+        $sql = $pdo->prepare("SELECT `usuario`,`email`,`adm` FROM `usuario` WHERE `codigo_usuario` = '$codigo_usuario'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+
+            $dados = $sql->fetch();
+
+            $usuario_nome = $dados['usuario'];
+            $usuario_email = $dados['email'];
+            $usuario_cargo = $dados['adm'];
+
+            $usuarioValues = array($usuario_nome, $usuario_email, $usuario_cargo);
+
+            return $usuarioValues;
+
+        }else{
+            return false;
+        }
+    }
+
+    public function editarUsuario($usuario_codigo, $usuario_nome, $usuario_email, $usuario_cargo){
         global $pdo;
 
-        
+        $sql = $pdo->prepare("UPDATE `usuario` SET `usuario`= '$usuario_nome',`email`='$usuario_email',`adm`= $usuario_cargo WHERE `usuario`.`codigo_usuario` = $usuario_codigo");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 
