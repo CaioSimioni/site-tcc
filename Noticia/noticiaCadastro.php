@@ -33,6 +33,7 @@
 
                     echo "<script> alert('Notícia cadastrada com sucesso.');</script>";
                     echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
+                    exit;
 
                 }else{
                     echo "<script> alert('Não foi possível cadastrar a notícia.');</script>";
