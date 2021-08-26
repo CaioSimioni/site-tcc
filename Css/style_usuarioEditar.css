@@ -78,3 +78,15 @@ input[type="radio"] {
     background: rgb(18,67,180);
     border-bottom: 5px solid rgb(16, 57, 151);
 }
+
+@media (max-width: 800px) {
+    #info_usuario {
+        width: 80%;
+    }
+    .usuario {
+        width: 80%;
+    }
+    .btn {
+        width: 80%;
+    }
+}
