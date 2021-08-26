@@ -42,7 +42,7 @@
                 $confirmarSenha = addslashes($_POST['conf_senha']);
                 if ($_POST['cargo'] == "Usuario") {
                     $cargo = 0;
-                }if($_POST['cargo'] == "Admin"){
+                }else if($_POST['cargo'] == "Admin"){
                     $cargo = 1;
                 }
 
@@ -56,6 +56,7 @@
 
                                 echo"<script> alert('Cadastrado com sucesso!') </script>";
                                 echo"<script> window.location.href = '../Usuario/usuarioSelecionar.php' </script>";
+                                exit;
 
                             }else{
                                 echo"<script> alert('Não foi possível cadastrar.  Nome de usuário ou Email já cadastrados.') </script>";
