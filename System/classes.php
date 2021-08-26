@@ -280,4 +280,58 @@ class Noticia{
 
 }
 
+class Esports{
+    private $pdo;
+    public $msgErro = "";
+    public $categorias = [
+        "Apex Legends",
+        "League of Legends",
+        "Counter Strike",
+        "Valorant"
+    ];
+
+    public function cadastrarEsports($nome, $categoria, $data, $local_arquivo_tabela, $status){
+        global $pdo;
+
+        $sql = $pdo->prepare("INSERT `esports`(`nome_camp`, `categoria_camp`, `data_camp`, `local_arquivo_tabela`, `status_camp`) VALUES ('$nome', '$categoria', :d, '$local_arquivo_tabela', $status)");
+        $sql->bindValue(':d', strval($data));
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function selecionarCampeonatos(){
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM `esports`");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+
+            while($row = $sql->fetch()){
+                $id_campeonato = $row['id_camp'];
+
+                echo "<tr class='conteudo'>";
+                echo "<td>".$row['id_camp']."</td>";
+                echo "<td>".$row['nome_camp']."</td>";
+                echo "<td class='dataDb'>".$row['data_camp']."</td>";
+                echo "<td>".$row['status_camp']."</td>";
+                echo "<td class='func'><a class='editar' href='campEditar.php?idcampeonato=$id_campeonato'>Editar</a>";
+                echo "<a class='excluir' href='deletaCampeonato.php?idcampeonato=$id_campeonato'>Excluir</a></td>";
+                echo "</tr>";
+            }
+
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+}
+
 ?>
