@@ -32,11 +32,13 @@
             }else{
                 echo"<script> alert('[Erro] Falha em coletar informações do Banco.') </script>";
                 echo"<script> window.location.href = '../Pages/home.php' </script>";
+                exit;
             }
 
         }else{
             echo"<script> alert('Valor de usuário inválido') </script>";
             echo"<script> window.location.href = '../Pages/home.php' </script>";
+            exit;
         }
 
     }else{
