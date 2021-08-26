@@ -15,3 +15,12 @@ function newUser(){
 function selectUser(){
     window.location.href = "../Usuario/usuarioSelecionar.php";
 }
+
+function newCamp(){
+    window.location.href = "../Esports/campeonatoCadastrar.php";
+}
+
+function selectCamp(){
+    window.location.href = "../Esports/campeonatoSelecionar.php";
+}
+
