@@ -47,13 +47,17 @@
         if($sql->rowCount() > 0 && $imagemInserirda){
             echo "<script> alert('Notícia editada com sucesso.');</script>";
             echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
+            exit;
         }else{
             echo "<script> alert('Não foi possível editar a notícia.');</script>";
             echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
+            exit;
         }
 
     }else{
         echo "<script> alert('Impossível conectar com o Banco.');</script>";
+        echo "<script> window.location.href = 'noticiaSelecionar.php';</script>";
+        exit;
     }
 
 ?>
