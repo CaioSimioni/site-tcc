@@ -27,12 +27,16 @@
         if($user->editarUsuario($usuario_codigo, $usuario_nome, $usuario_email, $usuario_cargo)){
             echo"<script> alert('Usuário editado com SUCESSO') </script>";
             echo"<script> window.location.href = 'usuarioSelecionar.php' </script>";
+            exit;
         }else{
             echo"<script> alert('[Erro] Não foi possível editar o usuário.') </script>";
             echo"<script> window.location.href = 'usuarioSelecionar.php' </script>";
+            exit;
         }
 
     }else{
-        echo"<script> alert('[Erro] Falha na conexãocom o banco de dados.') </script>";
+        echo"<script> alert('[Erro] Falha na conexão com o banco de dados.') </script>";
+        echo"<script> window.location.href = 'usuarioSelecionar.php' </script>";
+        exit;
     }
 ?>
