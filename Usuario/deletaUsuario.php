@@ -24,14 +24,17 @@
         if($sql->rowCount() > 0){
             echo"<script> alert('Usuário de código ".$cod." foi excluído com sucesso.') </script>";
             echo "<script>window.location.href='usuarioSelecionar.php'</script>";
+            exit;
         }else{
             echo"<script> alert('[Error] Não foi pessível excluir usuário') </script>";
             echo "<script>window.location.href='usuarioSelecionar.php'</script>";
+            exit;
         }
 
     }else{
         echo"<script> alert('Falha na conexão. Tente mais tarde.') </script>";
         echo"<script> window.location.href = 'selecionarUsuario.php' </script>";
+        exit;
     }
 
 ?>
