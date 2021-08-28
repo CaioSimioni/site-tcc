@@ -28,6 +28,7 @@ if($_SESSION['adm'] == false) {
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Css/style_adm.css">
+    <link rel="stylesheet" href="../Css/style_campeonatoCadastrar.css">
 
 </head>
 <body>
@@ -77,17 +78,17 @@ if($_SESSION['adm'] == false) {
 
         ?>
 
-        <form action="./campeonatoCadastrar.php" method="post">
+        <form class="form" action="./campeonatoCadastrar.php" method="post">
             <h1>Cadastrar Campeonato</h1>
             <div class="inputs">
                 <div class="grupo">
                     Nome
-                    <input type="text" name="nome_camp" id="nome_camp">
+                    <input type="text" class="campo" name="nome_camp" id="nome_camp">
                 </div>
 
                 <div class="grupo">
                     Jogo
-                    <select name="categoria_camp" id="categoria_camp">
+                    <select class="campo" name="categoria_camp" id="categoria_camp">
                         <?php
                             foreach($esports->categorias as $value){
                                 echo"<option value='$value'>$value</option>";
@@ -98,28 +99,28 @@ if($_SESSION['adm'] == false) {
 
                 <div class="grupo">
                     Data
-                    <input type="datetime-local" name="data_camp" id="data_camp">
+                    <input type="datetime-local" class="campo" name="data_camp" id="data_camp">
                 </div>
 
                 <div class="grupo">
                     Nome Arquivo
-                    <input type="text" name="nome_arquivo_camp" id="nome_arquivo_camp">
+                    <input type="text" class="campo" name="nome_arquivo_camp" id="nome_arquivo_camp">
                 </div>
 
-                <div class="grupo">
+                <div class="grupo ra">
                     Status
                     <div class="status_radios">
                         <input type="radio" name="status_camp" id="status_camp_embreve" value="Em Breve" checked>
                         <label for="status_camp_embreve">Em breve</label>
                     </div>
-                    <div class="status_radio">
+                    <div class="status_radios">
                         <input type="radio" name="status_camp" id="status_camp_encerrado" value="Encerrado">
                         <label for="status_camp_encerrado">Encerrado</label>
                     </div>
                 </div>
             </div>
             <div class="submit">
-                <input type="submit" value="Cadastrar">
+                <input class="btn" type="submit" value="Cadastrar">
             </div>
         </form>
     </div>
