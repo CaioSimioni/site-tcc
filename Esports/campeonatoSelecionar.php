@@ -26,35 +26,16 @@ if($_SESSION['adm'] == false) {
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Css/style_adm.css">
-
-    <!-- Testes de Style -->
-    <style>
-        table{
-            margin: auto;
-        }
-
-        th, tr, td{
-            border: 1px solid black;
-            padding: 5px;
-        }
-
-        th{
-            background-color: #d17771;
-        }
-
-        table{
-            border-collapse: collapse;
-        }
-    </style>
+    <link rel="stylesheet" href="../Css/style_campeonatoSelecionar.css">
 
 </head>
 <body>
 
     <?php include "../Templates/cabecalho.php" ?>
 
-    <div id="global">
-    <section class="section">
-        <h1>Campeonatos</h1>
+    <!-- <div id="global">
+        <section class="section">
+            <h1>Campeonatos</h1>
             <table class="tabela">
                 <thead>
                     <tr>
@@ -63,6 +44,19 @@ if($_SESSION['adm'] == false) {
                         <th>Data</th>
                         <th>Status</th>
                         <th>Funções</th>
+                    </tr>
+                </thead>
+                <tbody> -->
+    <div id="global">
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <td><strong>Código</strong></td>
+                        <td class="title"><strong>Nome</strong></td>
+                        <td><strong>Data</strong></td>
+                        <td class="data"><strong>Status</strong></td>
+                        <td><strong>Funções</strong></td>
                     </tr>
                 </thead>
                 <tbody>
