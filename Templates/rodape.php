@@ -1,6 +1,81 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../Css/style_rodape.css">
+    <style>
+
+        #final{
+            padding: 30px 10%;
+            background-color: #1a1922;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            bottom: 1px;
+        }
+
+        #final nav ul{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 30px
+        }
+
+        #final nav ul li {
+            list-style: none;
+        }
+
+
+        #final nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-family: "Raleway", cursive;
+            font-weight: bold;
+            font-size: 10pt;
+            cursor: pointer;
+        }
+
+        #social-media-github{
+            fill: #ffffff;
+        }
+
+        #final img {
+            width: 70px;
+            height: 25px;
+            /*margin-top: 20px;*/
+        }
+
+        #final nav ul li a:hover {
+            color: #30508b;
+            transition: 300ms ease;
+        }
+
+        #final span{
+            color: #f4f4f8;
+            font-size: 12pt;
+        }
+
+        @media (max-width: 1020px) {
+            #final {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+            #final nav ul {
+                display: flex;
+                flex-direction: column;
+            }
+            #final nav ul li a{
+                font-size: 12pt;
+            }
+            #final img {
+                width: 125px;
+                height: 45px;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <footer id="final">
