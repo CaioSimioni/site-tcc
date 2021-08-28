@@ -50,8 +50,6 @@ if($_SESSION['adm'] == false) {
                     $status_camp = 1;
                 }
 
-                var_dump($nome_camp, $categoria_camp, $data_camp, $nome_arquivo_camp, $status_camp);
-
                 if(!empty($nome_camp) && !empty($categoria_camp) && !empty($data_camp) && !empty($nome_arquivo_camp)){
                     
                     if($banco->conectar()){
@@ -64,7 +62,6 @@ if($_SESSION['adm'] == false) {
 
                         }else{
                             echo"<script> alert('Não foi possível cadastrar o Campeonato') </script>";
-
                         }
 
                     }else{
