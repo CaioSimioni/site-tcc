@@ -9,10 +9,6 @@
 
 [Parte do Sistema/Estrutura]
      * Exportar os arquivos
-
-[Nóticias]
-     * Feed de notícias
-     * Sistema de postagem de notícias
      
 [Tópicos/Chat]
      * Criar tabela BD
@@ -27,7 +23,6 @@
      * Painel de Moderação
 
 [E-Sports]
-     * Criar tabela BD
      * Sistema de Anúncio de Campeonatos
      * Sistema de apostas
 
