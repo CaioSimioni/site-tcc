@@ -315,12 +315,23 @@ class Esports{
             while($row = $sql->fetch()){
                 $id_campeonato = $row['id_camp'];
 
+
                 echo "<tr class='conteudo'>";
                 echo "<td>".$row['id_camp']."</td>";
                 echo "<td>".$row['nome_camp']."</td>";
                 echo "<td class='dataDb'>".$row['data_camp']."</td>";
-                echo "<td>".$row['status_camp']."</td>";
+                
+                if($row['status_camp'] == 0){
+                    $row['status_camp'] = "Em Breve";
+                    echo "<td><p style='color: #20c93f'>".$row['status_camp']."</p></td>";
+                } else {
+                    $row['status_camp'] = "Encerrado";
+                    echo "<td><p style='color: #c92020'>".$row['status_camp']."</p></td>";
+                };#c92020
+                
+
                 echo "<td class='func'><a class='editar' href='campEditar.php?idcampeonato=$id_campeonato'>Editar</a>";
+                echo "<a class='vil' href='campVisualizar.php?idcampeonato=$id_campeonato'>Visualizar</a>";
                 echo "<a class='excluir' href='deletaCampeonato.php?idcampeonato=$id_campeonato'>Excluir</a></td>";
                 echo "</tr>";
             }
