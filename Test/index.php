@@ -92,7 +92,7 @@ if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
         </div>
         <br>
         <form action="setTab.php" method="post">
-            <input type="hidden" name="nameTabCamp" value="<?php echo $nome_arquivo ?>">
+            <input type="hidden" name="nameTabCamp" value="<?php echo $camp['tab_name'] ?>">
             <label for="txta_tabs" style="display: block;"><strong>Nome Campeonato:</strong> <?php print $camp['title']?></label>
             <br>
             <textarea name="tabCamp" id="txta_tabs" cols="30" rows="10"><?php print $tabela ?></textarea>
