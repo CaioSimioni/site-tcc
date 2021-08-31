@@ -23,17 +23,17 @@ $camp = array(
  * }
  */
 
-$nome_arquivo = $path_pasta . "\\" . $camp['tab_name'] . '.php';
+$nome_arquivo = $path_pasta . "\\" . $camp['tab_name'] . '.txt';
 
 
 if(file_exists($nome_arquivo) && is_file($nome_arquivo)){ 
     $tabela = file_get_contents($nome_arquivo);
 }else{
     file_put_contents($nome_arquivo, '<table>'.PHP_EOL.
-    '   <thead>'.PHP_EOL.
-    '   </thead>'.PHP_EOL.
-    '   <tbody>'.PHP_EOL.
-    '   </tbody>'.PHP_EOL.
+    '<thead>'.PHP_EOL.
+    '</thead>'.PHP_EOL.
+    '<tbody>'.PHP_EOL.
+    '</tbody>'.PHP_EOL.
     '</table>');
     $tabela = file_get_contents($nome_arquivo);
 }
@@ -66,9 +66,9 @@ if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
 <body>
     <main>
         <form action="setTab.php" method="post">
-            <input type="hidden" name="valueTab">
+            <input type="hidden" name="idCamp" value="<?php echo $camp['id']?>">
             <label for="txta_tabs" style="display: block;"><?php print $camp['title']?></label>
-            <textarea name="htmlTabs" id="txta_tabs" cols="30" rows="10"><?php print $tabela ?></textarea>
+            <textarea name="tabCamp" id="txta_tabs" cols="30" rows="10"><?php print $tabela ?></textarea>
             <div class="bottons">
                 <input type="reset" value="Limpar">
                 <input type="submit" value="Salvar">
