@@ -1,5 +1,11 @@
 <?php
 
+/**
+*		Este arquivo tem como objetivo utilizar o Javascript + PHP;
+*/
+
+
+
 $title = 'Hello World';
 
 ?>
