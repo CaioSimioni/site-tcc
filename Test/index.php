@@ -23,7 +23,7 @@ $camp = array(
  * }
  */
 
-$nome_arquivo = $path_pasta . "\\" . $camp['tab_name'] . '.txt';
+$nome_arquivo = $path_pasta . "\\" . $camp['tab_name'] . '.php';
 
 
 if(file_exists($nome_arquivo) && is_file($nome_arquivo)){ 
@@ -61,19 +61,66 @@ if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
             border: 1px solid #ccc;
             box-shadow: 1px 1px 1px #999;
         }
+        table {
+            border-collapse: collapse;
+            max-width: 100%;
+            min-width: 500px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #d6d6d6;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2;}
+
+        main{
+            display: block;
+            margin: 20px auto;
+        }
     </style>
+    
 </head>
 <body>
     <main>
+        <strong>Tabela </strong>
+        <div id="tabela_camp_rederizada">
+            <?php echo $tabela?>
+        </div>
+        <br>
         <form action="setTab.php" method="post">
-            <input type="hidden" name="idCamp" value="<?php echo $camp['id']?>">
-            <label for="txta_tabs" style="display: block;"><?php print $camp['title']?></label>
+            <input type="hidden" name="nameTabCamp" value="<?php echo $nome_arquivo ?>">
+            <label for="txta_tabs" style="display: block;"><strong>Nome Campeonato:</strong> <?php print $camp['title']?></label>
+            <br>
             <textarea name="tabCamp" id="txta_tabs" cols="30" rows="10"><?php print $tabela ?></textarea>
             <div class="bottons">
                 <input type="reset" value="Limpar">
-                <input type="submit" value="Salvar">
+                <input type="submit" value="Atualizar">
             </div>
         </form>
     </main>
+
+    <script type="text/javascript" defer>
+
+        document.getElementById('txta_tabs').addEventListener("keydown", function(e) {
+        if(e.key === "Tab") { // TAB
+            var posAnterior = this.selectionStart;
+            var posPosterior = this.selectionEnd;
+
+            e.target.value = e.target.value.substring(0, posAnterior)
+                            + '\t'
+                            + e.target.value.substring(posPosterior);
+
+            this.selectionStart = posAnterior + 1;
+            this.selectionEnd = posAnterior + 1;
+
+            // não move pro próximo elemento
+            e.preventDefault();
+        }
+        });
+    </script>
 </body>
 </html>
