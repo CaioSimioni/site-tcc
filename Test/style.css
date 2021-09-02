@@ -1,0 +1,58 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+
+body{
+    background-color: rgb(240, 240, 240);
+}
+
+.global{
+    display: flex;
+}
+
+.maintag{
+    display: flex;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #616161;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.view_tabela table{
+    margin: 20px auto;
+    border: 1px solid #131313;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+.view_tabela table thead{
+    background-color: rgb(118, 148, 233);
+    padding: 5px;
+    margin: 0px;
+    border: 1px solid #131313;
+}
+
+.view_tabela table thead th{
+    padding: 5px;
+}
+
+.input_camp_nome{
+    padding: 10px;
+    margin: 5px;
+}
+
+.code_tabela textarea{
+    font-family: 'Source Code Pro', monospace;
+    margin: 10px 20px;
+    min-width: 500px;
+    background-color: #1a1922;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+
+}
+
