@@ -33,20 +33,6 @@ if($_SESSION['adm'] == false) {
 
     <?php include "../Templates/cabecalho.php" ?>
 
-    <!-- <div id="global">
-        <section class="section">
-            <h1>Campeonatos</h1>
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th>Status</th>
-                        <th>Funções</th>
-                    </tr>
-                </thead>
-                <tbody> -->
     <div id="global">
         <section>
             <table>
