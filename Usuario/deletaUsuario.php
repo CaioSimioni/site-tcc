@@ -18,7 +18,7 @@
     if($banco->conectar()){
 
         $cod = $_GET['idusuario'];
-        $sql=$pdo->prepare( "DELETE FROM `usuario` WHERE `usuario`.`codigo_usuario` = $cod");
+        $sql=$pdo->prepare( "DELETE * FROM `usuario` WHERE `usuario`.`codigo_usuario` = $cod");
         $sql->execute();
 
         if($sql->rowCount() > 0){
