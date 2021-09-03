@@ -50,6 +50,7 @@ $esports = new Esports;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo - Editar Campeonato</title>
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include "../Templates/cabecalho.php"?>
@@ -88,7 +89,7 @@ $esports = new Esports;
                     <div class="input_radio">
                         <input type="radio" name="status_camp" id="input_status_camp" value="encerrado" <?php if($bd_campeonato['status_camp'] == "1"){echo "checked";}?>>
                         <label for="input_status_camp">Encerrado</label>
-                        </div>
+                    </div>
                 </div>
                 <div class="grupo" id="buttons">
                     <button><a href="./campeonatoSelecionar.php">Voltar</a></button>
