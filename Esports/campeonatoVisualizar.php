@@ -82,33 +82,25 @@ if($banco->conectar()){
                     <input type="hidden" name="camp_id" value="<?php echo $bd_campeonato['id'] ?>">
                     <input type="hidden" name="camp_local_arquivo_tab" value="<?php echo$bd_campeonato['local_arquivo_tabela'] ?>">
                 
+                <div class="info_camp">
+                    <h1>Informações Campeonato</h1>
+                    <div class="camp_nome">
+                        <label>Nome: <?php echo $bd_campeonato['nome']?></label>
+                    </div>
+                    <div class="camp_data">
+                        <label>Data: <?php echo$bd_campeonato['data']?></label>
+                    </div>
+                    <div class="camp_status">
+                        <label>Status: <?php if($bd_campeonato['status'] == '0'){echo "Em breve";}else{echo "Encerrado";}?></label>
+                    </div>
+                </div>
                 <div class="view_tabela">
                     <h1>Tabela atual</h1>
                     <?php echo $bd_campeonato['tabela']?>
                 </div>
-                <div class="input_camp">
-                    <div class="input_camp_nome">
-                        <label for="input_title">Nome campeonato: </label>
-                        <input type="text" name="camp_title" id="input_title" value="<?php echo $bd_campeonato['nome']?>">
-                    </div>
-                    <div class="input_camp_data">
-                        <label for="input_datetime">Data Campeonato: </label>
-                        <input type="datetime-local" name="camp_datetime" id="input_datetime" value="<?php echo$bd_campeonato['data']?>">
-                    </div>
-                    <div class="input_camp_status">
-                        <div class="input_radio embreve">
-                            <input type="radio" name="camp_status" id="input_status_camp" value="em breve" <?php if($bd_campeonato['status'] == "0"){echo "checked";}?>>
-                            <label for="input_status_camp">Em Breve</label>
-                        </div>
-                        <div class="input_radio">
-                            <input type="radio" name="camp_status" id="input_status_camp" value="encerrado" <?php if($bd_campeonato['status'] == "1"){echo "checked";}?>>
-                            <label for="input_status_camp">Encerrado</label>
-                        </div>
-                    </div>
-                </div>
                 <div class="code_tabela">
                     <h1>Código da tabela</h1>
-                    <textarea name="camp_newTab" id="txta_tabs" cols="30" rows="10"><?php print $bd_campeonato['tabela'] ?></textarea>
+                    <textarea name="camp_nova_tab" id="txta_tabs" cols="30" rows="10"><?php print $bd_campeonato['tabela'] ?></textarea>
                 </div>
                 <div class="buttons">
                     <button><a href="campeonatoSelecionar.php">Voltar</a></button>
