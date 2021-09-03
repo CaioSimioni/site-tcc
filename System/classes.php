@@ -299,7 +299,7 @@ class Esports{
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $nome_arquivo = "\\Tab_Camps\\" . $local_arquivo_tabela;
+            $nome_arquivo = ".\\Tab_Camps\\" . $local_arquivo_tabela . ".php";
             if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
 
             }else{
@@ -435,6 +435,44 @@ class Esports{
 
         if(file_put_contents($camp_local_arquivo_tabela, $camp_nova_tabela)){
             return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function deletaCampeonato($id_camp){
+        global $pdo;
+        global $campeonatoValues;
+
+        $sql = $pdo->prepare("SELECT `nome_camp`, `local_arquivo_tabela` FROM `esports` WHERE `esports`.`id_camp` = $id_camp");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $dados = $sql->fetch();
+
+            $campeonatoValues = array(
+                "id" => $id_camp,
+                "nome_camp" => $dados['nome_camp'],
+                "local_arquivo_tabela" => "..\\Esports\\Tab_Camps\\" . $dados['local_arquivo_tabela'] . ".php",
+                "excluido" => false
+            );
+
+            $sql = $pdo->prepare("DELETE FROM `esports` WHERE `esports`.`id_camp` = $id_camp");
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+
+                if(unlink($campeonatoValues['local_arquivo_tabela'])){
+                    $campeonatoValues['excluido'] = true;
+                    return $campeonatoValues;
+                }else{
+                    return false;
+                }
+
+            }else{
+                return false;
+            }
+
         }else{
             return false;
         }
