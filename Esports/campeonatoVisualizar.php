@@ -73,10 +73,6 @@ if($banco->conectar()){
 
 <div class="global">
     <div class="view_camp">
-        <?php
-            var_dump($bd_campeonato);
-
-        ?>
         <form action="editaTabelaCampeonato.php" method="post">
                 
                     <input type="hidden" name="camp_id" value="<?php echo $bd_campeonato['id'] ?>">
@@ -100,7 +96,7 @@ if($banco->conectar()){
                 </div>
                 <div class="code_tabela">
                     <h1>Código da tabela</h1>
-                    <textarea name="camp_nova_tab" id="txta_tabs" cols="30" rows="10"><?php print $bd_campeonato['tabela'] ?></textarea>
+                    <textarea name="camp_nova_tab" id="txta_code_editor" cols="30" rows="10"><?php print $bd_campeonato['tabela'] ?></textarea>
                 </div>
                 <div class="buttons">
                     <button><a href="campeonatoSelecionar.php">Voltar</a></button>
@@ -113,5 +109,6 @@ if($banco->conectar()){
 
 <?php include "../Templates/rodape.php"?>
 
+<script type="text/javascript" src="../Js/editorcodigo.js" defer="defer" ></script>
 </body>
 </html>
