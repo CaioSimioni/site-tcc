@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../Css/style_cabecalho.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
