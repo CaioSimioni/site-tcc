@@ -431,6 +431,15 @@ class Esports{
         }
     }
 
+    public function alterarTabela($camp_local_arquivo_tabela, $camp_nova_tabela){
+
+        if(file_put_contents($camp_local_arquivo_tabela, $camp_nova_tabela)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
 
 ?>
