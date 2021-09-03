@@ -57,8 +57,10 @@ if($_SESSION['adm'] == false) {
                         if($esports->cadastrarEsports($nome_camp, $categoria_camp, $data_camp, $nome_arquivo_camp, $status_camp)){
 
                             echo"<script> alert('Campeonato cadastrado com SUCESSO.') </script>";
+                            /*
                             echo"<script> window.location.href = 'campeonatoSelecionar.php' </script>";
                             exit;
+                            */
 
                         }else{
                             echo"<script> alert('Não foi possível cadastrar o Campeonato') </script>";
