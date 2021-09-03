@@ -289,6 +289,7 @@ class Esports{
         "Counter Strike",
         "Valorant"
     ];
+    public $campeonatoValues;
 
     public function cadastrarEsports($nome, $categoria, $data, $local_arquivo_tabela, $status){
         global $pdo;
@@ -298,6 +299,19 @@ class Esports{
         $sql->execute();
 
         if($sql->rowCount() > 0){
+            $nome_arquivo = "../Esports/Tab_Camps/" . $local_arquivo_tabela;
+
+            if(file_exists($nome_arquivo) && is_file($nome_arquivo)){ 
+                
+            }else{
+                file_put_contents($nome_arquivo, PHP_EOL .
+                '<table>'.PHP_EOL.
+                '<thead>'.PHP_EOL.
+                '</thead>'.PHP_EOL.
+                '<tbody>'.PHP_EOL.
+                '</tbody>'.PHP_EOL.
+                '</table>');
+            }
             return true;
         }else{
             return false;
@@ -315,7 +329,6 @@ class Esports{
             while($row = $sql->fetch()){
                 $id_campeonato = $row['id_camp'];
 
-
                 echo "<tr class='conteudo'>";
                 echo "<td>".$row['id_camp']."</td>";
                 echo "<td>".$row['nome_camp']."</td>";
@@ -328,10 +341,9 @@ class Esports{
                     $row['status_camp'] = "Encerrado";
                     echo "<td><p style='color: #c92020'>".$row['status_camp']."</p></td>";
                 };#c92020
-                
 
-                echo "<td class='func'><a class='editar' href='campEditar.php?idcampeonato=$id_campeonato'>Editar</a>";
-                echo "<a class='vil' href='campVisualizar.php?idcampeonato=$id_campeonato'>Visualizar</a>";
+                echo "<td class='func'><a class='editar' href='campeonatoEditar.php?idcampeonato=$id_campeonato'>Editar</a>";
+                echo "<a class='vil' href='campeonatoVisualizar.php?idcampeonato=$id_campeonato'>Visualizar</a>";
                 echo "<a class='excluir' href='deletaCampeonato.php?idcampeonato=$id_campeonato'>Excluir</a></td>";
                 echo "</tr>";
             }
@@ -343,6 +355,56 @@ class Esports{
 
     }
 
+    public function pegarCampeonato($codigo_campeonato){
+        global $pdo;
+        global $campeonatoValues;
+        
+        $sql = $pdo->prepare("SELECT `nome_camp`, `categoria_camp`, `data_camp`, `local_arquivo_tabela`, `status_camp` FROM `esports` WHERE `esports`.`id_camp` = '$codigo_campeonato'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+
+            $dados = $sql->fetch();
+
+            $d = new DateTime($dados['data_camp']);
+
+            $campeonatoValues = array(
+                "id_camp" => "$codigo_campeonato",
+                "nome_camp" => $dados['nome_camp'],
+                "categoria_camp" => $dados['categoria_camp'],
+                "data_camp" => $d->format('Y-m-d\TH:i:s'),
+                "local_arquivo_tabela" => $dados['local_arquivo_tabela'],
+                "status_camp" => $dados['status_camp']
+            );
+
+            return $campeonatoValues;
+
+        }else{
+            return false;
+        }
+    }
+
+    public function editarCampeonato($cod_camp, $nome_camp, $categoria_camp, $data_camp, $status_camp){
+        global $pdo;
+
+        if($status_camp == "em breve"){
+            $status_camp = 0;
+        }else{
+            $status_camp = 1;
+        }
+
+        $sql = $pdo->prepare("UPDATE `esports` SET `nome_camp` = '$nome_camp', `categoria_camp` = '$categoria_camp', `data_camp` = :d, `status_camp` = $status_camp WHERE `esports`.`id_camp` = $cod_camp");
+        $sql->bindValue(':d', strval($data_camp));
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+        return false;
+    }
 }
 
 ?>
