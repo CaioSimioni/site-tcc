@@ -299,17 +299,16 @@ class Esports{
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $nome_arquivo = "../Esports/Tab_Camps/" . $local_arquivo_tabela;
+            $nome_arquivo = "\\Tab_Camps\\" . $local_arquivo_tabela;
+            if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
 
-            if(file_exists($nome_arquivo) && is_file($nome_arquivo)){ 
-                
             }else{
-                file_put_contents($nome_arquivo, PHP_EOL .
+                file_put_contents($nome_arquivo, PHP_EOL.
                 '<table>'.PHP_EOL.
-                '<thead>'.PHP_EOL.
-                '</thead>'.PHP_EOL.
-                '<tbody>'.PHP_EOL.
-                '</tbody>'.PHP_EOL.
+                "\t".'<thead>'.PHP_EOL.
+                "\t".'</thead>'.PHP_EOL.
+                "\t".'<tbody>'.PHP_EOL.
+                "\t".'</tbody>'.PHP_EOL.
                 '</table>');
             }
             return true;
@@ -405,6 +404,33 @@ class Esports{
 
         return false;
     }
+
+    public function vizualizarCampeonato($id_camp){
+        global $pdo;
+        global $campeonatoValues;
+
+        $sql = $pdo->prepare("SELECT `nome_camp`, `status_camp`, `data_camp`, `local_arquivo_tabela` FROM `esports` WHERE `esports`.`id_camp` = $id_camp");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $dados = $sql->fetch();
+            $d = new DateTime($dados['data_camp']);
+
+            $campeonatoValues = array(
+                "id" => "$id_camp",
+                "nome" => $dados['nome_camp'],
+                "data" => $d->format('Y-m-d\TH:i:s'),
+                "status" => $dados['status_camp'],
+                "local_arquivo_tabela" => "..\\Esports\\Tab_Camps\\" . $dados['local_arquivo_tabela'] . ".php"
+            );
+
+            return $campeonatoValues;
+            
+        }else{
+            return false;
+        }
+    }
+
 }
 
 ?>
