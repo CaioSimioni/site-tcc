@@ -44,7 +44,7 @@ $noticias_cards = $new->exibirNoticiasHome();
                             for($i = count($noticias_cards); $i >= 1; $i--){
                                 ?>
                                 <div class="card">
-                                    <img  class="img" src="../Materials/ImagensNoticias/<?php echo $noticias_cards['noticia '.$i]['imagem']?>" alt="">
+                                    <img  class="img" src="../Materials/ImagensNoticias/<?php echo $noticias_cards['noticia '.$i]['imagem']?>">
                                     <p class="title"><?php echo $noticias_cards['noticia '.$i]['titulo']?></p>
                                     <p class="data"><?php echo $noticias_cards['noticia '.$i]['data']?></p>
                                 </div>
