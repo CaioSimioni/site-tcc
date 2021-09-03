@@ -40,10 +40,8 @@
             exit;
         }else{
             echo"<script> alert('[Erro] Não foi possível editar o campeonato.') </script>";
-            /*
             echo"<script> window.location.href = 'campeonatoSelecionar.php' </script>";
             exit;
-            */
         }
 
     }else{
