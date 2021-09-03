@@ -19,8 +19,6 @@ if($_SESSION['adm'] == false) {
     exit;
 }
 
-var_dump($_POST);
-
 if(isset($_POST['camp_id'])){
 
     if($esports->alterarTabela($_POST['camp_local_arquivo_tab'], $_POST['camp_nova_tab'])){
