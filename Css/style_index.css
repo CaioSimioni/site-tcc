@@ -7,6 +7,13 @@
     outline: none;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background: #1a1922;
+    border-radius: 0px;
+}
 /*===============INDROTUÇÃO =================*/
 
 #indroducao{
