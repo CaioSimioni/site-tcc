@@ -478,6 +478,30 @@ class Esports{
         }
     }
 
+    public function exibirEsportsHome(){
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT `nome_camp`, `categoria_camp`, `local_arquivo_tabela`, `status_camp`, `data_camp` FROM `esports` ORDER BY `esports`.`data_camp` DESC LIMIT 3;");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $row = $sql->fetchAll();
+            
+            $esports_cards = array(
+                "esports 1" => $row[0],
+                "esports 2" => $row[1],
+                "esports 3" => $row[2]
+            );
+            return $esports_cards;
+
+        }else{
+            return false;
+        }
+    }
+
+
+
+
 }
 
 ?>

@@ -3,6 +3,7 @@ require "../System/classes.php";
 $user = new Usuario;
 $banco = new BancoBD;
 $new = new Noticia;
+$esp = new Esports;
 
 $banco->conectar();
 
@@ -13,6 +14,9 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 }
 
 $noticias_cards = $new->exibirNoticiasHome();
+$esports_cards = $esp->exibirEsportsHome();
+
+
 
 ?>
 
@@ -25,6 +29,7 @@ $noticias_cards = $new->exibirNoticiasHome();
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png">
     <link rel="stylesheet" href="../Css/style_home.css">
+    <link rel="stylesheet" href="../Css/style_campeonatos.css">
 <script src="../Js/home.js"></script>
 
 </head>
@@ -32,8 +37,62 @@ $noticias_cards = $new->exibirNoticiasHome();
     <?php
         include "../Templates/cabecalho.php";
     ?>
-    <div id="global">
 
+
+
+<?php
+  if($esports_cards){
+?>
+
+ <section id="section">
+    <h1 class="titulo">Últimos campeonatos</h1>
+ <section class="sec-apex">
+<?php
+for($i = count($esports_cards); $i >= 1; $i--){     
+?>
+  
+          <div class="camp">
+                <h2><?php echo  $esports_cards['esports '.$i]['nome_camp'] ?></h2>
+                <div class="stats">
+                <p class="status">
+                
+                <?php
+                   if( $esports_cards['esports '.$i]['status_camp']) {
+                   echo "<p style='color: #0004f9;'>Acontecerá⠀</p>"; }
+
+                    else { echo "<p style='color: #ff2020;'>Encerrado⠀</p>"; }
+                 ?>
+
+                </p>
+                <p id="data"><?php echo '|⠀'. $esports_cards['esports '.$i]['data_camp'] ?></p>
+           </div>
+           <div class="div-btn">
+                <a href=""><button class="btn">Ver Mais</button></a>
+                </div>
+              </div>
+    
+
+<?php
+  }
+?>
+       </section>        
+ </div>
+</section>
+
+ <?php //parte final caso nao tenha nenhuma notica
+ }else{
+?>
+                <div align="center">
+                    <p> Opss! Nenhum campeonato encontrado. </p>
+                </div>
+                <?php
+            }
+        ?>
+
+
+
+
+    <div id="global">
         <?php
             if($noticias_cards){
                 ?>
