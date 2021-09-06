@@ -259,6 +259,7 @@ class Noticia{
 
     public function exibirNoticiasHome(){
         global $pdo;
+        $noticias_cards = false;
 
         $sql = $pdo->prepare("SELECT `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC LIMIT 3;");
         $sql->execute();
@@ -266,15 +267,13 @@ class Noticia{
         if ($sql->rowCount() > 0) {
             $row = $sql->fetchAll();
             
-            $noticias_cards = array(
-                "noticia 1" => $row[0],
-                "noticia 2" => $row[1],
-                "noticia 3" => $row[2]
-            );
+            foreach($row as $key => $values){
+                $noticias_cards['notica '.$key] = $values;
+            }
             return $noticias_cards;
 
         }else{
-            return false;
+            return $noticias_cards;
         }
     }
 
@@ -480,22 +479,21 @@ class Esports{
 
     public function exibirEsportsHome(){
         global $pdo;
+        $esports_cards = false;
 
-        $sql = $pdo->prepare("SELECT `nome_camp`, `categoria_camp`, `local_arquivo_tabela`, `status_camp`, `data_camp` FROM `esports` ORDER BY `esports`.`data_camp` DESC LIMIT 3;");
+        $sql = $pdo->prepare("SELECT `nome_camp`, `categoria_camp`, `status_camp`, `data_camp` FROM `esports` ORDER BY `esports`.`data_camp` DESC LIMIT 3;");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $row = $sql->fetchAll();
-            
-            $esports_cards = array(
-                "esports 1" => $row[0],
-                "esports 2" => $row[1],
-                "esports 3" => $row[2]
-            );
+
+            foreach($row as $key => $values){
+                $esports_cards['camp ' . $key] = $values;
+            }
             return $esports_cards;
 
         }else{
-            return false;
+            return $esports_cards;
         }
     }
 
