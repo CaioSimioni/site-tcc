@@ -12,6 +12,7 @@
 
 #global{
     display: flex;
+    flex-direction: column;
 }
 
 #section {
