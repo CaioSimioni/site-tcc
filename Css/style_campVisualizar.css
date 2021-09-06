@@ -1,0 +1,119 @@
+a {
+    text-decoration: none;
+}
+
+#global {
+    display: flex;
+
+}
+.view_camp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms {
+    max-width: 80%;
+    min-width: 40%;
+    margin: 8vw 0;
+    height: auto;
+    padding: 20px;
+    font-family: "Raleway";
+    font-weight: 900;
+    background: #1a1922;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 4px rgba(0, 0, 0, 0.295);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info_camp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info_camp h1 {
+    text-align: center;
+}
+
+.nome {
+    font-size: 1.4rem;
+}
+.resultado {
+    margin-left: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.data {
+    font-size: 1.4rem;
+}
+
+.status {
+    font-size: 1.4rem;
+}
+
+.code_tabela {
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#txta_code_editor {
+    max-width: 90%;
+    min-width: 90%;
+    height: auto;
+    min-height: 150px;
+    border-radius: 4px;
+    background: #48474e;
+    padding: 10px;
+    font-size: 1rem;
+    border: 3px solid white;
+    color: white;
+    font-family: monospace;
+}
+
+
+
+.title_tab {
+    font-size: 1.5rem;
+}
+
+.buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.btn {
+    max-width: 28%;
+    min-width: 28%;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 900;
+    font-family: "Raleway";
+    padding: 10px;
+    border-radius: 4px;
+    background: white;
+    font-size: 1rem;
+    color: white;
+    border: none;
+}
+
+.voltar {
+    background: rgb(214, 30, 30);
+}
+.limpar {
+    background: rgb(214, 128, 30);
+}
+.atu {
+    background: rgb(30, 79, 214);
+}
