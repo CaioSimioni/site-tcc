@@ -64,6 +64,7 @@ if($banco->conectar()){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
+    <link rel="stylesheet" href="../Css/style_campVisualizar.css">
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 
 </head>
@@ -73,35 +74,38 @@ if($banco->conectar()){
 
 <div class="global">
     <div class="view_camp">
-        <form action="editaTabelaCampeonato.php" method="post">
+        <form class="forms" action="editaTabelaCampeonato.php" method="post">
                 
                     <input type="hidden" name="camp_id" value="<?php echo $bd_campeonato['id'] ?>">
                     <input type="hidden" name="camp_local_arquivo_tab" value="<?php echo$bd_campeonato['local_arquivo_tabela'] ?>">
                 
                 <div class="info_camp">
                     <h1>Informações Campeonato</h1>
-                    <div class="camp_nome">
-                        <label>Nome: <?php echo $bd_campeonato['nome']?></label>
+                    <div class="camp">
+                        <p class="nome">Nome</p>
+                        <label class="resultado"><?php echo $bd_campeonato['nome']?></label>
                     </div>
-                    <div class="camp_data">
-                        <label>Data: <?php echo$bd_campeonato['data']?></label>
+                    <div class="camp">
+                        <p class="data">Data</p>
+                        <label class="resultado"><?php echo$bd_campeonato['data']?></label>
                     </div>
-                    <div class="camp_status">
-                        <label>Status: <?php if($bd_campeonato['status'] == '0'){echo "Em breve";}else{echo "Encerrado";}?></label>
+                    <div class="camp">
+                        <p class="status">Status</p>
+                        <label class="resultado"><?php if($bd_campeonato['status'] == '0'){echo "Em breve";}else{echo "Encerrado";}?></label>
                     </div>
                 </div>
                 <div class="view_tabela">
-                    <h1>Tabela atual</h1>
-                    <?php echo $bd_campeonato['tabela']?>
+                    <h1 class="title_tab">Tabela atual</h1>
+                    <p class="resultado"><?php echo $bd_campeonato['tabela']?></p>
                 </div>
                 <div class="code_tabela">
                     <h1>Código da tabela</h1>
                     <textarea name="camp_nova_tab" id="txta_code_editor" cols="30" rows="10"><?php print $bd_campeonato['tabela'] ?></textarea>
                 </div>
                 <div class="buttons">
-                    <button><a href="campeonatoSelecionar.php">Voltar</a></button>
-                    <input type="reset" value="Limpar">
-                    <input type="submit" value="Atualizar">
+                    <a class="btn voltar" href="campeonatoSelecionar.php">Voltar</a>
+                    <input class="btn limpar" type="reset" value="Limpar">
+                    <input class="btn atu" type="submit" value="Atualizar">
                 </div>
             </form>
     </div>
