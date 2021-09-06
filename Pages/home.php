@@ -30,7 +30,6 @@ $esports_cards = $esp->exibirEsportsHome();
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png">
     <link rel="stylesheet" href="../Css/style_home.css">
-    <link rel="stylesheet" href="../Css/style_campeonatos.css">
 
 </head>
 <body>
@@ -42,7 +41,7 @@ $esports_cards = $esp->exibirEsportsHome();
 
     <div id="global">
 
-        <section>
+        <section class="firts">
             <?php 
                 if($esports_cards){
                     ?>
@@ -51,13 +50,21 @@ $esports_cards = $esp->exibirEsportsHome();
                         <?php
                             foreach($esports_cards as $key => $values){
                                 ?>
-                                    <div class="card">
-                                        <a href="">
-                                            <h1 class="title" id="camp-title"><?php echo $esports_cards[$key]['nome_camp']?></h1>
-                                            <p class="title camp-infos"><?php echo $esports_cards[$key]['categoria_camp']?></p>
-                                            <p class="data camp-infos"><?php echo date('d-M-y H:i', strtotime($esports_cards[$key]['data_camp']))?></p>
-                                        </a>
-                                    </div>
+                                    <a href="" class="link">
+                                        <div class="camp">
+                                            <div class="div-title">
+                                                <h1 class="" id="camp-title"><?php echo ucfirst($esports_cards[$key]['nome_camp'])?></h1>
+                                                <img class="img" src="../Materials/ImagensNoticias/godofwar.jpg" alt="">
+                                            </div>
+                                            <div class="div-cate">
+                                                <p class=""><?php echo ucfirst($esports_cards[$key]['categoria_camp'])?></p>
+                                            </div>
+                                            <div class="div-date">
+                                                <p class=""><?php echo date('d-M-y H:i', strtotime($esports_cards[$key]['data_camp']))?></p>
+                                            </div>
+                                        </div>
+                                    </a>
+
                                 <?php
                             }
                         ?>

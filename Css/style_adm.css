@@ -5,7 +5,7 @@
 }
 
 section {
-    margin: 50px auto 190px;
+    margin: 50px auto 200px;
     text-align: center;
 }
 section h1 {
@@ -14,7 +14,7 @@ section h1 {
     margin-bottom: 50px;
 }
 section .cards {
-    display: flex;
+    display: flex;  
     justify-content: space-around;
 }
 section .cards .box {

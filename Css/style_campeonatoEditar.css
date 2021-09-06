@@ -1,0 +1,104 @@
+input {
+    
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid white;
+    background: whitesmoke;   
+    height: 30px;
+    font-size: 1rem;
+}
+
+
+select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid white;
+    background: whitesmoke;   
+    height: 40px;
+    font-size: 1rem;
+    display: flex;
+    gap: 30px;
+}
+
+input[type="radio"] {
+    width: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.global {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    min-width: 30vw;
+    margin: 10vw 0;
+    height: auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #1a1922;
+    color: white;
+    font-family: "Raleway";
+    font-weight: 900;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h1 {
+    text-align: center;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.input_radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+#labelEm {
+    color: #5fe03e;
+}
+#labelFoi {
+    color: rgb(255, 0, 0);
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+}
+
+.voltar {
+    background: rgb(214, 30, 30);
+}
+.limpar {
+    background: rgb(214, 128, 30);
+}
+.atu {
+    background: rgb(30, 79, 214);
+}

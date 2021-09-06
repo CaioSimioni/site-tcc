@@ -51,14 +51,15 @@ $esports = new Esports;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo - Editar Campeonato</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/style_campeonatoEditar.css">
 </head>
 <body>
     <?php include "../Templates/cabecalho.php"?>
     <div class="global">
         <div class="editaCamp">
-            <form action="editaCampeonato.php" method="post">
+            <form class="form" action="editaCampeonato.php" method="post">
                 <input type="hidden" name="id_camp" value="<?php echo$bd_campeonato['id_camp']?>">
-
+                <h1>Editar Campeonato</h1>
                 <div class="grupo" id="div_nome_camp">
                     <label for="input_name_camp">Nome Campeonato</label>
                     <input type="text" name="name_camp" id="input_name_camp" value="<?php echo$bd_campeonato['nome_camp']?>">
@@ -84,17 +85,17 @@ $esports = new Esports;
                 <div class="grupo" id="div_status_camp">
                     <div class="input_radio embreve">
                         <input type="radio" name="status_camp" id="input_status_camp" value="em breve" <?php if($bd_campeonato['status_camp'] == "0"){echo "checked";}?>>
-                        <label for="input_status_camp">Em Breve</label>
+                        <label id="labelEm" for="input_status_camp">Em Breve</label>
                     </div>
                     <div class="input_radio">
                         <input type="radio" name="status_camp" id="input_status_camp" value="encerrado" <?php if($bd_campeonato['status_camp'] == "1"){echo "checked";}?>>
-                        <label for="input_status_camp">Encerrado</label>
+                        <label id="labelFoi" for="input_status_camp">Encerrado</label>
                     </div>
                 </div>
                 <div class="grupo" id="buttons">
-                    <button><a href="./campeonatoSelecionar.php">Voltar</a></button>
-                    <input type="reset" value="Limpar">
-                    <input type="submit" value="Alterar">
+                    <a class="item voltar" href="./campeonatoSelecionar.php">Voltar</a>
+                    <input class="item limpar" type="reset" value="Limpar">
+                    <input class="item atu" type="submit" value="Alterar">
                 </div>
             </form>
         </div>
