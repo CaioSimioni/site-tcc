@@ -282,12 +282,12 @@ class Noticia{
 class Esports{
     private $pdo;
     public $msgErro = "";
-    public $categorias = [
+    public $categorias = array(
         "Apex Legends",
         "League of Legends",
         "Counter Strike",
         "Valorant"
-    ];
+    );
     public $campeonatoValues;
 
     public function cadastrarEsports($nome, $categoria, $data, $local_arquivo_tabela, $status){
@@ -481,7 +481,7 @@ class Esports{
         global $pdo;
         $esports_cards = false;
 
-        $sql = $pdo->prepare("SELECT `nome_camp`, `categoria_camp`, `status_camp`, `data_camp` FROM `esports` ORDER BY `esports`.`data_camp` DESC LIMIT 3;");
+        $sql = $pdo->prepare("SELECT `id_camp`, `nome_camp`, `categoria_camp`, `status_camp`, `data_camp` FROM `esports` ORDER BY `esports`.`data_camp` DESC LIMIT 3;");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
@@ -497,7 +497,36 @@ class Esports{
         }
     }
 
+    public function nomeFotoPadraoCampHome($categoria_camp){
+        
+        $res = "..\Materials\ImagensCamps\default";
 
+        switch($categoria_camp){
+
+            case $this->categorias[0]:
+                $res = $res . "_apex";
+                break;
+
+            case $this->categorias[1]:
+                $res = $res . "_lol";
+                break;
+
+            case $this->categorias[2]:
+                $res = $res . "_csgo";
+                break;
+
+            case $this->categorias[3]:
+                $res = $res . "_valorant";
+                break;
+
+            default:
+                $res = $res . "";
+                break;
+        }
+
+        $res = $res . ".jpg";
+        return $res;
+    }
 
 
 }
