@@ -50,21 +50,20 @@ $esports_cards = $esp->exibirEsportsHome();
                         <?php
                             foreach($esports_cards as $key => $values){
                                 ?>
-                                    <a href="" class="link">
+                                    <a href="campeonato.php?idcamp=<?php echo$esports_cards[$key]['id_camp']?>" class="link">
                                         <div class="camp">
                                             <div class="div-title">
                                                 <h1 class="" id="camp-title"><?php echo ucfirst($esports_cards[$key]['nome_camp'])?></h1>
-                                                <img class="img" src="../Materials/ImagensNoticias/godofwar.jpg" alt="">
+                                                <img class="img" src="<?php echo$esp->nomeFotoPadraoCampHome($esports_cards[$key]['categoria_camp'])?>" alt="">
                                             </div>
                                             <div class="div-cate">
                                                 <p class=""><?php echo ucfirst($esports_cards[$key]['categoria_camp'])?></p>
                                             </div>
                                             <div class="div-date">
-                                                <p class=""><?php echo date('d-M-y H:i', strtotime($esports_cards[$key]['data_camp']))?></p>
+                                                <p class=""><?php echo date('H:i - d M, Y', strtotime($esports_cards[$key]['data_camp']))?></p>
                                             </div>
                                         </div>
                                     </a>
-
                                 <?php
                             }
                         ?>
