@@ -87,7 +87,7 @@ if($banco->conectar()){
                     </div>
                     <div class="camp">
                         <p class="data">Data</p>
-                        <label class="resultado"><?php echo$bd_campeonato['data']?></label>
+                        <label class="resultado"><?php echo date("d/m/y - h:m", strtotime($bd_campeonato['data'])) . " BRT"?></label>
                     </div>
                     <div class="camp">
                         <p class="status">Status</p>
@@ -96,7 +96,7 @@ if($banco->conectar()){
                 </div>
                 <div class="view_tabela">
                     <h1 class="title_tab">Tabela atual</h1>
-                    <p class="resultado"><?php echo $bd_campeonato['tabela']?></p>
+                    <?php echo $bd_campeonato['tabela']?>
                 </div>
                 <div class="code_tabela">
                     <h1>Código da tabela</h1>
