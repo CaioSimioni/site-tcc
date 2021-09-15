@@ -7,7 +7,7 @@
 .global h1 {
     margin-bottom: 20px;
 }
-.sec-apex {
+.section-camps {
     width: 100%;
     height: auto;
     background: #1a1922;
@@ -19,7 +19,7 @@
     transition: 700ms;
     margin-bottom: 100px;
 }
-.sec-apex .camp {
+.section-camps .camp {
     width: 20%;
     height: auto;
     background: white;
@@ -33,16 +33,16 @@
     margin: 30px;
     transition: 700ms;
 }
-.sec-apex .camp h2 {
+.section-camps .camp h2 {
     font-weight: 900;
 
 }
-.sec-apex .camp .stats {
+.section-camps .camp .stats {
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: left;
 }
-.sec-apex .camp .stats #status #resSta {
+.section-camps .camp .stats #status #resSta {
     background:blue;
 }
 
@@ -54,16 +54,16 @@
 
 
 
-.sec-apex img {
+.section-camps img {
     width: 100%;
     height: auto;
     border-radius: 4px;
 }
-.sec-apex .div-btn {
+.section-camps .div-btn {
     text-align: left;
     margin-top: 10px;
 }
-.sec-apex .div-btn a button{
+.section-camps .div-btn a button{
     width: 40%;
     border: none;
     height: auto;
@@ -73,7 +73,7 @@
     border-radius: 2px;
     color: white;
 }
-.sec-apex .div-btn a button:hover {
+.section-camps .div-btn a button:hover {
     background: rgb(12, 32, 58);
     cursor: pointer;
     transition: 300ms ease;
@@ -82,11 +82,11 @@
 
 
 @media screen and (max-width: 980px) {
-    .sec-apex .camp {
+    .section-camps .camp {
         width: 50%;
         transition: 700ms;
     }
-    .sec-apex {
+    .section-camps {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -94,11 +94,11 @@
     }
 }
 @media screen and (max-width: 500px) {
-    .sec-apex .camp {
+    .section-camps .camp {
         width: 70%;
         transition: 700ms;
     }
-    .sec-apex {
+    .section-camps {
         display: flex;
         flex-direction: column;
         justify-content: center;
