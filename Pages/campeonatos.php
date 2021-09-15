@@ -2,8 +2,15 @@
 require "../System/classes.php";
 $user = new Usuario;
 $banco = new BancoBD;
+$esports = new Esports;
 
 $banco->conectar();
+
+if(!$banco->conectar()){
+	echo "<script> alert('[Erro] Falha na conexão com o banco de dados.') </script>";
+	echo "<script> window.location.href('../Pages/home.php') </script>";
+	exit;
+}
 
 if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     echo "<script> alert('Falha na autenticação de usuário!')</script>";    
@@ -11,9 +18,6 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     exit;
 }
 
-$nomecamp = "ALGS - North America";
-$statuscamp = false;
-$datacamp = "11/07/2021";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,177 +35,77 @@ $datacamp = "11/07/2021";
     ?>
 
     <div class="global">
-        <h1>Campeonatos - Apex Legends</h1>
-        <section class="sec-apex">
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/apexlegends.jpg" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-        </section>
-        <h1>Campeonatos - League Of Legends</h1>
-        <section class="sec-apex">
-        <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/league-of-legends.png" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-        </section>
-        <h1>Campeonatos - Valorant</h1>
-        <section class="sec-apex">
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/valorant" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/valorant.jpg" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-            <div class="camp">
-                <h2><?php echo ucfirst($nomecamp)?></h2>
-                <div class="stats">
-                    <p class="status"><?php
-                        if($statuscamp) {
-                            echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
-                        }
-                        else {
-                            echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
-                        }
-                    ?></p>
-                    <p id="data"><?php echo '|⠀'.$datacamp?></p>
-                </div>
-                <img src="../Materials/ImagesNoticias/valorant.jpg" alt="">
-                <div class="div-btn">
-                    <a href=""><button class="btn">Ver Mais</button></a>
-                </div>
-            </div>
-        </section>
+		<?php
+
+			if($banco->conectar()){
+
+				$campeonatos = $esports->pegarTodosCampeonatos();
+				$categorias_camp = $esports->getCategorias();
+
+				if($campeonatos){
+
+					foreach($campeonatos as $chave => $camps){
+						/**
+						 * 	$campeonatos é a variável que veio do banco de dados.
+						 * 	$chave é a das categoria, ou seja, apex, lol, valorant, cs ...
+						 * 	$
+						 */
+						if(empty($camps)){
+							?>
+								<h1>Campeonatos - <?php echo $chave?></h1>
+								<section class="section-camps" style="color: #fff;">
+									<p style="text-align: center;">Não há campeonatos de <?echo $chave?> no sistema.</p>
+								</section>
+							<?php
+						}else{
+							?>
+							<!-- HMTL -->
+							<h1>Campeonatos - <?php echo $chave?></h1>
+							<section class="section-camps" style="color: #fff;">
+								<?php
+									foreach($camps as $camp){
+										?>
+											<div class="camp">
+												<h2><?php echo ucfirst($camp['nome_camp'])?></h2>
+												<div class="stats">
+													<p class="status"><?php
+														if(!$camp['status_camp']) {
+															echo "<p style='color: #0004f9;'>Acontecerá⠀</p>";
+														}
+														else {
+															echo "<p style='color: #ff2020;'>Encerrado⠀</p>";
+														}
+													?></p>
+													<p id="data"><?php echo '|⠀'.date("d/m/y - h:i", strtotime($camp['data_camp']))?></p>
+												</div>
+												<img src="<?php echo$esports->nomeFotoPadraoCampHome($camp['categoria_camp'])?>" alt="">
+												<div class="div-btn">
+													<a href="">Ver Mais</a>
+												</div>
+											</div>
+										<?php
+									}
+								?>
+							
+							</section>
+							<!-- Fim HMTL -->
+							<?php
+						}
+					}
+
+				}else{
+					echo "[Erro] Nenhum campeonato encontrado.";
+					echo "<script> window.location.href('../Pages/home.php') </script>";
+					exit;
+				}
+
+			}else{
+				echo "<script> alert('[Erro] Falha na conexão com o banco de dados.') </script>";
+				echo "<script> window.location.href('../Pages/home.php') </script>";
+				exit;
+			}
+		?>
+
     </div>
 
     <?php
