@@ -290,6 +290,10 @@ class Esports{
     );
     public $campeonatoValues;
 
+	public function getCategorias(){
+		return $this->categorias;
+	}
+
     public function cadastrarEsports($nome, $categoria, $data, $local_arquivo_tabela, $status){
         global $pdo;
 
@@ -352,6 +356,32 @@ class Esports{
         }
 
     }
+
+	public function pegarTodosCampeonatos(){
+		global $pdo;
+		$camps = false;
+
+		$sql = $pdo->prepare("SELECT * FROM `esports`");
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+
+			$dados = $sql->fetchAll();
+			$camps = [];
+			foreach($this->categorias as $categoria){
+				$camps[$categoria] = [];
+				foreach($dados as $key => $values){
+					if($categoria == $values['categoria_camp']){
+						$camps[$categoria]['camp '.$key] = $values;
+					}
+				}
+			}
+			return $camps;
+
+		}else{
+			return $camps;
+		}
+	}
 
     public function pegarCampeonato($codigo_campeonato){
         global $pdo;
