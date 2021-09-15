@@ -153,10 +153,9 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    word-break: break-all;
+	text-align: justify;
 }
+
 .div-date {
     display: flex;
     align-items: flex-end;
