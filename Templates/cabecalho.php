@@ -100,7 +100,7 @@
                     <ul class="nav__links">
                         <li><a href="../Pages/home.php">Home</a></li>
                         <li><a href="../Pages/campeonatos.php">E-Sports</a></li>
-                        <li><a href="#">Tópicos</a></li>
+                        <li><a href="../Pages/topicos.php">Tópicos</a></li>
                         <?php
                             if($_SESSION['adm']) {
                                 echo "<li><a href='../Admin/admin.php'>Administração</a></li>";
