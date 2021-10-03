@@ -11,8 +11,7 @@
     height: auto;
     padding: 20px 0%;
     background: white;
-    margin-top: 110px;
-    margin-bottom: 190px;
+    margin: 13vw 0;
     font-family: "Raleway";
     display: flex;
     justify-content: space-around;
@@ -51,4 +50,9 @@
     .div_principal .card {
         width: 70%;
     }
+}
+
+
+#final {
+	margin-top: 10vw;
 }

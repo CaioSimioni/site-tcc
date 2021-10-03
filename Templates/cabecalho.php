@@ -48,7 +48,16 @@
         .nav__links li a:hover{
             color: #30508b;
         }
-
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1922;
+            border-radius: 0px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #90909a;
+        }
         .header button{
             padding: 9px 25px;
             background-color: rgb(17, 49, 87, 1);

@@ -113,7 +113,7 @@ a {
 
 }
 .firts {
-    margin-top: 10vw;
+    margin-top: 5vw;
     padding: 20px;
     font-family: "Raleway";
     font-weight: 900;
@@ -138,7 +138,7 @@ a {
     display: flex;
     flex-direction: column;
     background: #1a1922;
-    padding: 10px;
+    padding: 20px;
     border-radius: 12px;
     color: white;
     justify-content: space-between;

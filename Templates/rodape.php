@@ -8,7 +8,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            bottom: 1px;
+            margin-top: 3vw;
         }
 
         #final nav ul{
