@@ -162,7 +162,6 @@ Class Usuario{
 
 }
 
-
 class Noticia{
     private $pdo;
     public $msgError = "";
