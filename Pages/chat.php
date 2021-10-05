@@ -14,57 +14,58 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     exit;
 }
 
+global $pdo;
+
+$sql = $pdo->query("SELECT * FROM `chat` WHERE `chat` = 'chat-geral'");
+
+if($sql->rowCount() > 0){
+
+    $dados = $sql->fetchAll();
+
+    foreach($dados as $values){
+
+        /*  Estrutura das mensagens
+            <div class="msg-in OU msg-out">  'out' do usuario local
+                <div class="info-user">
+                    <img src="../Materials/UsersAvatar/icon.png">
+                    <h1> Pedrinho_gamer </h1>
+                </div>
+                <div class="content-msg">
+                    <p> Oi, alguém no chat? </p>
+                </div>
+            </div> 
+        */
+        if($values['id_usuario'] == $_SESSION['codigo_usuario']){
+            ?>
+            <div class="msg-out">
+                <div class="info-user">
+                    <img src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
+                    <h1><?php echo $values['nome_usuario'] ?></h1>
+                </div>
+                <div class="content-msg">
+                    <p><?php $values['texto'] ?></p>
+                </div>
+            </div>
+            <?php
+        }else{
+            ?>
+            <div class="msg-in">
+                <div class="info-user">
+                    <img src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
+                    <h1><?php echo $values['nome_usuario'] ?></h1>
+                </div>
+                <div class="content-msg">
+                    <p><?php $values['texto'] ?></p>
+                </div>
+            </div>
+            <?php
+        }
+
+    }
+
+}else{
+    //  Exibir que não há mensagens no chat
+    //  Falar para a pessoa ser a primeira
+}
 
 ?>
- <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polo</title>
-    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="../Css/style_chat.css">
-
-</head>
-<body>
-
-
-<div id="global">
-
- <div class = "chat" >
- <?php
-
-global $pdo;
-$sql = $pdo->query("SELECT * FROM `chat`"); 
-
-foreach($sql->fetchAll() as $key){
-    
-    $nome = $key['nome'];
-
-
-       $sqli = $pdo ->query( "SELECT `imagem` FROM `usuario` WHERE usuario ='$nome'");
-       foreach($sqli->fetchAll() as $keyy){
-       $imagem = $keyy['imagem'];
-        echo '<img class="img-perfil"  src="../Materials/UsersAvatar/' .$imagem. ' "> ' ;
-        
-       }
-             if($nome == $_SESSION['nome_usuario']){
-                 echo '<h3 class= "user">' .$key['nome']. '</h3>';
-             }
-              else{
-                echo '<h3 class ="OUser">' .$key['nome']. '</h3>';
-
-              }
-  
-  echo "<p>" .$key['mensagem']. "</p>";
-
-   }
-
-   ?>
- </div>
-</div>
-
-</body>
-</html>

@@ -561,4 +561,40 @@ class Esports{
 
 }
 
+class Chat{
+    private $pdo;
+    public $msgErro = "";
+    public $mensagem = [
+        'id_mensagem' => '',
+        'chat' => '',
+        'id_usuario' => '',
+        'nome_usuario' => '',
+        'foto_usuario' => '',
+        'texto' => '',
+        'data' => ''
+    ];
+    public $chats = [
+        'geral' => 'chat-geral'
+    ];
+
+    public function getChats(){
+        return $this->chats;
+    }
+
+    public function inserirMensagem($chat, $id_usuario, $nome_usuario, $foto_usuario, $texto){
+        global $pdo;
+
+        $sql = $pdo->prepare("INSERT INTO `chat`(`chat`, `id_usuario`, `nome_usuario`, `foto_usuario`, `texto`, `data`) VALUES('$chat', $id_usuario, '$nome_usuario', '$foto_usuario', :txt, :dt)");
+        $sql->bindValue(':txt', $texto);
+        $sql->bindValue('dt', date('Y-m-d H:i:s'));
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
 ?>
