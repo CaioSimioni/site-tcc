@@ -33,29 +33,36 @@ if($sql->rowCount() > 0){
                 <div class="content-msg">
                     <p> Oi, alguém no chat? </p>
                 </div>
-            </div> 
+            </div> 1
         */
         if($values['id_usuario'] == $_SESSION['codigo_usuario']){
+            
+            
+            
             ?>
-            <div class="msg-out">
-                <div class="info-user">
-                    <img src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
-                    <h1><?php echo $values['nome_usuario'] ?></h1>
-                </div>
-                <div class="content-msg">
-                    <p><?php $values['texto'] ?></p>
+            <div class="vai-pa-direita">
+                <div class="msg-out">
+                    <div class="info-user">
+                        <img class="avatar-user" src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
+                        <h1 class="name-user"><?php echo $values['nome_usuario'] ?></h1>
+                    </div>
+                    <div class="content-msg">
+                        <p class="texto"><?php echo $values['texto'] ?></p>
+                    </div>
                 </div>
             </div>
             <?php
         }else{
             ?>
-            <div class="msg-in">
-                <div class="info-user">
-                    <img src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
-                    <h1><?php echo $values['nome_usuario'] ?></h1>
-                </div>
-                <div class="content-msg">
-                    <p><?php $values['texto'] ?></p>
+            <div class="vai-pa-esquerda">
+                <div class="msg-in">
+                    <div class="info-user">
+                        <img class="avatar-user" src=<?php echo "../Materials/UsersAvatar/".$values['foto_usuario']; ?> alt="img-user">
+                        <h1 class="name-user"><?php echo $values['nome_usuario'] ?></h1>
+                    </div>
+                    <div class="content-msg">
+                        <p class="texto"><?php echo $values['texto'] ?></p>
+                    </div>
                 </div>
             </div>
             <?php

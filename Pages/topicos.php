@@ -22,6 +22,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo</title>
     <link rel="shortcut icon" href="../Materials/polo_icon.png">
+    <link rel="stylesheet" href="../Css/style_topicos.css">
 
 
     <script type="text/javascript">
@@ -50,17 +51,18 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 <!-- -->
 
     <div id="global">
+        <h1 class="title-page">Chat Geral</h1>
+        <div class="box_form">
+            <form class="form" method="post" action="topicos.php">
+                <input class="input msg" type="text" name="mensagem" placeholder="Mensagem">
+                <input class="input btn" type="submit" value="Enviar">
+            </form>
+        </div>
 
-    <div class="box_form">
-        <form method="post" action="topicos.php">
-            <input type="text" name="mensagem" placeholder="Mensagem">
-            <input type="submit" value="enviar" >
-        </form>
-    </div>
+        <div id="chat">
+            
 
-    <div id="chat">
-
-    </div>
+        </div>
 
     
     </div> <!-- fim Global -->
