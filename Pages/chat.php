@@ -37,8 +37,6 @@ if($sql->rowCount() > 0){
         */
         if($values['id_usuario'] == $_SESSION['codigo_usuario']){
             
-            
-            
             ?>
             <div class="vai-pa-direita">
                 <div class="msg-out">
