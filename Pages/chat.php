@@ -16,7 +16,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 global $pdo;
 
-$sql = $pdo->query("SELECT * FROM `chat` WHERE `chat` = 'chat-geral'");
+$sql = $pdo->query("SELECT * FROM `chat` WHERE `chat` = 'chat-geral' ORDER BY `data` DESC LIMIT 50");
 
 if($sql->rowCount() > 0){
 
