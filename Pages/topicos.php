@@ -86,8 +86,10 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
                     if($chat->inserirMensagem($categoria_chat, $id_usuario, $nome_usuario, $foto_usuario, $texto)){
                         //  Se cadastrada com Sucesso.
+                        echo "<script> window.location.href = 'topicos.php' </script>";  // É cambiara eu sei :D
                     }else{
                         //  Se falhar a mensagem.
+                        echo "<script> alert('Falha ao enviar a mensagem.') </script>";
                     }
                 }
 
