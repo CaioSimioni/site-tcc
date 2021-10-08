@@ -37,6 +37,9 @@ if(isset($_FILES['arquivo'])){
         }else{
             $msg = "Arquivo na enviado com sucesso";
         }
+
+    $sql = $pdo->prepare("UPDATE `chat` SET `foto_usuario` = '$novo_nome' WHERE `chat`.`id_usuario` = $cod_usu");
+    $sql->execute();
 }
 ?>
 
