@@ -286,7 +286,8 @@ class Esports{
         "Apex Legends",
         "League of Legends",
         "Counter Strike",
-        "Valorant"
+        "Valorant",
+        "Free Fire"
     );
     public $campeonatoValues;
 
@@ -547,6 +548,10 @@ class Esports{
 
             case $this->categorias[3]:
                 $res = $res . "_valorant";
+                break;
+
+            case $this->categorias[4]:
+                $res = $res . "_freefire";
                 break;
 
             default:
