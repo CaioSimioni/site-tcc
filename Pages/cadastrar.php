@@ -8,12 +8,8 @@ $banco = new BancoBD;
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polo</title>
+    <?php include "../Templates/head.php"?>
     <link rel="stylesheet" href="../Css/style_cadastrar.css">
-    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
 </head>
 <body>
     <div id="global">

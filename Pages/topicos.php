@@ -17,16 +17,10 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polo</title>
-    <link rel="shortcut icon" href="../Materials/polo_icon.png">
+    <?php include "../Templates/head.php"?>
     <link rel="stylesheet" href="../Css/style_topicos.css">
 
-
     <script type="text/javascript">
-
         function ajax(){
             var req = new XMLHttpRequest();
             req.onreadystatechange = function(){
@@ -38,9 +32,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             req.send();
         }
         setInterval(function(){ajax();},1000)
-
    </script>
-
 
 </head>
 <body>
@@ -59,11 +51,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             </form>
         </div>
 
-        <div id="chat">
-            
-
-        </div>
-
+        <div id="chat"></div>
     
     </div> <!-- fim Global -->
     <?php
