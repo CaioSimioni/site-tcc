@@ -18,7 +18,7 @@ $esports = new Esports;
 
     if($banco->conectar()){
 
-        $id_camp = isset($_GET['idcampeonato']) ? $_GET['idcampeonato'] : NULL ;
+        $id_camp = isset($_GET['idcampeonato']) ? $_GET['idcampeonato'] : NULL;
 
         if($id_camp){
 
