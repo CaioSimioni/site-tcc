@@ -88,11 +88,15 @@ $esports_cards = $esp->exibirEsportsHome();
                         <?php
                             foreach($noticias_cards as $key => $values){
                                 ?>
+                                    
                                     <div class="card">
-                                        <img  class="img" src="../Materials/ImagensNoticias/<?php echo $noticias_cards[$key]['imagem']?>">
-                                        <p class="title"><?php echo $noticias_cards[$key]['titulo']?></p>
-                                        <p class="data"><?php echo date('d/m/Y', strtotime($noticias_cards[$key]['data']))?></p>
+                                        <a href="../Noticia/exibirNoticia.php?id=<?php echo $noticias_cards[$key]['id_noticia']?>">
+                                            <img  class="img" src="../Materials/ImagensNoticias/<?php echo $noticias_cards[$key]['imagem']?>">
+                                            <p class="title"><?php echo $noticias_cards[$key]['titulo']?></p>
+                                            <p class="data"><?php echo date('d/m/Y', strtotime($noticias_cards[$key]['data']))?></p>
+                                        </a>
                                     </div>
+                                    
                                 <?php
                             }
                         ?>
