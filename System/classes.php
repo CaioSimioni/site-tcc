@@ -165,7 +165,7 @@ Class Usuario{
 class Noticia{
     private $pdo;
     public $msgError = "";
-    public $noticiaValues;
+    public $noticiaValues = false;
 
     /*
         Atribudos Notícia
@@ -177,7 +177,7 @@ class Noticia{
         * data
     */
 
-    public function cadastrarNoticia ($titulo , $descricao, $fonte, $data, $imagem){
+    public function cadastrarNoticia($titulo , $descricao, $fonte, $data, $imagem){
         global $pdo;
         $imagemInserirda = false;
 
@@ -216,13 +216,14 @@ class Noticia{
 
             $dados = $sql->fetch();
 
-            $titulo_noticia = $dados['titulo'];
-            $descricao_noticia = $dados['descricao'];
-            $fonte_noticia = $dados['fonte'];
-            $data_noticia = $dados['data'];
-            $imagem_noticia = $dados['imagem'];
-
-            $noticiaValues = array($titulo_noticia, $descricao_noticia, $fonte_noticia, $data_noticia, $imagem_noticia);
+            $noticiaValues = array(
+                "id" => $dados['id_noticia'],
+                "titulo" => $dados['titulo'],
+                "descricao" => $dados['descricao'],
+                "fonte" => $dados['fonte'],
+                "data" => $dados['data'],
+                "imagem" => $dados['imagem']
+            );
 
             return $noticiaValues;
 
@@ -261,7 +262,7 @@ class Noticia{
         global $pdo;
         $noticias_cards = false;
 
-        $sql = $pdo->prepare("SELECT `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC LIMIT 3;");
+        $sql = $pdo->prepare("SELECT `id_noticia`, `titulo`, `descricao`, `fonte`, `data`, `imagem` FROM `noticia` ORDER BY `noticia`.`data` DESC LIMIT 3;");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
