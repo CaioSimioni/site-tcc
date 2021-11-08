@@ -109,6 +109,31 @@
     margin: 2vw 0;
 }
 
+.msg-erro{
+    font-family: "Raleway";
+    padding: 10px;
+    border-radius: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: rgb(202, 53, 53);
+    color: white;
+}
+.title-msg {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.603);
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.title-msg svg {
+    margin-right: 10px;
+}
+.desc-msg-erro {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 @media (max-width: 700px) {
     #chat {
         width: 90%;
