@@ -28,10 +28,10 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
                     document.getElementById('chat').innerHTML = req.responseText;
                 }
             }
-            req.open('GET','chat.php',true);
+            req.open('GET', 'chat.php', true);
             req.send();
         }
-        setInterval(function(){ajax();},1000)
+        setInterval(function(){ajax();},1000);
    </script>
 
 </head>
@@ -51,7 +51,8 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
             </form>
         </div>
 
-        <div id="chat"></div>
+        <div id="chat">
+        </div>
     
     </div> <!-- fim Global -->
     <?php
