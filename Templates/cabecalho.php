@@ -112,7 +112,7 @@
                         <li><a href="../Pages/topicos.php">Tópicos</a></li>
                         <?php
                             if($_SESSION['adm']) {
-                                echo "<li><a href='../Admin/admin.php'>Administração</a></li>";
+                                echo "<li><a href='../Admin/'>Administração</a></li>";
                             }
                         ?>
                         <li><a href="../System/logout.php">Sair</a></li>
