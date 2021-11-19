@@ -43,8 +43,9 @@ $noticia = new Noticia;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <?php include "../Templates/head.php"?>
     <link rel="stylesheet" href="../Css/style_verNoticia.css">
 </head>
