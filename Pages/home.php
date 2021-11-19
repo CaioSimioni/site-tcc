@@ -9,7 +9,7 @@ $banco->conectar();
 
 if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
     echo "<script> alert('Falha na autenticação de usuário!')</script>";    
-    echo "<script>window.location.href='../index.php'</script>";
+    echo "<script>window.location.href='../'</script>";
     exit;
 }
 
@@ -50,7 +50,7 @@ $esports_cards = $esp->exibirEsportsHome();
                         <?php
                             foreach($esports_cards as $key => $values){
                                 ?>
-                                    <a href="campeonato.php?idcamp=<?php echo$esports_cards[$key]['id_camp']?>" class="link">
+                                    <a href="../Esports/exibirCampeonato.php?id=<?php echo$esports_cards[$key]['id_camp']?>" class="link">
                                         <div class="camp">
                                             <div class="div-title">
                                                 <h1 id="camp-title"><?php echo ucfirst($esports_cards[$key]['nome_camp'])?></h1>
