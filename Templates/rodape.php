@@ -84,8 +84,8 @@
         <nav>
             <ul>
                 <li><a href="../Pages/sobre_nos.php">Sobre nós</a></li>
-                <li><a href="">Fale conosco </a></li>
-                <li><a href="../Pages/privacidade.php">Política de privacidade </a></li>
+                <li><a href="../Pages/Fale_conosco.php">Fale conosco </a></li>
+                <li><a href="../Pages/regras.php">Regras de convivência</a></li>
                 <li>
                     <a href="https://github.com/CaioSimioni/site-tcc">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
