@@ -11,10 +11,17 @@ class BancoBD{
         global $pdo;    // As variaveis globais serão usadas
         global $msgErro;
 
-        $nome    = "polo";
+        $nome    = "3863708_polo";
         $host    = "localhost";
         $usuario = "root";
         $senha   = "";
+
+        /*
+        $nome    = "3863708_polo";
+        $host    = "fdb32.awardspace.net";
+        $usuario = "3863708_polo";
+        $senha   = "A5Fh9xV)0aY(oP@t";// A5Fh9xV)0aY(oP@t
+        */
 
         try{  // Tenta fazer o PDO
             $pdo = new PDO("mysql:dbname=".$nome.";host=".$host, $usuario, $senha);
@@ -27,10 +34,50 @@ class BancoBD{
 
 }
 
+Class feedback{
+    private $pdo;  
+    public $msgErro = "";
+   
+     public function EnviarFeed($nome,$email,$mensagem){
+        //   $to = "fernandoft0p6@gmail.com";
+        //   $subjet = "Contato - Programador BR";
+        //   $body = "Nome: ".$nome. "\r\n ".
+        //           "Email: ".$email."\r\n".
+        //            "Mensagem: ".$mensagem;
+        //    $header = "From: "."\r\n"."Reply-To: ".$email."\e\n"."x=Mailer:PHP/".phpversion();
+        
+        //     if (mail($to,$subjet,$body,$header)){
+                return true;
+        //                                             }
+        //      else{
+        //  return true;
+        //          }
+        
+       
+     }
+
+}
+
 Class Usuario{
     private $pdo;  // Fica meio cinza pq ainda não usou.  Biblioteca PDO.
     public $msgErro = "";
     public $usuarioValues;
+
+    public function validarLoginUsario(){
+        if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
+            echo "<script> alert('Falha na autenticação de usuário!')</script>";    
+            echo "<script>window.location.href='../'</script>";
+            exit;
+        }
+    }
+
+    public function validarAdmin(){
+        if($_SESSION['adm'] == false) {
+            echo "<script>alert('Você não tem permissão para entrar nesta área')</script>";
+            echo "<script>window.location.href='../index.php'</script>";
+            exit;
+        }
+    }
 
     public function cadastrarUsuario($usuario, $email, $senha, $confirmarSenha, $adm){
         global $pdo;
@@ -209,7 +256,7 @@ class Noticia{
         global $pdo;
         global $noticiaValues;
         
-        $sql = $pdo->prepare("SELECT * FROM `noticia` WHERE `id_noticia` = '$id_noticia'");
+        $sql = $pdo->prepare("SELECT * FROM `noticia` WHERE `id_noticia` = $id_noticia");
         $sql->execute();
 
         if($sql->rowCount() > 0){
@@ -304,17 +351,20 @@ class Esports{
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $nome_arquivo = ".\\Tab_Camps\\" . $local_arquivo_tabela . ".php";
+            $nome_arquivo = "./Tab_Camps/" . $local_arquivo_tabela . ".php";
             if(file_exists($nome_arquivo) && is_file($nome_arquivo)){
 
             }else{
                 file_put_contents($nome_arquivo, PHP_EOL.
-                '<table>'.PHP_EOL.
-                "\t".'<thead>'.PHP_EOL.
-                "\t".'</thead>'.PHP_EOL.
-                "\t".'<tbody>'.PHP_EOL.
-                "\t".'</tbody>'.PHP_EOL.
-                '</table>');
+                    '<table>'.PHP_EOL.
+                    "\t".'<thead>'.PHP_EOL.
+                    "\t".'</thead>'.PHP_EOL.
+                    "\t".'<tbody>'.PHP_EOL.
+                    "\t\t".'<tr>'.PHP_EOL.
+                    "\t\t\t".'<td style="text-align: center;">Informações da tabela não encontradas.</td>'.PHP_EOL.
+                    "\t\t".'</tr>'.PHP_EOL.
+                    "\t".'</tbody>'.PHP_EOL.
+                    '</table>');
             }
             return true;
         }else{
@@ -452,7 +502,7 @@ class Esports{
                 "nome" => $dados['nome_camp'],
                 "data" => $d->format('Y-m-d\TH:i:s'),
                 "status" => $dados['status_camp'],
-                "local_arquivo_tabela" => "..\\Esports\\Tab_Camps\\" . $dados['local_arquivo_tabela'] . ".php"
+                "local_arquivo_tabela" => "../Esports/Tab_Camps/" . $dados['local_arquivo_tabela'] . ".php"
             );
 
             return $campeonatoValues;
@@ -484,7 +534,7 @@ class Esports{
             $campeonatoValues = array(
                 "id" => $id_camp,
                 "nome_camp" => $dados['nome_camp'],
-                "local_arquivo_tabela" => "..\\Esports\\Tab_Camps\\" . $dados['local_arquivo_tabela'] . ".php",
+                "local_arquivo_tabela" => "../Esports/Tab_Camps/" . $dados['local_arquivo_tabela'] . ".php",
                 "excluido" => false
             );
 
