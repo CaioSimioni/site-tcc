@@ -16,13 +16,6 @@ class BancoBD{
         $usuario = "root";
         $senha   = "";
 
-        /*
-        $nome    = "3863708_polo";
-        $host    = "fdb32.awardspace.net";
-        $usuario = "3863708_polo";
-        $senha   = "A5Fh9xV)0aY(oP@t";// A5Fh9xV)0aY(oP@t
-        */
-
         try{  // Tenta fazer o PDO
             $pdo = new PDO("mysql:dbname=".$nome.";host=".$host, $usuario, $senha);
             return true;
