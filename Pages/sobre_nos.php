@@ -33,7 +33,7 @@ session_start();
                 </p>
             </div>
             <div class="card">
-                <h1>Por que usar o polo?</h1>
+                <h1>Por que usar o Polo?</h1>
                 <p>
                     Ao usar polo, você automaticamente incentiva jovens criadores a continuarem o seu trabalho. Cada acesso seu 
                     é um sorriso no rosto da equipe. Além claro de poder interagir com outros usuários no chat e poder torcer para o seu
