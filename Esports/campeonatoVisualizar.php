@@ -34,13 +34,16 @@ if($banco->conectar()){
                 "\t".'<thead>'.PHP_EOL.
                 "\t".'</thead>'.PHP_EOL.
                 "\t".'<tbody>'.PHP_EOL.
+                "\t\t".'<tr>'.PHP_EOL.
+                "\t\t\t".'<td style="text-align: center;">Informações da tabela não encontradas.</td>'.PHP_EOL.
+                "\t\t".'</tr>'.PHP_EOL.
                 "\t".'</tbody>'.PHP_EOL.
                 '</table>');
                 $bd_campeonato['tabela'] = file_get_contents($bd_campeonato['local_arquivo_tabela']);
             }
 
         }else{
-            echo"<script> alert('[Erro] Falha em coletar informações do Banco.') </script>";
+            echo"<script> alert('[Erro] Falha na conexão com o Banco.') </script>";
             echo"<script> window.location.href = '../Pages/home.php' </script>";
             exit;
         }
@@ -60,8 +63,13 @@ if($banco->conectar()){
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php include "../Templates/head.php"?>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polo</title>
     <link rel="stylesheet" href="../Css/style_campVisualizar.css">
+    <link rel="shortcut icon" href="../Materials/polo_icon.png" type="image/x-icon">
+
 </head>
 <body>
 
