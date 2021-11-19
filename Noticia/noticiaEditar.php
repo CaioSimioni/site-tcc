@@ -23,11 +23,6 @@
 
     if($cod_noticia){  
         $noticia = $new->pegarNoticia($cod_noticia);    // Seleciona a notícia que será editada.
-        $titulo_new     = isset($noticia[0]) ? $noticia[0] : NULL;
-        $descricao_new  = isset($noticia[1]) ? $noticia[1] : NULL;
-        $fonte_new      = isset($noticia[2]) ? $noticia[2] : NULL;
-        $data_new       = isset($noticia[3]) ? $noticia[3] : NULL;
-        $imagem_new     = isset($noticia[4]) ? $noticia[4] : NULL;
     }
 
 ?>
@@ -45,32 +40,32 @@
 
     <div id="global">
         <form action="editaNoticia.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="cod_noticia" value="<?php if($cod_noticia){echo $cod_noticia;}?>">
+            <input type="hidden" name="cod_noticia" value="<?php if($noticia['id']){echo $noticia['id'];}?>">
             <div class="campo div-title">
                 <p>Título</p>
-                <input type="text" id="newNoticia_titulo" name="titulo" value="<?php if($titulo_new){echo $titulo_new;}?>">
+                <input type="text" id="newNoticia_titulo" name="titulo" value="<?php if($noticia['titulo']){echo $noticia['titulo'];}?>">
             </div>
             <div class="campo div-descricao">
                 <p>Descrição</p>
-                <textarea id="newNoticia_descricao" name="descricao"><?php if($descricao_new){echo$descricao_new;}?></textarea>
+                <textarea id="newNoticia_descricao" name="descricao"><?php if($noticia['descricao']){echo $noticia['descricao'];}?></textarea>
             </div>
             <div class="campo div-fonte">
                 <p>Fonte</p>
-                <input type="text" id="newNoticia_fonte" name="fonte" value="<?php if($fonte_new){echo $fonte_new;}?>">
+                <input type="text" id="newNoticia_fonte" name="fonte" value="<?php if($noticia['fonte']){echo $noticia['fonte'];}?>">
             </div>
             <p>Data</p>
             <div class="campo div-data-file">
-                <input type="date" id="new_noticia_data" name="data" value="<?php if($data_new){echo $data_new;}?>">
+                <input type="date" id="new_noticia_data" name="data" value="<?php if($noticia['data']){echo $noticia['data'];}?>">
                 <div class="imagem">
                     <label onclick="a()" for="imagem">Enviar Imagem</label>
-                    <div id="nome-arquivo"><?php if($imagem_new){echo $imagem_new;}?></div>
+                    <div id="nome-arquivo"><?php if($noticia['imagem']){echo $noticia['imagem'];}?></div>
                 </div>
             </div>
             <div class="campo div-nome-arquivo">
             </div>
             <input type="file" id="newNoticia_imagem" oninput="mostrarNomeImagem()" name="imagem">
             <div class="campo div-submit">
-                <a class="btn-voltar" href="../Admin/admin.php">Voltar</a>
+                <a class="btn-voltar" href="../Admin/">Voltar</a>
                 <input type="submit" class="atrib_noticia" id="newNoticia_submit">
             </div>
         </form>
