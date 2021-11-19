@@ -127,7 +127,7 @@
                 <img class="logo" src="../Materials/polo_logo_white@2x.png" alt="logo" onclick="goHome()">
                 <nav>
                     <ul class="nav__links">
-                        <li><a href="../index.php">Inicio</a></li>
+                        <li><a href="../">Inicio</a></li>
                         <li><a href="../Pages/cadastrar.php">Cadastrar</a></li>
                     </ul>
                 </nav>
@@ -139,7 +139,7 @@
     
 <script>
     function goHome(){
-        window.location.href = "../index.php"
+        window.location.href = "../"
     }
     function goHomeLogged(){
         window.location.href = "../Pages/home.php"
