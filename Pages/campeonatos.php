@@ -20,7 +20,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 	<?php include "../Templates/head.php"?>
@@ -77,7 +77,7 @@ if(!isset($_SESSION['logged']) or !isset($_SESSION['codigo_usuario'])){
 												</div>
 												<img src="<?php echo$esports->nomeFotoPadraoCampHome($camp['categoria_camp'])?>" alt="">
 												<div class="div-btn">
-													<a href="">Ver Mais</a>
+													<a href="../Esports/exibirCampeonato.php?id=<?php echo$camp['id_camp']?>">Ver Mais</a>
 												</div>
 											</div>
 										<?php
